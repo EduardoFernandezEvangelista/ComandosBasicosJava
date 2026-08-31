@@ -1024,7 +1024,7 @@ Este projeto ainda não possui uma licença específica definida.
 
 <div align="center">
 
-☕ **Java • Tipos de entradas e saídas 
+☕ **Java • Tipos de entradas e saídas **
 
 📚 Estudo • Prática • Desenvolvimento • Evolução
 
