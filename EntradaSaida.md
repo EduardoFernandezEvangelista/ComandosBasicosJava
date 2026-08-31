@@ -1006,26 +1006,26 @@ Esses conceitos são **mais avançados** e estão fora do escopo deste guia intr
 
 ---
 
-## 🎓 Conclusão
+## 👨‍💻 Autor
 
-Java oferece um ecossistema completo para entrada e saída de dados:
+**Eduardo Fernandez Evangelista**
 
-1. **Console**: Para interação direta com usuários via terminal
-2. **Arquivos**: Para persistência de dados
-3. **Rede**: Para comunicação entre aplicações
-4. **Memória**: Para operações em dados residentes
-
-Escolher a classe correta depende de:
-
-- **Origem/Destino**: Console, arquivo, rede, memória?
-- **Tipo de dado**: Bytes (binário) ou caracteres (texto)?
-- **Performance**: Buffering necessário?
-- **Modelo**: Bloqueante (tradicional) ou não-bloqueante (NIO)?
-
-Comece com `Scanner` e `System.out` para programas simples, explore `BufferedReader/PrintWriter` para texto, e avance para `Channels` e `Path/Files` conforme sua experiência crescer.
+**GitHub:** [EduardoFernandezEvangelista](https://github.com/EduardoFernandezEvangelista)
 
 ---
 
-**Última atualização**: Agosto 2026  
-**Versão**: 1.0  
-**Nível**: Iniciante a Intermediário
+## 📄 Licença
+
+Este projeto ainda não possui uma licença específica definida.
+
+**Licença:** `[ADICIONAR LICENÇA]`
+
+---
+
+<div align="center">
+
+☕ **Java • Variáveis • Tipos de Dados • POO**
+
+📚 Estudo • Prática • Desenvolvimento • Evolução
+
+</div>
