@@ -4,23 +4,6 @@ Um guia completo e profissional sobre **Input/Output (I/O)** em Java, explorando
 
 ---
 
-## 📋 Índice
-
-1. [Introdução](#introdução)
-2. [Conceitos Fundamentais](#conceitos-fundamentais)
-3. [Entrada e Saída pelo Console](#entrada-e-saída-pelo-console)
-4. [Scanner - Leitura Simplificada](#scanner---leitura-simplificada)
-5. [BufferedReader e InputStreamReader](#bufferedreader-e-inputstreamreader)
-6. [Entrada e Saída pela Rede](#entrada-e-saída-pela-rede)
-7. [Streams de Bytes](#streams-de-bytes)
-8. [Streams de Caracteres](#streams-de-caracteres)
-9. [Manipulação de Arquivos](#manipulação-de-arquivos)
-10. [Java NIO](#java-nio)
-11. [Java NIO.2](#java-nio2)
-12. [Tabela de Resumo](#tabela-de-resumo)
-
----
-
 ## 🎯 Introdução
 
 Toda aplicação Java interage com o mundo exterior. Programas:
