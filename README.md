@@ -430,7 +430,7 @@ O objetivo é manter este repositório como um registro da evolução do aprendi
 
 Este projeto ainda não possui uma licença específica definida.
 
-**Licença:** `[ADICIONAR LICENÇA]`
+**Licença:** 
 
 ---
 
