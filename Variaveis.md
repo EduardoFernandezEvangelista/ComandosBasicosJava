@@ -8,7 +8,7 @@ O projeto possui finalidade **educacional**, servindo como material de estudo, p
 
 ---
 
-## 📚 Sobre o projeto
+## Intrução
 
 As variáveis são um dos conceitos fundamentais da programação. Em Java, existem diferentes formas de declarar e utilizar variáveis, dependendo do tipo de dado armazenado, do local onde a variável é declarada e da forma como ela será utilizada.
 
