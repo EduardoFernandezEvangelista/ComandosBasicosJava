@@ -420,9 +420,9 @@ O objetivo é manter este repositório como um registro da evolução do aprendi
 
 ## 👨‍💻 Autor
 
-**Autor:** [SEU NOME]
+**Autor:** Eduardo Fernandez Evangelista
 
-**GitHub:** [SEU GITHUB]
+**GitHub:** EduardoFernandezEvangelista
 
 ---
 
