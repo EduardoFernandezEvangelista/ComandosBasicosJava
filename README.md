@@ -703,7 +703,7 @@ Esses conteúdos já fazem parte da direção dos estudos e serão continuamente
 
 Este projeto ainda não possui uma licença específica definida.
 
-**Licença:** `[ADICIONAR LICENÇA]`
+**Licença:** ``
 
 ---
 
