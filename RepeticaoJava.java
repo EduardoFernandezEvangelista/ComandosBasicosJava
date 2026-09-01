@@ -1,4 +1,4 @@
-public class EstruturasRepeticaoJava {
+public class RepeticaoJava {
 
     public static void main(String[] args) {
 
