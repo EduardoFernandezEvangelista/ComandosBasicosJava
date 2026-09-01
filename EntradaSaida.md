@@ -1001,7 +1001,7 @@ Esses conceitos são **mais avançados** e estão fora do escopo deste guia intr
 
 Este projeto ainda não possui uma licença específica definida.
 
-**Licença:** `[ADICIONAR LICENÇA]`
+**Licença:** ``
 
 ---
 
