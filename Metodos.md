@@ -920,7 +920,7 @@ GitHub:
 Este projeto ainda não possui uma licença específica definida.
 
 ```text
-Licença: [ADICIONAR LICENÇA]
+Licença: ´`
 ```
 
 ---
