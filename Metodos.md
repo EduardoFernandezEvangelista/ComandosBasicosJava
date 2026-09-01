@@ -16,35 +16,6 @@ Também apresenta a estrutura completa do método `main` nas versões Java 17 e 
 
 ---
 
-# 📑 Índice
-
-* [🎯 Introdução](#-introdução)
-* [🏗️ Estrutura de um Método](#️-estrutura-de-um-método)
-* [🚀 Método ](#-método-main-no-java-17)[`main`](#-método-main-no-java-17)[ no Java 17](#-método-main-no-java-17)
-* [🚀 Método ](#-método-main-no-java-25)[`main`](#-método-main-no-java-25)[ no Java 25](#-método-main-no-java-25)
-* [🔢 Métodos da Classe Math](#-métodos-da-classe-math)
-* [🔤 Métodos da Classe String](#-métodos-da-classe-string)
-* [📦 Métodos da Classe Object](#-métodos-da-classe-object)
-* [📋 Métodos das Collections](#-métodos-das-collections)
-* [🔄 Métodos da Classe Arrays](#-métodos-da-classe-arrays)
-* [🔍 Métodos do Scanner](#-métodos-do-scanner)
-* [📁 Métodos de Arquivos](#-métodos-de-arquivos)
-* [🌊 Métodos de Entrada e Saída](#-métodos-de-entrada-e-saída)
-* [⚡ Métodos da Stream API](#-métodos-da-stream-api)
-* [🧵 Métodos relacionados a Threads](#-métodos-relacionados-a-threads)
-* [⏱️ Métodos de Tempo e Datas](#️-métodos-de-tempo-e-datas)
-* [🎲 Métodos da Classe Random](#-métodos-da-classe-random)
-* [🖥️ Métodos da Classe System](#️-métodos-da-classe-system)
-* [🏗️ Métodos da Classe StringBuilder](#️-métodos-da-classe-stringbuilder)
-* [🧹 Métodos de Exceções](#-métodos-de-exceções)
-* [🧪 Exemplo Completo](#-exemplo-completo)
-* [💻 Pré-requisitos](#-pré-requisitos)
-* [▶️ Como Executar](#️-como-executar)
-* [👨‍💻 Autor](#-autor)
-* [📄 Licença](#-licença)
-
----
-
 # 🎯 Introdução
 
 Métodos são blocos de código responsáveis por executar tarefas específicas.
