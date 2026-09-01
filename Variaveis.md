@@ -1224,7 +1224,7 @@ Alguns exercícios que podem ser utilizados para praticar os conceitos deste pro
 
 Este projeto ainda não possui uma licença específica definida.
 
-**Licença:** `[ADICIONAR LICENÇA]`
+**Licença:** ``
 
 ---
 
