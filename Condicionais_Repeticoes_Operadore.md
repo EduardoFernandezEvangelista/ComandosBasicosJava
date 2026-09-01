@@ -2987,7 +2987,7 @@ Para praticar os conteúdos deste repositório:
 
 Este projeto ainda não possui uma licença específica definida.
 
-**Licença:** `[ADICIONAR LICENÇA]`
+**Licença:** ``
 
 ---
 
