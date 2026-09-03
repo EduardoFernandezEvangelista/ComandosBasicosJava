@@ -8,7 +8,7 @@ Este conteúdo faz parte da sequência de estudos de comandos básicos em Java e
 
 ## 📚 Conteúdo abordado
 
-A pesquisa reúne os principais aspectos relacionados ao uso de dados em Java, desde os **tipos primitivos** até **tipos de referência, classes Wrapper, constantes, ****`enum`****, ****`var`**** e variáveis associadas a classes e objetos**.
+Aqui reúne os principais aspectos relacionados ao uso de dados em Java, desde os **tipos primitivos** até **tipos de referência, classes Wrapper, constantes, ****`enum`****, ****`var`**** e variáveis associadas a classes e objetos**.
 
 | Tema                    | Conteúdo                                                  |
 | ----------------------- | --------------------------------------------------------- |
