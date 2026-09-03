@@ -4,6 +4,8 @@ Study repository dedicated to learning and practicing different **variables, dat
 
 This project contains practical examples and explanations about primitive types, reference types, Wrapper classes, local variables, instance variables, static variables, parameters, constants, access modifiers, `enum`, interfaces, and reference variables.
 
+All example codes in this project are Java source files with the `.java` extension.
+
 The project has an **educational purpose**, serving as study, practice, and reference material during the continuous learning process of Java.
 
 ---
@@ -1098,7 +1100,7 @@ Java-Variables/
 └── README.md
 ```
 
-> The structure above is only a suggestion and can be adapted to the actual organization of the project.
+> The structure above is only a suggestion and can be adapted to the actual organization of the project. All example codes are Java source files with the `.java` extension.
 
 ---
 
@@ -1135,6 +1137,8 @@ javac -version
 
 # ▶️ How to Run
 
+All example codes are Java source files with the `.java` extension.
+
 ### Terminal
 
 Compile the file:
@@ -1160,7 +1164,7 @@ java Main
 
 The examples can also be executed directly through a Java-compatible IDE.
 
-Find the class containing:
+Find the `.java` file containing:
 
 ```java
 public static void main(String[] args)
