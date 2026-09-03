@@ -1,526 +1,240 @@
-# Java - Comandos Básicos
+# ☕ Java Basic Commands
 
-Repositório de estudos desenvolvido para praticar a linguagem **Java**, reunindo exemplos, pequenos programas, exercícios e projetos relacionados aos fundamentos e à evolução do desenvolvimento de software.
+Repositório de estudos desenvolvido para praticar os **fundamentos da linguagem Java**, reunindo exemplos práticos, comandos básicos e materiais de consulta.
 
-O projeto possui finalidade **exclusivamente educacional**, servindo como material de estudo, prática e consulta durante o aprendizado de Java e de conceitos relacionados ao desenvolvimento de aplicações.
+O conteúdo está organizado por temas, com arquivos **`.java`** contendo exemplos práticos e arquivos **`.md`** contendo materiais de apoio em português e inglês.
 
 ---
 
 ## 📚 Sobre o projeto
 
-Este repositório foi criado para acompanhar minha evolução no aprendizado da linguagem **Java**, começando pelos conceitos fundamentais e avançando gradualmente para conceitos mais estruturados de desenvolvimento de software.
+Este repositório reúne estudos e exemplos dos principais fundamentos utilizados no desenvolvimento inicial com Java.
 
-Os fundamentos apresentados já foram desenvolvidos e estudados. Os conteúdos relacionados à Programação Orientada a Objetos, banco de dados, APIs e integração entre sistemas também já fazem parte da minha trajetória de aprendizado, mas permanecem em constante aprimoramento por meio de estudos, exercícios e projetos.
+A organização foi feita de forma simples e separada por assuntos, facilitando a navegação pelo código e a consulta dos conteúdos.
 
-Aqui podem ser encontrados exemplos, exercícios e projetos relacionados a:
+### Conteúdos disponíveis
 
-* Fundamentos da linguagem Java;
-* Lógica de programação;
-* Estruturas condicionais;
-* Estruturas de repetição;
-* Métodos e funções;
-* Arrays e Strings;
-* Programação Orientada a Objetos;
-* Classes e objetos;
-* Encapsulamento;
-* Herança;
-* Polimorfismo;
-* Modelagem e organização de aplicações;
-* Banco de dados;
-* Desenvolvimento de APIs;
-* Integração entre sistemas;
-* Outros conceitos relacionados à evolução dos estudos.
-
-> **Observação:** os conteúdos marcados como “em desenvolvimento” já foram estudados e desenvolvidos, mas continuam sendo aprimorados e aplicados em novos projetos.
+| Conteúdo            | Descrição                                                  |
+| ------------------- | ---------------------------------------------------------- |
+| **Variáveis**       | Declaração, armazenamento e manipulação de valores         |
+| **Entrada e Saída** | Entrada de dados e exibição de informações                 |
+| **Operadores**      | Operações matemáticas, relacionais e lógicas               |
+| **Condicionais**    | Estruturas utilizadas para tomada de decisões              |
+| **Repetições**      | Estruturas utilizadas para executar comandos repetidamente |
+| **Métodos**         | Organização e reutilização de código                       |
 
 ---
 
-## 🎯 Objetivos
-
-Os principais objetivos deste projeto são:
-
-* Aprender e praticar a sintaxe da linguagem Java;
-* Desenvolver lógica de programação;
-* Compreender os principais tipos de dados;
-* Trabalhar com entrada e saída de dados;
-* Praticar estruturas condicionais;
-* Praticar estruturas de repetição;
-* Desenvolver e utilizar métodos;
-* Trabalhar com parâmetros e valores de retorno;
-* Manipular arrays e strings;
-* Compreender os fundamentos da Programação Orientada a Objetos;
-* Aprender a criar e organizar classes e objetos;
-* Compreender encapsulamento, herança e polimorfismo;
-* Desenvolver aplicações utilizando Java;
-* Estudar integração com bancos de dados;
-* Compreender os fundamentos do desenvolvimento de APIs;
-* Praticar integração entre diferentes sistemas;
-* Aprimorar conhecimentos já desenvolvidos;
-* Registrar a evolução dos estudos;
-* Criar uma base de conhecimento para projetos futuros.
-
----
-
-## 📖 Conteúdos estudados
-
-### ☕ Fundamentos do Java
-
-| Conceito               | Descrição                                    |
-| ---------------------- | -------------------------------------------- |
-| Variáveis              | Armazenamento e manipulação de dados         |
-| Tipos de dados         | Representação de diferentes tipos de valores |
-| `Scanner`              | Entrada de dados pelo teclado                |
-| `System.out.println()` | Exibição de informações no console           |
-| Operadores matemáticos | Realização de operações aritméticas          |
-| Operadores relacionais | Comparação entre valores                     |
-| Operadores lógicos     | Combinação de condições                      |
-| Conversão de tipos     | Conversão entre diferentes tipos de dados    |
-| Strings                | Manipação de textos                          |
-| Arrays                 | Armazenamento de múltiplos valores           |
-
-### 🔀 Estruturas de controle
-
-| Conceito        | Descrição                         |
-| --------------- | --------------------------------- |
-| `if / else`     | Estruturas condicionais           |
-| `else if`       | Utilização de múltiplas condições |
-| `switch / case` | Seleção entre diferentes casos    |
-| `for`           | Estrutura de repetição            |
-| `while`         | Repetição baseada em uma condição |
-| `while (true)`  | Criação de loops contínuos        |
-| `break`         | Interrupção de loops ou casos     |
-| `continue`      | Pulo de uma determinada iteração  |
-
-### 🧩 Métodos e organização
-
-| Conceito                | Descrição                                  |
-| ----------------------- | ------------------------------------------ |
-| Métodos                 | Organização e reutilização de código       |
-| Parâmetros              | Passagem de valores para métodos           |
-| `return`                | Retorno de valores                         |
-| Classes                 | Organização estrutural do código           |
-| Modificadores de acesso | Controle de acesso aos membros das classes |
-
-### 🏗️ Programação Orientada a Objetos
-
-Os conceitos de Programação Orientada a Objetos já foram desenvolvidos e estudados, permanecendo em aprimoramento contínuo por meio da prática e da criação de aplicações mais estruturadas.
-
-| Conceito                        | Descrição                                                                              |
-| ------------------------------- | -------------------------------------------------------------------------------------- |
-| Programação Orientada a Objetos | Organização do software utilizando objetos e suas responsabilidades                    |
-| Classes                         | Estruturas utilizadas para definir objetos                                             |
-| Objetos                         | Instâncias de classes                                                                  |
-| Atributos                       | Características e dados dos objetos                                                    |
-| Métodos                         | Comportamentos definidos pelas classes                                                 |
-| Construtores                    | Inicialização de objetos                                                               |
-| `this`                          | Referência ao próprio objeto                                                           |
-| Encapsulamento                  | Controle do acesso aos dados e comportamentos                                          |
-| Herança                         | Reutilização e especialização de estruturas                                            |
-| Polimorfismo                    | Possibilidade de diferentes comportamentos através de uma mesma interface ou estrutura |
-
-### 🗄️ Banco de dados
-
-Os conhecimentos relacionados a banco de dados já foram desenvolvidos e estudados, mas continuam em aprimoramento, especialmente na integração com aplicações Java.
-
-| Conceito                         | Descrição                                                        |
-| -------------------------------- | ---------------------------------------------------------------- |
-| Banco de dados                   | Armazenamento estruturado de informações                         |
-| MySQL                            | Sistema de gerenciamento de banco de dados utilizado nos estudos |
-| SQL                              | Linguagem utilizada para manipulação de dados                    |
-| CRUD                             | Operações de criação, leitura, atualização e exclusão de dados   |
-| Integração Java + Banco de Dados | Comunicação entre aplicações Java e banco de dados               |
-
-### 🌐 APIs
-
-Os conceitos relacionados ao desenvolvimento de APIs já foram desenvolvidos e estudados, permanecendo em constante aprimoramento por meio da prática, da integração entre sistemas e da criação de aplicações mais completas.
-
-| Conceito               | Descrição                                                    |
-| ---------------------- | ------------------------------------------------------------ |
-| APIs                   | Comunicação entre diferentes aplicações e sistemas           |
-| APIs REST              | Modelo de comunicação baseado em recursos e requisições HTTP |
-| HTTP                   | Protocolo utilizado na comunicação entre cliente e servidor  |
-| Requisições            | Comunicação entre aplicações                                 |
-| Respostas              | Dados retornados por uma API                                 |
-| Integração de sistemas | Comunicação entre diferentes aplicações                      |
-
-> Os conteúdos podem ser modificados, aprofundados ou reorganizados conforme os estudos evoluírem.
-
----
-
-## 🧠 Exemplos de conceitos
-
-### Entrada de dados
-
-O `Scanner` permite receber informações digitadas pelo usuário através do teclado.
-
-```java
-Scanner scanner = new Scanner(System.in);
-
-System.out.print("Digite seu nome: ");
-String nome = scanner.nextLine();
-
-System.out.println("Olá, " + nome);
-```
-
-Neste exemplo:
-
-* `Scanner` captura dados do teclado;
-* `nextLine()` recebe uma linha de texto;
-* O valor é armazenado na variável `nome`;
-* `System.out.println()` exibe a informação.
-
----
-
-### `if / else`
-
-As estruturas `if` e `else` permitem executar diferentes trechos de código dependendo de uma condição.
-
-```java
-if (idade >= 18) {
-    System.out.println("Maior de idade");
-} else {
-    System.out.println("Menor de idade");
-}
-```
-
----
-
-### `else if`
-
-O `else if` permite trabalhar com múltiplas condições.
-
-```java
-if (nota >= 9) {
-    System.out.println("Excelente");
-} else if (nota >= 7) {
-    System.out.println("Bom");
-} else {
-    System.out.println("Precisa melhorar");
-}
-```
-
----
-
-### `switch / case`
-
-O `switch` permite selecionar uma opção entre diferentes possibilidades.
-
-```java
-switch (opcao) {
-    case 1:
-        System.out.println("Opção 1");
-        break;
-
-    case 2:
-        System.out.println("Opção 2");
-        break;
-
-    default:
-        System.out.println("Opção inválida");
-}
-```
-
----
-
-### `for`
-
-O `for` pode ser utilizado para executar um bloco de código várias vezes.
-
-```java
-for (int i = 0; i < 10; i++) {
-    System.out.println(i);
-}
-```
-
----
-
-### `while`
-
-O `while` executa um bloco enquanto determinada condição for verdadeira.
-
-```java
-while (contador < 10) {
-    System.out.println(contador);
-    contador++;
-}
-```
-
----
-
-### `while (true)`
-
-O `while (true)` cria um loop contínuo que pode ser interrompido utilizando `break`.
-
-```java
-while (true) {
-    System.out.println("Executando...");
-
-    if (condicao) {
-        break;
-    }
-}
-```
-
----
-
-### Método
-
-Métodos permitem organizar o código em blocos reutilizáveis.
-
-```java
-public static int somar(int a, int b) {
-    return a + b;
-}
-```
-
-O método recebe dois parâmetros e retorna o resultado da soma.
-
----
-
-## 🏗️ Programação Orientada a Objetos
-
-Os conceitos de **Programação Orientada a Objetos (POO)** já foram desenvolvidos e estudados. Atualmente, permanecem em aprimoramento contínuo por meio da aplicação em exercícios, projetos e sistemas mais estruturados.
-
-### Classe
-
-Uma classe funciona como uma estrutura que define características e comportamentos de determinados objetos.
-
-```java
-class Pessoa {
-
-    String nome;
-    int idade;
-
-    void apresentar() {
-        System.out.println(
-            "Olá, meu nome é " + nome
-        );
-    }
-}
-```
-
-### Objeto
-
-Um objeto pode ser criado a partir de uma classe.
-
-```java
-Pessoa pessoa = new Pessoa();
-
-pessoa.nome = "Eduardo";
-pessoa.idade = 18;
-
-pessoa.apresentar();
-```
-
-### Encapsulamento
-
-O encapsulamento permite controlar o acesso aos dados de um objeto.
-
-```java
-class Pessoa {
-
-    private String nome;
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-}
-```
-
-### Herança
-
-A herança permite que uma classe aproveite características de outra classe.
-
-```java
-class Animal {
-
-    void emitirSom() {
-        System.out.println("Som do animal");
-    }
-}
-
-class Cachorro extends Animal {
-
-    void latir() {
-        System.out.println("Au au!");
-    }
-}
-```
-
-### Polimorfismo
-
-O polimorfismo permite trabalhar com diferentes implementações através de uma mesma estrutura.
-
-```java
-Animal animal = new Cachorro();
-
-animal.emitirSom();
-```
-
-Esses conceitos já fazem parte dos conhecimentos desenvolvidos e continuam sendo aprimorados conforme novos projetos e desafios são realizados.
-
----
-
-## 🗄️ Banco de Dados
-
-Os conhecimentos relacionados a banco de dados já foram desenvolvidos e estudados, permanecendo em aprimoramento contínuo para melhorar a integração entre aplicações Java e informações armazenadas.
-
-Entre os conceitos estudados estão:
-
-* MySQL;
-* SQL;
-* Tabelas;
-* Registros;
-* Consultas;
-* Inserção de dados;
-* Atualização de dados;
-* Exclusão de dados;
-* CRUD;
-* Integração entre Java e banco de dados.
-
-Exemplo conceitual de uma consulta SQL:
-
-```sql
-SELECT * FROM usuarios;
-```
-
-A integração entre Java e banco de dados continua sendo aprimorada por meio do desenvolvimento de aplicações mais completas e organizadas.
-
----
-
-## 🌐 APIs
-
-Os conhecimentos relacionados a APIs já foram desenvolvidos e estudados, mas continuam em aprimoramento por meio da criação de serviços, integração entre aplicações e utilização de diferentes recursos de comunicação.
-
-Entre os conceitos estudados estão:
-
-* APIs REST;
-* Requisições HTTP;
-* Métodos `GET`;
-* Métodos `POST`;
-* Métodos `PUT`;
-* Métodos `DELETE`;
-* Respostas HTTP;
-* JSON;
-* Integração entre aplicações;
-* Desenvolvimento de APIs utilizando Java e Spring Boot.
-
-Exemplo conceitual de uma requisição:
+## 📂 Estrutura do repositório
 
 ```text
-Cliente
-   │
-   │ GET /usuarios
-   ▼
-API
-   │
-   │ Consulta os dados
-   ▼
-Banco de Dados
-   │
-   │ Retorna os dados
-   ▼
-API
-   │
-   │ Resposta JSON
-   ▼
-Cliente
+JavaBasicCommands/
+│
+├── Condicionais_Repeticoes_Operadores/
+│   │
+│   ├── Condicionais/
+│   │   └── CondicionaisJava.java
+│   │
+│   ├── Operadores/
+│   │   └── OperadoresJava.java
+│   │
+│   ├── Repeticao/
+│   │   └── RepeticaoJava.java
+│   │
+│   ├── CondicionaisRepeticoesOperadore.md
+│   └── ConditionalStructuresLoopsOperators.md
+│
+├── Entrada_Saida/
+│   ├── EntradaSaida.md
+│   ├── EntradaSaidaJava.java
+│   └── InputOutput.md
+│
+├── Metodos/
+│   ├── Methods.md
+│   ├── Metodos.md
+│   └── MetodosJava.java
+│
+├── Variaveis/
+│   ├── Variables.md
+│   ├── Variaveis.md
+│   └── VariaveisJava.java
+│
+├── README.md
+└── READMEbr.md
 ```
 
 ---
 
-## 📁 Estrutura do projeto
+## 🗂️ Organização dos conteúdos
 
-Uma possível organização para os estudos é:
+### ☑️ Variáveis
 
-```text
-Java-Comandos-Basicos/
-│
-├── src/
-│   ├── fundamentos/
-│   ├── entrada_dados/
-│   ├── variaveis/
-│   ├── operadores/
-│   ├── condicionais/
-│   ├── switch_case/
-│   ├── repeticoes/
-│   ├── metodos/
-│   ├── arrays/
-│   ├── strings/
-│   │
-│   ├── poo/
-│   │   ├── classes_objetos/
-│   │   ├── encapsulamento/
-│   │   ├── heranca/
-│   │   └── polimorfismo/
-│   │
-│   ├── banco_dados/
-│   ├── apis/
-│   └── exercicios/
-│
-└── README.md
-```
+A pasta `Variaveis` contém os exemplos e materiais relacionados ao uso de variáveis em Java.
 
-A estrutura acima é apenas uma **sugestão de organização**.
-
-A estrutura definitiva pode ser adaptada conforme o projeto crescer e novos conteúdos forem adicionados.
+| Arquivo              | Idioma/Formato | Conteúdo             |
+| -------------------- | -------------- | -------------------- |
+| `VariaveisJava.java` | Java           | Exemplos práticos    |
+| `Variaveis.md`       | Português      | Material de consulta |
+| `Variables.md`       | Inglês         | Material de consulta |
 
 ---
 
-## ⚙️ Tecnologias utilizadas
+### ⌨️ Entrada e Saída
 
-Atualmente, os estudos relacionados a este projeto podem envolver:
+A pasta `Entrada_Saida` reúne exemplos relacionados à entrada e saída de informações.
 
-* **Java**
-* **JDK**
-* **MySQL**
-* **Spring Boot**
-* **SQL**
-* **Git e GitHub**
+| Arquivo                 | Idioma/Formato | Conteúdo             |
+| ----------------------- | -------------- | -------------------- |
+| `EntradaSaidaJava.java` | Java           | Exemplos práticos    |
+| `EntradaSaida.md`       | Português      | Material de consulta |
+| `InputOutput.md`        | Inglês         | Material de consulta |
 
-As versões específicas das tecnologias não são definidas neste README.
+---
+
+### 🧩 Métodos
+
+A pasta `Metodos` reúne exemplos e materiais relacionados à criação e utilização de métodos.
+
+| Arquivo            | Idioma/Formato | Conteúdo             |
+| ------------------ | -------------- | -------------------- |
+| `MetodosJava.java` | Java           | Exemplos práticos    |
+| `Metodos.md`       | Português      | Material de consulta |
+| `Methods.md`       | Inglês         | Material de consulta |
+
+---
+
+### 🔀 Condicionais, Repetições e Operadores
+
+Esses três assuntos estão agrupados em uma mesma seção, pois são fundamentos diretamente relacionados à lógica de programação.
+
+| Pasta/Arquivo                            | Formato   | Conteúdo                 |
+| ---------------------------------------- | --------- | ------------------------ |
+| `Condicionais/`                          | Pasta     | Estruturas condicionais  |
+| `Operadores/`                            | Pasta     | Operadores Java          |
+| `Repeticao/`                             | Pasta     | Estruturas de repetição  |
+| `CondicionaisJava.java`                  | Java      | Exemplos de condicionais |
+| `OperadoresJava.java`                    | Java      | Exemplos de operadores   |
+| `RepeticaoJava.java`                     | Java      | Exemplos de repetição    |
+| `CondicionaisRepeticoesOperadore.md`     | Português | Material de consulta     |
+| `ConditionalStructuresLoopsOperators.md` | Inglês    | Material de consulta     |
+
+---
+
+## 📖 Conteúdos do repositório
+
+| Categoria             | Exemplos de assuntos                                     |
+| --------------------- | -------------------------------------------------------- |
+| **Variáveis**         | Declaração, tipos e armazenamento de dados               |
+| **Entrada e Saída**   | `Scanner`, `System.out.print()` e `System.out.println()` |
+| **Operadores**        | Aritméticos, relacionais e lógicos                       |
+| **Condicionais**      | `if`, `else`, `else if`, `switch` e `case`               |
+| **Repetições**        | `for`, `while`, `do while`                               |
+| **Controle de fluxo** | `break` e `continue`                                     |
+| **Métodos**           | Criação, parâmetros e retorno                            |
+| **Exemplos Java**     | Programas simples para prática dos conceitos             |
+
+---
+
+## 💻 Arquivos Java
+
+Os arquivos `.java` possuem exemplos práticos dos conteúdos estudados.
+
+| Arquivo                 | Principal objetivo                       |
+| ----------------------- | ---------------------------------------- |
+| `VariaveisJava.java`    | Praticar variáveis e tipos de dados      |
+| `EntradaSaidaJava.java` | Praticar entrada e saída de dados        |
+| `OperadoresJava.java`   | Praticar operadores                      |
+| `CondicionaisJava.java` | Praticar estruturas condicionais         |
+| `RepeticaoJava.java`    | Praticar estruturas de repetição         |
+| `MetodosJava.java`      | Praticar criação e utilização de métodos |
+
+---
+
+## 📝 Arquivos Markdown
+
+Os arquivos `.md` são utilizados como materiais de documentação e consulta.
+
+Cada tema possui, quando aplicável, uma versão em **português** e outra em **inglês**.
+
+| Tema                                  | Português                            | Inglês                                   |
+| ------------------------------------- | ------------------------------------ | ---------------------------------------- |
+| Variáveis                             | `Variaveis.md`                       | `Variables.md`                           |
+| Entrada e Saída                       | `EntradaSaida.md`                    | `InputOutput.md`                         |
+| Métodos                               | `Metodos.md`                         | `Methods.md`                             |
+| Condicionais, Repetições e Operadores | `CondicionaisRepeticoesOperadore.md` | `ConditionalStructuresLoopsOperators.md` |
+
+---
+
+## 🌎 Idiomas
+
+O repositório possui documentação em dois idiomas:
+
+| Idioma         | Utilização                     |
+| -------------- | ------------------------------ |
+| 🇧🇷 Português | Material principal de estudo   |
+| 🇺🇸 Inglês    | Versão traduzida dos conteúdos |
+
+Além dos arquivos individuais, o projeto também possui dois arquivos principais:
+
+| Arquivo       | Função              |
+| ------------- | ------------------- |
+| `READMEbr.md` | README em português |
+| `README.md`   | README em inglês    |
+
+---
+
+## 🎯 Objetivo
+
+O principal objetivo deste repositório é manter uma coleção organizada de exemplos dos **comandos e fundamentos básicos de Java**.
+
+O projeto pode ser utilizado para:
+
+* 📚 Estudo;
+* 🔎 Consulta rápida;
+* 💻 Prática de programação;
+* 🧠 Exercícios de lógica;
+* 📝 Revisão de conceitos;
+* 🌎 Consulta dos conteúdos em português e inglês;
+* 📈 Acompanhamento dos estudos de Java.
+
+---
+
+## ⚙️ Tecnologias
+
+| Tecnologia      | Utilização                                  |
+| --------------- | ------------------------------------------- |
+| ☕ **Java**      | Desenvolvimento dos exemplos                |
+| 📄 **Markdown** | Documentação dos conteúdos                  |
+| 🔧 **Git**      | Controle de versão                          |
+| 🐙 **GitHub**   | Armazenamento e compartilhamento do projeto |
 
 ---
 
 ## 💻 Pré-requisitos
 
-Para executar os exemplos Java, é necessário possuir:
+Para executar os exemplos Java, é necessário possuir um **JDK (Java Development Kit)** instalado.
 
-* JDK instalado;
-* IDE compatível com Java ou terminal;
-* Variáveis de ambiente configuradas, quando necessárias.
-
-Para verificar o Java:
+Verifique a instalação utilizando:
 
 ```bash
 java -version
 ```
 
-Para verificar o compilador:
+E:
 
 ```bash
 javac -version
 ```
 
-Para exemplos que utilizem banco de dados, também será necessário configurar o ambiente correspondente.
-
 ---
 
-## ▶️ Como executar
+## ▶️ Execução
 
-### Pelo terminal
+Os arquivos `.java` podem ser executados através de uma IDE ou pelo terminal.
 
-Navegue até a pasta onde está localizado o arquivo Java:
+### Terminal
 
-```bash
-cd caminho/do/projeto
-```
-
-Compile o programa:
+Compile o arquivo:
 
 ```bash
 javac NomeDoArquivo.java
@@ -535,167 +249,38 @@ java NomeDoArquivo
 Exemplo:
 
 ```bash
-javac Main.java
-java Main
+javac VariaveisJava.java
+java VariaveisJava
 ```
 
-### Pela IDE
+### IDE
 
-Também é possível executar os programas através de uma IDE compatível com Java.
+Também é possível abrir o projeto em uma IDE compatível com Java e executar diretamente as classes que possuem o método:
 
-De forma geral:
-
-1. Abra o projeto;
-2. Localize a classe que possui o método `main`;
-3. Abra o arquivo;
-4. Execute utilizando a opção **Run/Executar**;
-5. Observe o resultado no console.
-
----
-
-## 📝 Exemplos de exercícios
-
-Durante os estudos, podem ser desenvolvidos exercícios como:
-
-* Calculadora;
-* Verificação de maioridade;
-* Números pares e ímpares;
-* Tabuada;
-* Contagem utilizando loops;
-* Menor e maior número;
-* Média de notas;
-* Menus utilizando `switch`;
-* Entrada de dados;
-* Manipulação de arrays;
-* Manipulação de strings;
-* Criação de classes;
-* Criação de objetos;
-* Exercícios de encapsulamento;
-* Exercícios de herança;
-* Exercícios de polimorfismo;
-* Exercícios envolvendo banco de dados;
-* Exercícios envolvendo APIs.
-
-> Esses exemplos representam possibilidades de exercícios e não significam necessariamente que todos estejam presentes atualmente no repositório.
-
----
-
-## 📈 Evolução dos estudos
-
-O projeto acompanha uma evolução contínua dos conceitos de programação. Os fundamentos já foram desenvolvidos, enquanto os conhecimentos relacionados à POO, banco de dados, APIs e integração entre sistemas continuam sendo aprimorados.
-
-```text
-Fundamentos
-     ↓
-Lógica de Programação
-     ↓
-Java Básico
-     ↓
-Estruturas Condicionais
-     ↓
-Estruturas de Repetição
-     ↓
-Métodos e Arrays
-     ↓
-Programação Orientada a Objetos
-     ↓
-Classes e Objetos
-     ↓
-Encapsulamento
-     ↓
-Herança
-     ↓
-Polimorfismo
-     ↓
-Banco de Dados
-     ↓
-APIs
-     ↓
-Integração de Sistemas
-     ↓
-Projetos mais completos
+```java
+public static void main(String[] args)
 ```
 
-A evolução apresentada representa conhecimentos já desenvolvidos e conteúdos que continuam em aprimoramento por meio da prática e da criação de novos projetos.
-
 ---
 
-## 🚀 Roadmap
+## 📌 Resumo
 
-### ✅ Fundamentos desenvolvidos
-
-* [x] Estrutura básica do Java
-* [x] Variáveis
-* [x] Tipos de dados
-* [x] Entrada e saída
-* [x] Operadores
-* [x] Condicionais
-* [x] Estruturas de repetição
-* [x] Métodos
-* [x] Arrays
-* [x] Strings
-
-### 🔄 Desenvolvidos e em aprimoramento
-
-* [x] Programação Orientada a Objetos
-* [x] Classes e objetos
-* [x] Construtores
-* [x] Encapsulamento
-* [x] Herança
-* [x] Polimorfismo
-* [x] Organização de aplicações
-* [x] MySQL
-* [x] SQL
-* [x] CRUD
-* [x] Spring Boot
-* [x] APIs REST
-
-> Os itens desta seção já foram estudados e desenvolvidos. A marcação “em aprimoramento” indica que esses conhecimentos continuam sendo praticados, aprofundados e aplicados em novos projetos.
-
-### 🎯 Próximos objetivos de aprimoramento
-
-* [ ] Aprofundar Programação Orientada a Objetos
-* [ ] Desenvolver aplicações utilizando Java
-* [ ] Aprimorar a integração com banco de dados
-* [ ] Desenvolver APIs REST mais completas
-* [ ] Trabalhar com integração entre sistemas
-* [ ] Criar projetos de maior complexidade
-* [ ] Aplicar boas práticas de desenvolvimento
-* [ ] Melhorar a organização e a arquitetura das aplicações
-
-> O roadmap é atualizado conforme os estudos avançam e os conhecimentos são aprimorados.
-
----
-
-## 📚 Próximos conteúdos
-
-Os próximos conteúdos representam temas para aprofundamento e expansão dos conhecimentos já desenvolvidos:
-
-* Programação Orientada a Objetos;
-* Classes e objetos;
-* Encapsulamento;
-* Herança;
-* Polimorfismo;
-* Interfaces;
-* Collections;
-* Tratamento de exceções;
-* Manipulação de arquivos;
-* Banco de dados;
-* SQL;
-* CRUD;
-* APIs REST;
-* Spring Boot;
-* Integração entre sistemas.
-
-Esses conteúdos já fazem parte da direção dos estudos e serão continuamente aprofundados e aplicados conforme novos projetos forem desenvolvidos.
+| Área            | Possui exemplos Java | Possui documentação |
+| --------------- | :------------------: | :-----------------: |
+| Variáveis       |           ✅          |      🇧🇷 🇺🇸      |
+| Entrada e Saída |           ✅          |      🇧🇷 🇺🇸      |
+| Operadores      |           ✅          |      🇧🇷 🇺🇸      |
+| Condicionais    |           ✅          |      🇧🇷 🇺🇸      |
+| Repetições      |           ✅          |      🇧🇷 🇺🇸      |
+| Métodos         |           ✅          |      🇧🇷 🇺🇸      |
 
 ---
 
 ## 👨‍💻 Autor
 
-**Autor:** Eduardo Fernandez Evangelista
+**Eduardo Fernandez Evangelista**
 
-**GitHub:** [EduardoFernandezEvangelista](https://github.com/EduardoFernandezEvangelista)
+GitHub: [EduardoFernandezEvangelista](https://github.com/EduardoFernandezEvangelista)
 
 ---
 
@@ -703,16 +288,16 @@ Esses conteúdos já fazem parte da direção dos estudos e serão continuamente
 
 Este projeto ainda não possui uma licença específica definida.
 
-**Licença:** ``
+**Licença:** `Não definida`
 
 ---
 
 <div align="center">
 
-📚 **Projeto desenvolvido para fins de estudo, prática e evolução em Java.**
+☕ **Java Basic Commands**
 
-☕ Java • 🧩 POO • 🗄️ Banco de Dados • 🌐 APIs
+📚 Fundamentos • 💻 Java • 🧠 Lógica • 📝 Estudos
 
-**Aprender → Praticar → Aprimorar → Desenvolver → Evoluir**
+**Estudar → Praticar → Aprender**
 
 </div>
