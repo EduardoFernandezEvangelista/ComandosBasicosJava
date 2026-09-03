@@ -1,80 +1,46 @@
-# ☕ Java - Variáveis e Tipos de Dados
+# ☕ Java — Variáveis e Tipos de Dados
 
-Repositório de estudos dedicado ao aprendizado e à prática dos diferentes tipos de **variáveis, tipos de dados e formas de declaração utilizadas na linguagem Java**.
+Material de referência sobre **variáveis e tipos de dados em Java**, com exemplos práticos e observações sobre declaração, armazenamento, escopo e utilização de valores.
 
-Este projeto reúne exemplos práticos e explicações sobre tipos primitivos, tipos não primitivos, classes Wrapper, variáveis locais, de instância, estáticas, parâmetros, constantes, modificadores de acesso, `enum`, interfaces e variáveis de referência.
-
-O projeto possui finalidade **educacional**, servindo como material de estudo, prática e consulta durante a evolução do aprendizado em Java.
+Este conteúdo faz parte da sequência de estudos de comandos básicos em Java e concentra os exemplos práticos no arquivo `VariaveisJava.java`.
 
 ---
 
-## 🎯 Introdução
+## 📚 Conteúdo abordado
 
-As variáveis são um dos conceitos fundamentais da programação. Em Java, existem diferentes formas de declarar e utilizar variáveis, dependendo do tipo de dado armazenado, do local onde a variável é declarada e da forma como ela será utilizada.
+A pesquisa reúne os principais aspectos relacionados ao uso de dados em Java, desde os **tipos primitivos** até **tipos de referência, classes Wrapper, constantes, ****`enum`****, ****`var`**** e variáveis associadas a classes e objetos**.
 
-Neste projeto são estudados conceitos como:
-
-* Tipos primitivos;
-* Tipos não primitivos;
-* Classes Wrapper;
-* Variáveis locais;
-* Variáveis de instância;
-* Variáveis estáticas;
-* Variáveis de parâmetro;
-* Variáveis `final`;
-* Variáveis `static`;
-* Constantes `static final`;
-* Modificadores de acesso;
-* Variáveis de referência;
-* `enum`;
-* Variáveis declaradas em interfaces;
-* Inferência de tipos com `var`;
-* Classes e objetos;
-* Construtores;
-* Métodos;
-* Referência `this`;
-* Valores `null`.
-
-A proposta é compreender não apenas **quais tipos de variáveis existem**, mas também **onde podem ser utilizadas, qual é seu escopo e como funcionam dentro da estrutura de uma aplicação Java**.
-
----
-
-## 🎯 Objetivos
-
-Os principais objetivos deste projeto são:
-
-* Compreender o conceito de variável;
-* Conhecer os tipos primitivos do Java;
-* Conhecer os principais tipos não primitivos;
-* Compreender a diferença entre tipos primitivos e objetos;
-* Aprender sobre classes Wrapper;
-* Compreender autoboxing e unboxing;
-* Trabalhar com `String`;
-* Trabalhar com arrays;
-* Compreender o conceito de `null`;
-* Conhecer variáveis locais;
-* Conhecer variáveis de instância;
-* Conhecer variáveis estáticas;
-* Compreender variáveis de parâmetro;
-* Utilizar `final`;
-* Utilizar `static`;
-* Compreender constantes;
-* Conhecer os modificadores de acesso;
-* Trabalhar com `enum`;
-* Compreender variáveis declaradas em interfaces;
-* Compreender variáveis de referência;
-* Praticar classes e objetos;
-* Compreender construtores;
-* Utilizar `this`;
-* Desenvolver uma base para Programação Orientada a Objetos.
+| Tema                    | Conteúdo                                                  |
+| ----------------------- | --------------------------------------------------------- |
+| Tipos primitivos        | Características e utilização dos 8 tipos primitivos       |
+| Tipos de referência     | Referências para objetos, arrays, `String` e outros tipos |
+| `String`                | Representação e manipulação de textos                     |
+| Arrays                  | Armazenamento de múltiplos valores                        |
+| Wrapper                 | Representação de tipos primitivos como objetos            |
+| Autoboxing              | Conversão automática de primitivo para Wrapper            |
+| Unboxing                | Conversão automática de Wrapper para primitivo            |
+| `null`                  | Ausência de referência para um objeto                     |
+| Variáveis locais        | Escopo dentro de métodos e blocos                         |
+| Variáveis de instância  | Dados pertencentes a objetos                              |
+| `static`                | Dados associados à classe                                 |
+| `final`                 | Valores que não recebem nova atribuição                   |
+| `static final`          | Declaração de constantes                                  |
+| Parâmetros              | Valores recebidos por métodos                             |
+| Modificadores de acesso | Controle de visibilidade                                  |
+| `enum`                  | Representação de conjuntos fixos de valores               |
+| Interfaces              | Variáveis declaradas em interfaces                        |
+| `var`                   | Inferência do tipo de variáveis locais                    |
+| Classes e objetos       | Atributos, métodos e construtores                         |
+| `this`                  | Referência à instância atual                              |
+| Escopo                  | Região em que uma variável pode ser acessada              |
 
 ---
 
 # 📖 Tipos de dados em Java
 
-Java possui **tipagem estática**, o que significa que o tipo de uma variável é conhecido em tempo de compilação.
+Java possui **tipagem estática**, portanto o tipo de uma variável é definido em tempo de compilação.
 
-De forma geral, podemos dividir os tipos utilizados em Java em:
+De forma geral, os tipos utilizados em Java são organizados em:
 
 ```text
 Tipos em Java
@@ -84,7 +50,7 @@ Tipos em Java
 └── Tipos de Referência
     │
     ├── Classes
-    ├── Strings
+    ├── String
     ├── Arrays
     ├── Enums
     └── Objetos
@@ -94,22 +60,20 @@ Tipos em Java
 
 ## 🔹 Tipos primitivos
 
-Os tipos primitivos são os tipos básicos da linguagem Java.
-
 Java possui **8 tipos primitivos**:
 
-| Tipo      |        Tamanho | Descrição                        | Exemplo                      |
-| --------- | -------------: | -------------------------------- | ---------------------------- |
-| `byte`    |         8 bits | Inteiro pequeno                  | `byte idade = 18;`           |
-| `short`   |        16 bits | Inteiro                          | `short numero = 1000;`       |
-| `int`     |        32 bits | Inteiro                          | `int idade = 18;`            |
-| `long`    |        64 bits | Inteiro grande                   | `long populacao = 1000000L;` |
-| `float`   |        32 bits | Número decimal                   | `float altura = 1.75f;`      |
-| `double`  |        64 bits | Número decimal de maior precisão | `double preco = 19.99;`      |
-| `char`    |        16 bits | Um caractere Unicode             | `char letra = 'A';`          |
+| Tipo      | Tamanho        | Descrição                        | Exemplo                      |
+| --------- | -------------- | -------------------------------- | ---------------------------- |
+| `byte`    | 8 bits         | Inteiro pequeno                  | `byte idade = 18;`           |
+| `short`   | 16 bits        | Inteiro                          | `short numero = 1000;`       |
+| `int`     | 32 bits        | Inteiro                          | `int idade = 18;`            |
+| `long`    | 64 bits        | Inteiro grande                   | `long populacao = 1000000L;` |
+| `float`   | 32 bits        | Número decimal                   | `float altura = 1.75f;`      |
+| `double`  | 64 bits        | Número decimal de maior precisão | `double preco = 19.99;`      |
+| `char`    | 16 bits        | Um caractere Unicode             | `char letra = 'A';`          |
 | `boolean` | JVM-dependente | Verdadeiro ou falso              | `boolean ativo = true;`      |
 
-> **Observação:** embora seja comum encontrar `boolean` descrito como "1 bit", a especificação da linguagem Java não define um tamanho de armazenamento de 1 bit para `boolean`. O tamanho exato depende da implementação da JVM.
+> **Observação:** a especificação Java não define `boolean` como tendo exatamente 1 bit de armazenamento. Sua representação depende da implementação da JVM.
 
 ### Exemplo
 
@@ -129,54 +93,46 @@ boolean Boolean = false;
 
 ---
 
+# 🔢 Intervalo dos tipos numéricos
+
+| Tipo     |                     Mínimo |                    Máximo |
+| -------- | -------------------------: | ------------------------: |
+| `byte`   |                     `-128` |                     `127` |
+| `short`  |                  `-32.768` |                  `32.767` |
+| `int`    |                     `-2³¹` |                 `2³¹ - 1` |
+| `long`   |                     `-2⁶³` |                 `2⁶³ - 1` |
+| `float`  |  Aproximadamente `-3.4E38` |  Aproximadamente `3.4E38` |
+| `double` | Aproximadamente `-1.7E308` | Aproximadamente `1.7E308` |
+
+---
+
 # 🔹 `byte`
 
-O `byte` é um tipo inteiro de **8 bits**.
-
-Seu intervalo é:
+Tipo inteiro com representação de **8 bits**.
 
 ```text
 -128 até 127
 ```
 
-Exemplo:
-
-```java
-byte idade = 18;
-byte temperatura = 25;
-```
-
-É útil quando precisamos trabalhar com valores inteiros pequenos.
+É adequado para valores inteiros pequenos.
 
 ---
 
 # 🔹 `short`
 
-O `short` é um tipo inteiro de **16 bits**.
-
-Seu intervalo é:
+Tipo inteiro com representação de **16 bits**.
 
 ```text
 -32.768 até 32.767
 ```
 
-Exemplo:
-
-```java
-short quantidade = 1000;
-```
-
-Apesar de existir, o `short` é menos utilizado que `int` em aplicações comuns.
+Embora faça parte da linguagem, seu uso é menos comum que `int`.
 
 ---
 
 # 🔹 `int`
 
-O `int` é o tipo inteiro mais utilizado em muitos programas Java.
-
-Possui **32 bits**.
-
-Exemplo:
+Tipo inteiro com representação de **32 bits** e uma das opções mais utilizadas para valores inteiros.
 
 ```java
 int idade = 20;
@@ -188,76 +144,58 @@ int resultado = 10 + 20;
 
 # 🔹 `long`
 
-O `long` possui **64 bits** e permite armazenar números inteiros maiores.
-
-Exemplo:
+Tipo inteiro com representação de **64 bits**, utilizado para valores inteiros maiores.
 
 ```java
 long populacao = 200000000L;
 ```
 
-O sufixo `L` indica que o literal é do tipo `long`.
+O sufixo `L` identifica o literal como `long`.
 
 ---
 
 # 🔹 `float`
 
-O `float` representa números de ponto flutuante com **32 bits**.
-
-Exemplo:
+Tipo decimal com representação de **32 bits**.
 
 ```java
 float altura = 1.75f;
 float temperatura = 25.5f;
 ```
 
-O `f` é utilizado para indicar que o valor literal deve ser tratado como `float`.
+O sufixo `f` indica que o literal deve ser tratado como `float`.
 
 ---
 
 # 🔹 `double`
 
-O `double` representa números de ponto flutuante com **64 bits**.
-
-Exemplo:
+Tipo decimal com representação de **64 bits**.
 
 ```java
 double preco = 19.99;
 double media = 8.75;
 ```
 
-Por padrão, valores decimais como `19.99` são considerados `double`.
+Literais decimais são considerados `double` por padrão.
 
 ---
 
 # 🔹 `char`
 
-O `char` representa **um único caractere Unicode**.
+Representa um único caractere Unicode.
 
-Exemplo:
+### `char` x `String`
 
-```java
-char letra = 'A';
-char simbolo = '#';
-char numero = '1';
-```
-
-É importante observar a diferença:
-
-```java
-char letra = 'A';
-String palavra = "A";
-```
-
-`char` utiliza aspas simples e representa um único caractere.
-
-`String` utiliza aspas duplas e representa uma sequência de caracteres.
+| Tipo     | Exemplo | Representação           |
+| -------- | ------- | ----------------------- |
+| `char`   | `'A'`   | Um único caractere      |
+| `String` | `"A"`   | Sequência de caracteres |
 
 ---
 
 # 🔹 `boolean`
 
-O `boolean` representa apenas dois estados:
+Representa dois estados:
 
 ```text
 true
@@ -271,7 +209,7 @@ boolean ligado = true;
 boolean aprovado = false;
 ```
 
-É muito utilizado em condições:
+É utilizado em expressões condicionais:
 
 ```java
 if (aprovado) {
@@ -283,36 +221,44 @@ if (aprovado) {
 
 # 🧩 Tipos de referência
 
-Além dos tipos primitivos, Java possui **tipos de referência**.
-
-Eles podem representar objetos, arrays, strings, enums e instâncias de classes.
+Tipos de referência representam valores relacionados a **objetos**.
 
 Exemplos:
 
 ```java
 String nome = "Eduardo";
 
-int[] numeros = {1, 2, 3, 4, 5};
+int[] numeros = {1, 2, 3};
 
 Pessoa pessoa = new Pessoa("João", 30);
 ```
 
-Uma variável de referência não armazena diretamente o objeto da mesma forma que uma variável primitiva armazena seu valor. Ela mantém uma referência para um objeto.
+Diferentemente de um tipo primitivo, uma variável de referência armazena uma referência para um objeto.
+
+---
+
+## 📦 Principais tipos de referência
+
+| Tipo     | Exemplo                         |
+| -------- | ------------------------------- |
+| `String` | `String nome = "Java";`         |
+| Array    | `int[] numeros = {1, 2, 3};`    |
+| Classe   | `Pessoa pessoa = new Pessoa();` |
+| `enum`   | `Dia dia = Dia.SEGUNDA;`        |
+| Wrapper  | `Integer idade = 18;`           |
 
 ---
 
 # 📝 `String`
 
-`String` é uma classe utilizada para representar sequências de caracteres.
-
-Exemplo:
+`String` representa uma sequência de caracteres.
 
 ```java
 String nome = "Eduardo";
 String mensagem = "Olá, mundo!";
 ```
 
-Diferentemente de `char`, uma `String` pode armazenar vários caracteres.
+É diferente de `char`:
 
 ```java
 char letra = 'A';
@@ -320,19 +266,22 @@ char letra = 'A';
 String palavra = "Java";
 ```
 
+| Tipo     | Aspas | Quantidade                  |
+| -------- | ----- | --------------------------- |
+| `char`   | `' '` | Um caractere                |
+| `String` | `" "` | Uma sequência de caracteres |
+
 ---
 
 # 📦 Arrays
 
-Arrays permitem armazenar vários valores do mesmo tipo.
-
-Exemplo:
+Arrays armazenam múltiplos valores do mesmo tipo.
 
 ```java
 int[] numeros = {1, 2, 3, 4, 5};
 ```
 
-Também podemos criar arrays de outros tipos:
+Também podem armazenar referências:
 
 ```java
 String[] nomes = {
@@ -342,19 +291,17 @@ String[] nomes = {
 };
 ```
 
-Os elementos podem ser acessados através de seus índices:
+Os índices começam em `0`:
 
 ```java
 System.out.println(numeros[0]);
 ```
 
-O índice começa em `0`.
-
 ---
 
 # 📦 Classes Wrapper
 
-As classes Wrapper representam os tipos primitivos como **objetos**.
+As classes Wrapper representam tipos primitivos como objetos.
 
 | Primitivo | Wrapper     |
 | --------- | ----------- |
@@ -376,13 +323,16 @@ Boolean ativo = true;
 Character letra = 'A';
 ```
 
-Java realiza automaticamente a conversão entre primitivos e seus respectivos Wrappers em muitos contextos.
-
 ---
 
-## 🔄 Autoboxing
+## 🔄 Autoboxing e Unboxing
 
-Autoboxing ocorre quando um valor primitivo é convertido automaticamente para seu Wrapper.
+| Processo       | Conversão           |
+| -------------- | ------------------- |
+| **Autoboxing** | Primitivo → Wrapper |
+| **Unboxing**   | Wrapper → Primitivo |
+
+### Autoboxing
 
 ```java
 int numero = 10;
@@ -390,13 +340,7 @@ int numero = 10;
 Integer valor = numero;
 ```
 
-O Java realiza a conversão automaticamente.
-
----
-
-## 🔄 Unboxing
-
-Unboxing é o processo inverso.
+### Unboxing
 
 ```java
 Integer valor = 10;
@@ -404,55 +348,49 @@ Integer valor = 10;
 int numero = valor;
 ```
 
-O Java converte automaticamente o objeto `Integer` para `int`.
+O Java realiza essas conversões automaticamente em diversos contextos.
 
 ---
 
 # ⚠️ `null`
 
-Variáveis de tipos primitivos não podem receber `null`.
+`null` representa a ausência de uma referência para um objeto.
 
-Isso gera erro:
+Tipos primitivos não podem receber `null`, enquanto tipos de referência podem.
 
-```java
-int numero = null;
-```
-
-Já uma variável de referência pode receber `null`:
-
-```java
-String nome = null;
-
-Pessoa pessoa = null;
-
-int[] numeros = null;
-```
-
-`null` significa que a variável de referência **não está apontando para um objeto**.
-
-É importante diferenciar:
+### `null` x valor vazio
 
 ```java
 String nome = null;
 ```
-
-de:
 
 ```java
 String nome = "";
 ```
 
-No primeiro caso, não existe uma referência para um objeto `String`.
+| Valor  | Significado                             |
+| ------ | --------------------------------------- |
+| `null` | Não existe referência para um objeto    |
+| `""`   | Existe uma `String`, mas ela está vazia |
 
-No segundo, existe uma `String` vazia.
+---
+
+# 📍 Escopo das variáveis
+
+O escopo determina **onde uma variável pode ser acessada**.
+
+| Tipo      | Local de declaração | Escopo                       |
+| --------- | ------------------- | ---------------------------- |
+| Local     | Método ou bloco     | Dentro daquele método/bloco  |
+| Instância | Classe              | Associada ao objeto          |
+| `static`  | Classe              | Associada à classe           |
+| Parâmetro | Método              | Durante a execução do método |
 
 ---
 
 # 📍 Variáveis locais
 
-Variáveis locais são declaradas dentro de métodos, construtores ou blocos.
-
-Exemplo:
+São declaradas dentro de métodos, construtores ou blocos.
 
 ```java
 public static void main(String[] args) {
@@ -463,15 +401,13 @@ public static void main(String[] args) {
 }
 ```
 
-A variável `idade` só pode ser utilizada dentro do escopo onde foi declarada.
+A variável `idade` pode ser acessada apenas dentro do escopo em que foi declarada.
 
 ---
 
 # 🏠 Variáveis de instância
 
-Variáveis de instância são declaradas dentro de uma classe, mas fora de métodos, construtores ou blocos.
-
-Exemplo:
+São declaradas dentro de uma classe, mas fora de métodos, construtores ou blocos.
 
 ```java
 class Pessoa {
@@ -481,7 +417,7 @@ class Pessoa {
 }
 ```
 
-Cada objeto da classe `Pessoa` possui suas próprias variáveis de instância.
+Cada objeto possui seus próprios valores:
 
 ```java
 Pessoa pessoa1 = new Pessoa();
@@ -491,15 +427,16 @@ pessoa1.nome = "João";
 pessoa2.nome = "Maria";
 ```
 
-Cada objeto possui seu próprio `nome`.
+| Objeto    | `nome`    |
+| --------- | --------- |
+| `pessoa1` | `"João"`  |
+| `pessoa2` | `"Maria"` |
 
 ---
 
 # 🌐 Variáveis `static`
 
-Uma variável `static` pertence à **classe**, e não a uma instância específica.
-
-Exemplo:
+Uma variável `static` pertence à classe, em vez de pertencer individualmente a cada objeto.
 
 ```java
 class Pessoa {
@@ -508,56 +445,56 @@ class Pessoa {
 }
 ```
 
-A variável pode ser acessada através da classe:
+Acesso:
 
 ```java
 Pessoa.quantidadePessoas++;
 ```
 
-Como ela pertence à classe, existe uma única variável compartilhada entre as instâncias.
+| Tipo                  | Pertence a |
+| --------------------- | ---------- |
+| Variável de instância | Objeto     |
+| Variável `static`     | Classe     |
 
 ---
 
-# 🔒 Variáveis `final`
+# 🔒 `final`
 
-Uma variável declarada como `final` não pode receber uma nova atribuição depois de inicializada.
-
-Exemplo:
+Uma variável `final` não pode receber uma nova atribuição depois de inicializada.
 
 ```java
 final int idade = 18;
 ```
 
-O código abaixo gera erro:
+A tentativa abaixo é inválida:
 
 ```java
 idade = 20;
 ```
 
-`final` é utilizado quando queremos impedir que uma referência ou variável receba uma nova atribuição.
-
 ---
 
 # ⭐ `static final`
 
-A combinação `static final` é muito utilizada para representar **constantes**.
-
-Exemplo:
+A combinação `static final` é utilizada para representar constantes.
 
 ```java
 static final double PI = 3.14159;
 ```
 
-A variável:
-
-* Pertence à classe;
-* Não pode receber uma nova atribuição.
-
-Por convenção, constantes em Java normalmente utilizam nomes em letras maiúsculas:
+Outro exemplo:
 
 ```java
 static final int MAX_USUARIOS = 100;
 ```
+
+| Palavra-chave  | Característica                   |
+| -------------- | -------------------------------- |
+| `static`       | Associada à classe               |
+| `final`        | Não pode receber nova atribuição |
+| `static final` | Constante associada à classe     |
+
+Por convenção, constantes utilizam nomes em letras maiúsculas.
 
 ---
 
@@ -565,45 +502,41 @@ static final int MAX_USUARIOS = 100;
 
 Parâmetros são variáveis declaradas na assinatura de um método.
 
-Exemplo:
-
 ```java
 public void apresentar(String nome, int idade) {
 
-    System.out.println(
-        "Nome: " + nome +
-        " | Idade: " + idade
-    );
+    System.out.println(nome);
+    System.out.println(idade);
 }
 ```
 
 Nesse exemplo:
 
-```text
-nome → parâmetro
-idade → parâmetro
-```
+| Elemento | Função    |
+| -------- | --------- |
+| `nome`   | Parâmetro |
+| `idade`  | Parâmetro |
 
-Quando o método é chamado:
+Ao chamar:
 
 ```java
 apresentar("Eduardo", 18);
 ```
 
-Os valores `"Eduardo"` e `18` são passados para os parâmetros.
+Os valores fornecidos são os **argumentos** da chamada.
 
 ---
 
 # 🔐 Modificadores de acesso
 
-Java possui modificadores que controlam o acesso aos membros de uma classe.
+Os modificadores controlam o acesso aos membros de uma classe.
 
-| Modificador     | Acesso                                                                           |
-| --------------- | -------------------------------------------------------------------------------- |
-| `public`        | Acessível de qualquer lugar                                                      |
-| `private`       | Acessível apenas dentro da própria classe                                        |
-| `protected`     | Acessível dentro do mesmo pacote e em subclasses, observadas as regras de acesso |
-| Sem modificador | Acesso dentro do mesmo pacote                                                    |
+| Modificador     | Acesso                                                                 |
+| --------------- | ---------------------------------------------------------------------- |
+| `public`        | Qualquer classe que tenha acesso ao tipo                               |
+| `private`       | Somente dentro da própria classe                                       |
+| `protected`     | Própria classe, mesmo pacote e subclasses conforme as regras de acesso |
+| Sem modificador | Dentro do mesmo pacote                                                 |
 
 Exemplo:
 
@@ -620,15 +553,11 @@ class Pessoa {
 }
 ```
 
-Esses modificadores são importantes principalmente para o conceito de **encapsulamento**.
-
 ---
 
 # 🏷️ `enum`
 
-`enum` permite representar um conjunto fixo de constantes.
-
-Exemplo:
+`enum` representa um conjunto fixo de constantes.
 
 ```java
 enum DiaDaSemana {
@@ -643,19 +572,19 @@ enum DiaDaSemana {
 }
 ```
 
-Podemos utilizar o `enum` da seguinte maneira:
+Utilização:
 
 ```java
 DiaDaSemana dia = DiaDaSemana.SEGUNDA;
 ```
 
-Isso é útil quando trabalhamos com valores que possuem um conjunto limitado de possibilidades.
+É utilizado quando existe um conjunto limitado de possibilidades.
 
 ---
 
 # 🔌 Variáveis em interfaces
 
-Variáveis declaradas em interfaces são implicitamente:
+Variáveis declaradas diretamente em interfaces são implicitamente:
 
 ```text
 public static final
@@ -670,7 +599,7 @@ interface Configuracao {
 }
 ```
 
-Na prática, isso equivale conceitualmente a:
+Conceitualmente:
 
 ```java
 interface Configuracao {
@@ -679,15 +608,11 @@ interface Configuracao {
 }
 ```
 
-Por isso, essas variáveis funcionam como constantes associadas à interface.
-
 ---
 
 # 🧠 `var`
 
-O `var` permite que o compilador **infira o tipo da variável local a partir do valor utilizado na inicialização**.
-
-Exemplo:
+`var` permite que o compilador infira o tipo de uma **variável local** durante a inicialização.
 
 ```java
 var numero = 10;
@@ -697,15 +622,13 @@ var ativo = true;
 
 O compilador identifica:
 
-```text
-numero → int
-nome   → String
-ativo  → boolean
-```
+| Variável | Tipo inferido |
+| -------- | ------------- |
+| `numero` | `int`         |
+| `nome`   | `String`      |
+| `ativo`  | `boolean`     |
 
-É importante lembrar que `var` **não significa que a variável pode mudar de tipo**.
-
-Isto continua sendo inválido:
+`var` não torna a variável dinamicamente tipada:
 
 ```java
 var numero = 10;
@@ -713,13 +636,15 @@ var numero = 10;
 numero = "Java";
 ```
 
-Além disso, `var` é utilizado para variáveis locais e precisa ser inicializado:
+O código acima é inválido.
+
+A variável também precisa ser inicializada no momento da declaração:
 
 ```java
 var numero = 10;
 ```
 
-Não podemos fazer:
+Não é permitido:
 
 ```java
 var numero;
@@ -729,15 +654,7 @@ var numero;
 
 # 👤 Classes e objetos
 
-As variáveis ficam ainda mais importantes quando começamos a trabalhar com **Programação Orientada a Objetos**.
-
-Uma classe pode possuir:
-
-* Atributos;
-* Métodos;
-* Construtores.
-
-Exemplo:
+As variáveis também podem representar atributos de objetos.
 
 ```java
 public class Pessoa {
@@ -750,47 +667,31 @@ public class Pessoa {
         this.nome = nome;
         this.idade = idade;
     }
-
-    public void apresentar() {
-
-        System.out.println(
-            "Olá, meu nome é " +
-            nome +
-            " e eu tenho " +
-            idade +
-            " anos."
-        );
-    }
 }
 ```
 
----
-
-# 🏗️ Construtor
-
-O construtor é utilizado durante a criação de um objeto.
+Criação do objeto:
 
 ```java
 Pessoa pessoa = new Pessoa("João", 30);
 ```
 
-Nesse momento, o construtor recebe os valores:
+Nesse exemplo:
 
-```java
-public Pessoa(String nome, int idade) {
-
-    this.nome = nome;
-    this.idade = idade;
-}
-```
+| Elemento          | Representa                   |
+| ----------------- | ---------------------------- |
+| `Pessoa`          | Classe                       |
+| `pessoa`          | Variável de referência       |
+| `nome`            | Atributo                     |
+| `idade`           | Atributo                     |
+| `new Pessoa(...)` | Criação do objeto            |
+| `this`            | Referência à instância atual |
 
 ---
 
 # 🔎 `this`
 
-A palavra-chave `this` representa a instância atual da classe.
-
-No exemplo:
+`this` representa a instância atual da classe.
 
 ```java
 public Pessoa(String nome, int idade) {
@@ -800,7 +701,7 @@ public Pessoa(String nome, int idade) {
 }
 ```
 
-Temos:
+Nesse caso:
 
 ```text
 this.nome
@@ -809,429 +710,121 @@ atributo da classe
 
 nome
     ↓
-parâmetro do construtor
+parâmetro
 ```
-
-O `this` ajuda a diferenciar o atributo da classe do parâmetro que possui o mesmo nome.
 
 ---
 
 # 🔗 Variáveis de referência
 
-Uma variável de referência pode armazenar uma referência para um objeto.
-
-Exemplo:
+Uma variável de referência pode apontar para um objeto.
 
 ```java
 Pessoa pessoa = new Pessoa("João", 30);
 ```
 
-Nesse caso:
+Representação simplificada:
 
 ```text
 pessoa
    │
    ▼
-┌─────────────────────┐
-│      Objeto Pessoa  │
-│                     │
-│ nome = "João"       │
-│ idade = 30          │
-└─────────────────────┘
+┌──────────────────┐
+│   Objeto Pessoa  │
+│                  │
+│ nome = "João"    │
+│ idade = 30       │
+└──────────────────┘
 ```
 
-Também podemos ter:
+Também pode não apontar para nenhum objeto:
 
 ```java
 Pessoa pessoa = null;
 ```
 
-Nesse caso, a variável não possui uma referência para um objeto.
+---
+
+# 📊 Primitivos x Referências
+
+| Característica      | Primitivo                  | Referência                           |
+| ------------------- | -------------------------- | ------------------------------------ |
+| Exemplo             | `int`                      | `Integer`                            |
+| Representa          | Valor básico               | Referência para objeto               |
+| Pode receber `null` | ❌                          | ✅                                    |
+| Possui métodos      | ❌                          | ✅                                    |
+| Exemplos            | `int`, `double`, `boolean` | `String`, arrays, classes, `Integer` |
 
 ---
 
-# 🧪 Exemplo completo
+# 📊 Resumo das variáveis
 
-O exemplo abaixo reúne alguns dos conceitos apresentados:
-
-```java
-public class Pessoa {
-
-    // Variáveis de instância
-    private String nome;
-    private int idade;
-
-    // Variável estática
-    static int quantidadePessoas = 0;
-
-    // Constante
-    static final String TIPO = "PESSOA";
-
-    // Construtor
-    public Pessoa(String nome, int idade) {
-
-        this.nome = nome;
-        this.idade = idade;
-
-        quantidadePessoas++;
-    }
-
-    // Método
-    public void apresentar() {
-
-        System.out.println(
-            "Nome: " + nome
-        );
-
-        System.out.println(
-            "Idade: " + idade
-        );
-    }
-}
-```
-
-Utilização:
-
-```java
-public class Main {
-
-    public static void main(String[] args) {
-
-        // Variável local
-        int numero = 10;
-
-        // Variável de referência
-        Pessoa pessoa = new Pessoa(
-            "Eduardo",
-            18
-        );
-
-        pessoa.apresentar();
-
-        System.out.println(
-            "Total de pessoas: " +
-            Pessoa.quantidadePessoas
-        );
-    }
-}
-```
-
-Esse exemplo combina diferentes conceitos:
-
-* Variável local;
-* Variáveis de instância;
-* `private`;
-* `static`;
-* `static final`;
-* Construtor;
-* `this`;
-* Objeto;
-* Variável de referência;
-* Método.
+| Tipo           | Exemplo                      | Associada a               |
+| -------------- | ---------------------------- | ------------------------- |
+| Local          | `int idade = 18;`            | Método/bloco              |
+| Instância      | `String nome;`               | Objeto                    |
+| `static`       | `static int total;`          | Classe                    |
+| `final`        | `final int MAX = 10;`        | Valor sem nova atribuição |
+| `static final` | `static final int MAX = 10;` | Constante da classe       |
+| Parâmetro      | `void metodo(int idade)`     | Método                    |
+| Referência     | `Pessoa pessoa;`             | Objeto                    |
+| `enum`         | `Dia.SEGUNDA`                | Conjunto de constantes    |
+| Interface      | `int MAX = 100;`             | Constante da interface    |
+| `var`          | `var numero = 10;`           | Tipo inferido localmente  |
 
 ---
 
-# 📊 Comparação dos principais tipos
+# 📁 Organização do material
 
-| Categoria | Exemplo           | Pode ser `null`? | Associado a objeto? |
-| --------- | ----------------- | ---------------: | ------------------: |
-| Primitivo | `int idade`       |                ❌ |                   ❌ |
-| Wrapper   | `Integer idade`   |                ✅ |                   ✅ |
-| String    | `String nome`     |                ✅ |                   ✅ |
-| Array     | `int[] numeros`   |                ✅ |                   ✅ |
-| Objeto    | `Pessoa pessoa`   |                ✅ |                   ✅ |
-| Enum      | `DiaDaSemana dia` |                ✅ |                   ✅ |
-
----
-
-# 🧭 Escopo das variáveis
-
-O **escopo** determina onde uma variável pode ser acessada.
-
-Exemplo:
-
-```java
-public class Exemplo {
-
-    // Escopo da classe
-    int atributo = 10;
-
-    public void metodo() {
-
-        // Escopo local
-        int local = 20;
-
-        System.out.println(atributo);
-        System.out.println(local);
-    }
-}
-```
-
-De forma simplificada:
+Os conteúdos deste estudo estão organizados junto aos demais fundamentos de Java:
 
 ```text
-Classe
+JavaBasicCommands/
 │
-├── Variável de instância
+├── Condicionais_Repeticoes_Operadores/
+│   ├── Condicionais/
+│   │   └── CondicionaisJava.java
+│   ├── Operadores/
+│   │   └── OperadoresJava.java
+│   ├── Repeticao/
+│   │   └── RepeticaoJava.java
+│   ├── CondicionaisRepeticoesOperadores.md
+│   └── ConditionalStructuresLoopsOperators.md
 │
-└── Método
-    │
-    └── Variável local
+├── Entrada_Saida/
+│   ├── EntradaSaida.md
+│   ├── EntradaSaidaJava.java
+│   └── InputOutput.md
+│
+├── Metodos/
+│   ├── Methods.md
+│   ├── Metodos.md
+│   └── MetodosJava.java
+│
+├── Variaveis/
+│   ├── Variables.md
+│   ├── Variaveis.md
+│   ├── VariaveisJava.java
+│   ├── README.md
+│   └── READMEbr.md
 ```
 
-Compreender escopo é fundamental para evitar erros e organizar corretamente o código.
-
----
-
-# 🧠 Conceitos relacionados
-
-O estudo de variáveis também serve como base para diversos conceitos posteriores da linguagem Java:
-
-* Tipagem estática;
-* Conversão de tipos;
-* Casting;
-* Autoboxing;
-* Unboxing;
-* Escopo;
-* Modificadores de acesso;
-* Encapsulamento;
-* Classes;
-* Objetos;
-* Construtores;
-* Métodos;
-* Programação Orientada a Objetos;
-* Coleções;
-* Banco de dados;
-* APIs.
-
----
-
-# 📈 Evolução dos estudos
-
-Este projeto representa uma etapa da evolução no aprendizado de Java.
-
-Os conceitos de variáveis servem como base para conteúdos cada vez mais estruturados:
+Os exemplos práticos relacionados a variáveis, tipos de dados, escopo, referências, Wrapper, `null`, `static`, `final`, `enum` e `var` estão concentrados no arquivo:
 
 ```text
-Tipos de dados
-      ↓
-Variáveis
-      ↓
-Operadores
-      ↓
-Estruturas condicionais
-      ↓
-Estruturas de repetição
-      ↓
-Métodos
-      ↓
-Arrays e Strings
-      ↓
-Classes e Objetos
-      ↓
-Encapsulamento
-      ↓
-Herança
-      ↓
-Polimorfismo
-      ↓
-Banco de Dados
-      ↓
-APIs
-      ↓
-Aplicações mais completas
+Variaveis/VariaveisJava.java
 ```
 
-O aprendizado é contínuo. Conceitos já estudados continuam sendo praticados e aprofundados através de novos exercícios e projetos.
-
----
-
-# 📁 Estrutura sugerida
-
-Uma possível organização para este conteúdo é:
-
-```text
-Java-Variaveis/
-│
-├── src/
-│   │
-│   ├── primitivas/
-│   │   ├── Byte.java
-│   │   ├── Short.java
-│   │   ├── Int.java
-│   │   ├── Long.java
-│   │   ├── Float.java
-│   │   ├── Double.java
-│   │   ├── Char.java
-│   │   └── Boolean.java
-│   │
-│   ├── nao_primitivas/
-│   │   ├── String.java
-│   │   └── Arrays.java
-│   │
-│   ├── wrappers/
-│   │   └── Wrapper.java
-│   │
-│   ├── escopo/
-│   │   ├── Local.java
-│   │   ├── Instancia.java
-│   │   ├── Static.java
-│   │   └── Parametro.java
-│   │
-│   ├── modificadores/
-│   │   ├── Final.java
-│   │   ├── StaticFinal.java
-│   │   └── Acesso.java
-│   │
-│   ├── enum/
-│   │   └── DiaDaSemana.java
-│   │
-│   ├── interfaces/
-│   │   └── VariaveisInterface.java
-│   │
-│   ├── objetos/
-│   │   ├── Pessoa.java
-│   │   └── Main.java
-│   │
-│   └── exercicios/
-│
-└── README.md
-```
-
-> A estrutura acima é apenas uma sugestão e pode ser adaptada à organização real do projeto.
-
----
-
-# ⚙️ Tecnologias utilizadas
-
-* **Java**
-* **JDK**
-
-As versões específicas utilizadas podem variar conforme o ambiente de estudos.
-
----
-
-# 💻 Pré-requisitos
-
-Para executar os exemplos, é necessário possuir:
-
-* JDK instalado;
-* IDE compatível com Java ou terminal;
-* Ambiente Java configurado.
-
-Verifique a instalação utilizando:
-
-```bash
-java -version
-```
-
-E:
-
-```bash
-javac -version
-```
-
----
-
-# ▶️ Como executar
-
-### Terminal
-
-Compile o arquivo:
-
-```bash
-javac NomeDoArquivo.java
-```
-
-Depois execute:
-
-```bash
-java NomeDoArquivo
-```
-
-Exemplo:
-
-```bash
-javac Main.java
-java Main
-```
-
-### IDE
-
-Também é possível executar os exemplos diretamente através de uma IDE compatível com Java.
-
-Localize a classe que contém:
-
-```java
-public static void main(String[] args)
-```
-
-e utilize a opção **Run / Executar**.
-
----
-
-# 📝 Exercícios sugeridos
-
-Alguns exercícios que podem ser utilizados para praticar os conceitos deste projeto:
-
-### 🔹 Nível básico
-
-* Criar variáveis de cada tipo primitivo;
-* Exibir os valores no console;
-* Trabalhar com operações matemáticas;
-* Criar variáveis `String`;
-* Criar arrays;
-* Trabalhar com `char` e `boolean`.
-
-### 🔹 Tipos e conversões
-
-* Converter `int` para `double`;
-* Trabalhar com casting;
-* Praticar autoboxing;
-* Praticar unboxing;
-* Comparar tipos primitivos e Wrapper.
-
-### 🔹 Escopo
-
-* Criar variáveis locais;
-* Criar variáveis de instância;
-* Criar variáveis `static`;
-* Trabalhar com parâmetros;
-* Observar diferenças de escopo.
-
-### 🔹 Orientação a Objetos
-
-* Criar uma classe `Pessoa`;
-* Criar objetos;
-* Criar atributos;
-* Criar métodos;
-* Criar construtores;
-* Utilizar `this`;
-* Aplicar `private`;
-* Criar getters e setters.
-
----
-
-## 👨‍💻 Autor
-
-**Eduardo Fernandez Evangelista**
-
-**GitHub:** [EduardoFernandezEvangelista](https://github.com/EduardoFernandezEvangelista)
-
----
-
-## 📄 Licença
-
-Este projeto ainda não possui uma licença específica definida.
-
-**Licença:** ``
+Os arquivos Markdown apresentam a documentação conceitual, enquanto os arquivos `.java` concentram os exemplos executáveis de cada tema.
 
 ---
 
 <div align="center">
 
-☕ **Java • Variáveis • Tipos de Dados • POO**
+☕ **Java — Variáveis e Tipos de Dados**
 
-📚 Estudo • Prática • Desenvolvimento • Evolução
+📚 Pesquisa • 🔬 Estudo • 💻 Prática • 🧠 Fundamentos
+
+**Pesquisar → Compreender → Praticar**
 
 </div>
