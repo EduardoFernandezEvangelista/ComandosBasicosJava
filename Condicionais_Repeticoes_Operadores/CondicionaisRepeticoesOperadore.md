@@ -6,7 +6,7 @@ O material foi organizado como uma referência prática: conceitos essenciais, s
 
 ---
 
-## 📚 Conteúdo
+## Conteúdo
 
 | Categoria                   | Principais recursos                    |
 | --------------------------- | -------------------------------------- |
@@ -25,7 +25,7 @@ O material foi organizado como uma referência prática: conceitos essenciais, s
 
 ---
 
-# 🧮 Operadores
+# Operadores
 
 Operadores são utilizados para realizar cálculos, comparações, atribuições e operações lógicas.
 
@@ -116,7 +116,7 @@ System.out.println(saldo); // 130
 
 ---
 
-# 🔎 Operadores relacionais
+# Operadores relacionais
 
 Utilizados para comparar valores. O resultado é sempre `true` ou `false`.
 
@@ -154,7 +154,7 @@ Evite usar `==` para comparar o conteúdo de `String`.
 
 ---
 
-# 🧩 Operadores lógicos
+# Operadores lógicos
 
 Permitem combinar condições.
 
@@ -187,7 +187,7 @@ Se `objeto != null` for falso, a segunda condição não será avaliada.
 
 ---
 
-# ⚙️ Operadores bit a bit
+# Operadores bit a bit
 
 Trabalham diretamente com a representação binária dos números.
 
@@ -216,7 +216,7 @@ Os operadores `&` e `|` também podem ser usados com `boolean`, mas não possuem
 
 ---
 
-# 🔀 Estruturas condicionais
+# Estruturas condicionais
 
 ## `if`
 
@@ -288,7 +288,7 @@ if (idade >= 18 && possuiCarteira) {
 
 ---
 
-# 🎛️ `switch`
+# `switch`
 
 É uma boa opção quando a decisão depende de **valores específicos**.
 
@@ -370,7 +370,7 @@ String resultado = switch (numero) {
 
 ---
 
-# ❓ Operador ternário
+# Operador ternário
 
 Indicado para decisões simples que precisam produzir um valor.
 
@@ -397,7 +397,7 @@ if (idade >= 18) {
 
 ---
 
-# 🔁 Estruturas de repetição
+# Estruturas de repetição
 
 ## `while`
 
@@ -463,7 +463,7 @@ Diferença principal:
 
 ---
 
-# 🔂 `for`
+# `for`
 
 Ideal quando a repetição possui inicialização, condição e atualização bem definidas.
 
@@ -489,7 +489,7 @@ for (int i = 1; i <= 10; i++) {
 
 ---
 
-# 📦 `for-each`
+# `for-each`
 
 Usado principalmente para percorrer arrays e coleções quando o índice não é necessário.
 
@@ -516,7 +516,7 @@ Comparação:
 
 ---
 
-# 🛑 `break`
+# `break`
 
 Encerra imediatamente o loop ou `switch` atual.
 
@@ -543,7 +543,7 @@ Saída:
 
 ---
 
-# ⏭️ `continue`
+# `continue`
 
 Ignora a iteração atual e continua com a próxima.
 
@@ -570,7 +570,7 @@ Saída:
 
 ---
 
-# 🏷️ Labels
+# Labels
 
 Labels permitem identificar loops, principalmente em estruturas aninhadas.
 
@@ -599,7 +599,7 @@ continue externo;
 
 ---
 
-# 🧭 Qual estrutura utilizar?
+# Qual estrutura utilizar?
 
 | Situação                                      | Escolha comum |
 | --------------------------------------------- | ------------- |
@@ -617,7 +617,7 @@ continue externo;
 
 ---
 
-# 📊 Comparação rápida
+# Comparação rápida
 
 ### Condicionais
 
@@ -638,7 +638,7 @@ continue externo;
 
 ---
 
-# ⚠️ Erros comuns
+# Erros comuns
 
 | Problema                          | Correto                             |
 | --------------------------------- | ----------------------------------- |
@@ -653,7 +653,7 @@ continue externo;
 
 ---
 
-# 📁 Estrutura do projeto
+# Estrutura do projeto
 
 Dentro do **JavaBasicCommands**, este conteúdo está organizado da seguinte forma:
 
@@ -703,7 +703,7 @@ Os arquivos em português e inglês permitem consultar o mesmo conteúdo em dife
 
 ---
 
-# ▶️ Executando os exemplos
+# Executando os exemplos
 
 É necessário possuir um **JDK** configurado.
 
@@ -733,7 +733,7 @@ Também é possível executar os arquivos diretamente por uma IDE compatível co
 
 ---
 
-# ☕ Sobre
+# Sobre
 
 Este diretório faz parte do **JavaBasicCommands**, um projeto de estudos voltado à prática dos fundamentos da linguagem Java por meio de exemplos pequenos, organizados e progressivos.
 
@@ -746,7 +746,5 @@ Este diretório faz parte do **JavaBasicCommands**, um projeto de estudos voltad
 <div align="center">
 
 ### ☕ JavaBasicCommands
-
-**Aprender → Praticar → Aplicar → Evoluir**
 
 </div>
