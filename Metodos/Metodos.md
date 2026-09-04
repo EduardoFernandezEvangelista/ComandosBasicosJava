@@ -4,7 +4,7 @@ Métodos ajudam a organizar o código em partes menores e reutilizáveis. Neste 
 
 ---
 
-## 📚 Conteúdo
+## Conteúdo
 
 | Tema                 | Conteúdo                                 |
 | -------------------- | ---------------------------------------- |
@@ -28,7 +28,7 @@ Métodos ajudam a organizar o código em partes menores e reutilizáveis. Neste 
 
 ---
 
-# 🧱 Estrutura de um método
+# Estrutura de um método
 
 Um método é um bloco de código criado para realizar uma tarefa. Ele pode receber valores, processar informações, retornar um resultado ou apenas executar uma ação.
 
@@ -38,7 +38,7 @@ modificador tipoDeRetorno nomeDoMetodo(parametros) {
 }
 ```
 
-## 🔁 Método com retorno
+## Método com retorno
 
 ```java
 public static int somar(int primeiroNumero, int segundoNumero) {
@@ -60,7 +60,7 @@ Saída:
 15
 ```
 
-## ⚙️ Método sem retorno
+## Método sem retorno
 
 Quando um método não precisa devolver um valor, usamos `void`.
 
@@ -82,7 +82,7 @@ Saída:
 Olá, Java!
 ```
 
-## 🧩 Elementos de um método
+## Elementos de um método
 
 | Elemento   | Função                              |
 | ---------- | ----------------------------------- |
@@ -96,11 +96,11 @@ Olá, Java!
 
 ---
 
-# 🚀 Método `main`
+# Método `main`
 
 O método `main` é usado como ponto de entrada de uma aplicação Java.
 
-## 🏛️ Forma tradicional
+## Forma tradicional
 
 ```java
 public static void main(String[] args) {
@@ -146,7 +146,7 @@ Java
 17
 ```
 
-## ✨ Formas simplificadas
+## Formas simplificadas
 
 Versões recentes do Java também permitem formas simplificadas do método `main`:
 
@@ -170,13 +170,13 @@ void main(String[] args) {
 
 ---
 
-# 🧰 Métodos úteis da biblioteca padrão
+# Métodos úteis da biblioteca padrão
 
 Além dos métodos criados pelo programador, o Java possui várias classes prontas com métodos para tarefas comuns, como trabalhar com textos, listas, arquivos, datas e números.
 
 ---
 
-# 🧮 `Math`
+# `Math`
 
 A classe `Math` possui métodos para realizar cálculos matemáticos.
 
@@ -217,7 +217,7 @@ Saída:
 
 ---
 
-# 🔤 `String`
+# `String`
 
 A classe `String` representa textos. Como seus objetos são imutáveis, os métodos que modificam o texto retornam uma nova `String`.
 
@@ -269,7 +269,7 @@ J
 
 ---
 
-# 🧬 `Object`
+# `Object`
 
 `Object` é a classe base de todas as classes Java.
 
@@ -288,11 +288,11 @@ J
 
 ---
 
-# 📦 Collections
+# Collections
 
 As Collections são usadas para armazenar e manipular grupos de objetos.
 
-## 📋 `List`
+## `List`
 
 `List` representa uma coleção ordenada que permite elementos duplicados.
 
@@ -327,7 +327,7 @@ System.out.println(nomes.get(0));
 
 ---
 
-## 🧱 `Set`
+## `Set`
 
 `Set` representa uma coleção que não permite elementos duplicados.
 
@@ -346,7 +346,7 @@ System.out.println(nomes.get(0));
 
 ---
 
-## 🗺️ `Map`
+## `Map`
 
 `Map` armazena dados em pares de chave e valor.
 
@@ -384,7 +384,7 @@ System.out.println(idades.get("João"));
 
 ---
 
-# 🧮 `Arrays`
+# `Arrays`
 
 A classe `Arrays` possui métodos para ordenar, pesquisar, copiar e comparar arrays.
 
@@ -418,7 +418,7 @@ System.out.println(Arrays.toString(numeros));
 
 ---
 
-# 🔎 `Scanner`
+# `Scanner`
 
 `Scanner` permite ler dados digitados pelo usuário ou obtidos de outras fontes.
 
@@ -454,9 +454,9 @@ scanner.close();
 
 ---
 
-# 📁 Arquivos
+# Arquivos
 
-## 📄 `File`
+## `File`
 
 `File` representa caminhos de arquivos e diretórios e permite realizar operações básicas sobre eles.
 
@@ -480,7 +480,7 @@ scanner.close();
 | `canWrite()`        | Verifica permissão de escrita         |
 | `canExecute()`      | Verifica permissão de execução        |
 
-## 🗃️ `Files`
+## `Files`
 
 `Files`, do pacote `java.nio.file`, possui métodos para trabalhar com arquivos e diretórios.
 
@@ -525,11 +525,11 @@ System.out.println(conteudo);
 
 ---
 
-# 🔌 I/O
+# I/O
 
 As classes de I/O são usadas para ler e gravar bytes e caracteres.
 
-## 📥 `InputStream`
+## `InputStream`
 
 | Método           | Função                                |
 | ---------------- | ------------------------------------- |
@@ -541,7 +541,7 @@ As classes de I/O são usadas para ler e gravar bytes e caracteres.
 | `close()`        | Fecha o fluxo                         |
 | `transferTo()`   | Transfere dados para outro fluxo      |
 
-## 📤 `OutputStream`
+## `OutputStream`
 
 | Método    | Função                     |
 | --------- | -------------------------- |
@@ -549,7 +549,7 @@ As classes de I/O são usadas para ler e gravar bytes e caracteres.
 | `flush()` | Força a gravação dos dados |
 | `close()` | Fecha o fluxo              |
 
-## 📖 `Reader`
+## `Reader`
 
 | Método    | Função                                   |
 | --------- | ---------------------------------------- |
@@ -558,13 +558,13 @@ As classes de I/O são usadas para ler e gravar bytes e caracteres.
 | `ready()` | Verifica se a leitura pode ser realizada |
 | `close()` | Fecha o leitor                           |
 
-## 📚 `BufferedReader`
+## `BufferedReader`
 
 | Método       | Função                |
 | ------------ | --------------------- |
 | `readLine()` | Lê uma linha completa |
 
-## ✍️ `Writer`
+## `Writer`
 
 | Método     | Função              |
 | ---------- | ------------------- |
@@ -575,11 +575,11 @@ As classes de I/O são usadas para ler e gravar bytes e caracteres.
 
 ---
 
-# 🌊 Stream API
+# Stream API
 
 A Stream API permite processar coleções de forma mais organizada, aplicando filtros, transformações e outras operações.
 
-## 🔄 Operações intermediárias
+## Operações intermediárias
 
 | Método       | Função                                    |
 | ------------ | ----------------------------------------- |
@@ -592,7 +592,7 @@ A Stream API permite processar coleções de forma mais organizada, aplicando fi
 | `skip()`     | Ignora elementos                          |
 | `peek()`     | Observa elementos durante o processamento |
 
-## ✅ Operações terminais
+## Operações terminais
 
 | Método             | Função                                       |
 | ------------------ | -------------------------------------------- |
@@ -631,7 +631,7 @@ Saída:
 
 ---
 
-# 🧵 Threads
+# Threads
 
 A classe `Thread` permite executar tarefas separadamente.
 
@@ -661,9 +661,9 @@ thread.start();
 
 ---
 
-# 🗓️ Datas e horários
+# Datas e horários
 
-## 📅 `LocalDate`
+## `LocalDate`
 
 `LocalDate` representa uma data sem horário.
 
@@ -685,7 +685,7 @@ thread.start();
 | `isAfter()`       | Verifica se é posterior |
 | `isEqual()`       | Compara duas datas      |
 
-## ⏰ `LocalDateTime`
+## `LocalDateTime`
 
 `LocalDateTime` representa uma data e um horário sem fuso horário.
 
@@ -705,7 +705,7 @@ thread.start();
 
 ---
 
-# 🎲 `Random`
+# `Random`
 
 A classe `Random` gera valores pseudoaleatórios.
 
@@ -730,7 +730,7 @@ System.out.println(numero);
 
 ---
 
-# 🖥️ `System`
+# `System`
 
 A classe `System` possui métodos relacionados ao ambiente de execução.
 
@@ -749,7 +749,7 @@ A classe `System` possui métodos relacionados ao ambiente de execução.
 
 ---
 
-# 🧱 `StringBuilder`
+# `StringBuilder`
 
 `StringBuilder` permite construir e modificar textos.
 
@@ -781,7 +781,7 @@ System.out.println(texto);
 
 ---
 
-# ⚠️ Exceções
+# Exceções
 
 As classes `Exception` e `Throwable` possuem métodos para consultar informações sobre erros.
 
@@ -809,7 +809,7 @@ try {
 
 ---
 
-# 🧪 Exemplo integrado
+# Exemplo integrado
 
 ```java
 import java.util.Arrays;
@@ -856,7 +856,7 @@ public class Main {
 
 ---
 
-# 🗂️ Organização do material
+# Organização do material
 
 Este conteúdo faz parte do repositório **JavaBasicCommands** e acompanha os estudos sobre variáveis, condicionais, repetições, operadores e outros fundamentos do Java.
 
@@ -878,7 +878,5 @@ Metodos/
 <div align="center">
 
 ☕ **Java — Métodos**
-
-**Conceitos → Exemplos → Prática**
 
 </div>
