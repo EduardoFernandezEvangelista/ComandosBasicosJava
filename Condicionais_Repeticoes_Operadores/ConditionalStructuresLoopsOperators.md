@@ -1,875 +1,168 @@
-# ☕ Java — Conditional Structures, Loops and Operators
+# ☕ Java — Conditionals, Loops and Operators
 
-Repository dedicated to learning and practicing the main **conditional structures, loop structures and operators of the Java language**.
+Part of the **JavaBasicCommands** project, bringing together the main **flow control features and operators of the Java language**.
 
-The goal of this material is to present concepts progressively, using explanations, syntax, simple examples, practical examples, comparisons and observations about common mistakes.
-
-This content was developed for **educational purposes**, functioning as study material, review and consultation during your learning journey in the Java language.
+The material is organized as a practical reference: essential concepts, syntax, quick-reference tables, and examples small enough to be tested quickly.
 
 ---
 
-# 🎯 About the project
+## 📚 Contents
 
-Conditional structures and loop structures are fundamental to control the behavior of a program.
-
-They allow an application to:
-
-* Make decisions;
-* Perform calculations;
-* Compare values;
-* Execute certain code sections only when needed;
-* Repeat operations;
-* Interrupt repetitions;
-* Skip certain iterations;
-* Work with multiple execution paths;
-* Organize business rules;
-* Control menus;
-* Validate data;
-* Traverse collections;
-* Create more complex algorithms.
-
-This material also covers the main operators used within these structures.
+| Category                  | Main features                          |                                |        |
+| ------------------------- | -------------------------------------- | ------------------------------ | ------ |
+| **Arithmetic operators**  | `+`, `-`, `*`, `/`, `%`                |                                |        |
+| **Increment / decrement** | `++`, `--`                             |                                |        |
+| **Assignment**            | `=`, `+=`, `-=`, `*=`, `/=`, `%=`      |                                |        |
+| **Relational**            | `==`, `!=`, `>`, `<`, `>=`, `<=`       |                                |        |
+| **Logical**               | `&&`, `                                |                                | `, `!` |
+| **Bitwise**               | `&`, `                                 | `, `^`, `~`, `<<`, `>>`, `>>>` |        |
+| **Conditionals**          | `if`, `else if`, `else`, `switch`      |                                |        |
+| **Modern switch**         | `->`, `switch expression`, `yield`     |                                |        |
+| **Compact conditional**   | ternary operator `? :`                 |                                |        |
+| **Loops**                 | `while`, `do while`, `for`, `for-each` |                                |        |
+| **Loop control**          | `break`, `continue`                    |                                |        |
+| **Labels**                | `break label`, `continue label`        |                                |        |
 
 ---
 
-# 🗂️ Code Organization
+# 🧮 Operators
 
-The example codes for this material are organized in the following folders:
+Operators are used to perform calculations, comparisons, assignments, and logical operations.
 
-* **Operadores** — Contains all arithmetic, relational, logical and bitwise operator examples in `.java` files
-* **Condicionais** — Contains all conditional structure examples (`if`, `else`, `switch`, ternary operator, etc.) in `.java` files
-* **Repeticao** — Contains all loop structure examples (`while`, `do while`, `for`, `for-each`, etc.) in `.java` files
+## Arithmetic operators
 
-Each example is implemented as a separate `.java` file for easy understanding and testing.
+| Operator | Function       |  Example | Result |
+| -------- | -------------- | -------: | -----: |
+| `+`      | Addition       | `10 + 3` |   `13` |
+| `-`      | Subtraction    | `10 - 3` |    `7` |
+| `*`      | Multiplication | `10 * 3` |   `30` |
+| `/`      | Division       | `10 / 3` |    `3` |
+| `%`      | Remainder      | `10 % 3` |    `1` |
 
----
-
-# 🎯 Objectives
-
-The main objectives of this study are:
-
-* Understand arithmetic operators;
-* Use addition, subtraction, multiplication, division and modulo;
-* Understand increment and decrement;
-* Understand relational operators;
-* Understand logical operators;
-* Know bitwise operators;
-* Learn to use `if`;
-* Work with `else`;
-* Create multiple conditions with `else if`;
-* Work with nested `if`;
-* Understand `switch`;
-* Use `case`;
-* Use `default`;
-* Understand `break`;
-* Learn the modern syntax of `switch` with `->`;
-* Work with `switch expression`;
-* Understand `yield`;
-* Use the ternary operator;
-* Create repetitions with `while`;
-* Understand continuous loops with `while (true)`;
-* Use `do while`;
-* Create repetitions with `for`;
-* Traverse collections with `for-each`;
-* Use `continue`;
-* Know labels;
-* Use `break` with labels;
-* Use `continue` with labels;
-* Understand when to use each structure.
-
----
-
-# 🧠 Overview
-
-We can organize the content as follows:
-
-```text
-Flow Control and Operators in Java
-│
-├── Operators
-│   │
-│   ├── Arithmetic
-│   │   ├── +
-│   │   ├── -
-│   │   ├── *
-│   │   ├── /
-│   │   └── %
-│   │
-│   ├── Relational
-│   │   ├── ==
-│   │   ├── !=
-│   │   ├── >
-│   │   ├── <
-│   │   ├── >=
-│   │   └── <=
-│   │
-│   ├── Logical
-│   │   ├── &&
-│   │   ├── ||
-│   │   └── !
-│   │
-│   └── Bitwise
-│       ├── &
-│       ├── |
-│       ├── ^
-│       └── ~
-│
-├── Conditionals
-│   │
-│   ├── if
-│   ├── else
-│   ├── else if
-│   ├── nested if
-│   ├── switch
-│   ├── switch ->
-│   ├── switch expression
-│   └── ternary operator
-│
-└── Loops
-    │
-    ├── while
-    ├── while (true)
-    ├── do while
-    ├── for
-    ├── for-each
-    ├── break
-    ├── continue
-    └── labels
-```
-
----
-
-# ➕ Arithmetic Operators
-
-Arithmetic operators are used to perform mathematical calculations in Java.
-
-The main arithmetic operators are:
-
-```text
-+
--
-*
-/
-%
-```
-
-They can be used with numeric types, such as:
-
-```java
-int
-long
-float
-double
-```
-
----
-
-## 🔹 Operator `+` — Addition
-
-### What is it?
-
-The `+` operator performs the sum of two values.
-
-### Syntax
-
-```java
-valor1 + valor2
-```
-
-### Simple example
-
-```java
-int numero1 = 10;
-int numero2 = 5;
-
-int resultado = numero1 + numero2;
-
-System.out.println(resultado);
-```
-
-Result:
-
-```text
-15
-```
-
-### Example with decimal numbers
-
-```java
-double preco = 19.90;
-double frete = 5.00;
-
-double total = preco + frete;
-
-System.out.println(total);
-```
-
-### String Concatenation
-
-The `+` operator can also concatenate text.
-
-```java
-String nome = "Java";
-String mensagem = "Estudando " + nome;
-
-System.out.println(mensagem);
-```
-
-Result:
-
-```text
-Estudando Java
-```
-
-When one part of the expression is a `String`, the `+` operator performs concatenation.
-
-```java
-int idade = 20;
-
-System.out.println("Idade: " + idade);
-```
-
-Result:
-
-```text
-Idade: 20
-```
-
----
-
-## 🔹 Operator `-` — Subtraction
-
-### What is it?
-
-The `-` operator performs the subtraction of values.
-
-### Syntax
-
-```java
-valor1 - valor2
-```
-
-### Example
-
-```java
-int saldo = 100;
-int compra = 35;
-
-int restante = saldo - compra;
-
-System.out.println(restante);
-```
-
-Result:
-
-```text
-65
-```
-
-### Practical example
-
-```java
-int estoque = 50;
-int produtosVendidos = 12;
-
-estoque = estoque - produtosVendidos;
-
-System.out.println("Estoque restante: " + estoque);
-```
-
----
-
-## 🔹 Operator `*` — Multiplication
-
-### What is it?
-
-The `*` operator performs multiplication of values.
-
-### Syntax
-
-```java
-valor1 * valor2
-```
-
-### Example
-
-```java
-int largura = 10;
-int altura = 5;
-
-int area = largura * altura;
-
-System.out.println(area);
-```
-
-Result:
-
-```text
-50
-```
-
-### Practical example
-
-```java
-double preco = 25.50;
-int quantidade = 3;
-
-double total = preco * quantidade;
-
-System.out.println("Total: " + total);
-```
-
----
-
-## 🔹 Operator `/` — Division
-
-### What is it?
-
-The `/` operator performs division between values.
-
-### Syntax
-
-```java
-valor1 / valor2
-```
-
-### Integer division
-
-When both values are integers, the result will also be an integer.
+> In an integer division, the result is also an integer.
 
 ```java
 int resultado = 10 / 3;
-
-System.out.println(resultado);
+System.out.println(resultado); // 3
 ```
 
-Result:
-
-```text
-3
-```
-
-The decimal part is discarded.
-
-### Decimal division
-
-To obtain a decimal result, at least one of the values must be decimal.
+To obtain decimal places:
 
 ```java
 double resultado = 10.0 / 3;
-
-System.out.println(resultado);
+System.out.println(resultado); // 3.333...
 ```
 
-Approximate result:
-
-```text
-3.3333333333333335
-```
-
-It is also possible to use type conversion:
+The `%` operator is very useful for checking even and odd numbers:
 
 ```java
-int numero1 = 10;
-int numero2 = 3;
-
-double resultado = (double) numero1 / numero2;
-
-System.out.println(resultado);
-```
-
-### ⚠️ Division by zero
-
-It is not allowed to divide an integer by zero:
-
-```java
-int resultado = 10 / 0;
-```
-
-This causes:
-
-```text
-ArithmeticException
-```
-
-With floating point values, the behavior may result in `Infinity` or `NaN`.
-
----
-
-## 🔹 Operator `%` — Modulo
-
-### What is it?
-
-The `%` operator returns the remainder of integer division.
-
-### Syntax
-
-```java
-valor1 % valor2
-```
-
-### Example
-
-```java
-int resto = 10 % 3;
-
-System.out.println(resto);
-```
-
-Result:
-
-```text
-1
-```
-
-Because:
-
-```text
-10 ÷ 3 = 3
-remainder = 1
-```
-
-### Check if a number is even
-
-```java
-int numero = 8;
-
 if (numero % 2 == 0) {
-    System.out.println("Even number");
+    System.out.println("Even");
 }
-```
-
-### Check if a number is odd
-
-```java
-int numero = 7;
-
-if (numero % 2 != 0) {
-    System.out.println("Odd number");
-}
-```
-
-### Practical example
-
-```java
-int totalSegundos = 3675;
-
-int horas = totalSegundos / 3600;
-int restante = totalSegundos % 3600;
-
-int minutos = restante / 60;
-int segundos = restante % 60;
-
-System.out.println(
-    horas + "h " +
-    minutos + "min " +
-    segundos + "s"
-);
 ```
 
 ---
 
-# 🔼 Increment and Decrement
+## Increment and decrement
 
-In addition to basic arithmetic operators, Java has operators to increase or decrease by one unit.
-
----
-
-## 🔹 Operator `++`
-
-Increases the value by `1`.
+| Operator | Function      |
+| -------- | ------------- |
+| `++`     | adds `1`      |
+| `--`     | subtracts `1` |
 
 ```java
 int contador = 0;
 
 contador++;
-
-System.out.println(contador);
-```
-
-Result:
-
-```text
-1
-```
-
-It can also be written as:
-
-```java
-contador = contador + 1;
-```
-
-### Pre-increment
-
-```java
-int numero = 5;
-
-int resultado = ++numero;
-
-System.out.println(numero);
-System.out.println(resultado);
-```
-
-Result:
-
-```text
-6
-6
-```
-
-### Post-increment
-
-```java
-int numero = 5;
-
-int resultado = numero++;
-
-System.out.println(numero);
-System.out.println(resultado);
-```
-
-Result:
-
-```text
-6
-5
-```
-
-In post-increment, the current value is used first and incremented after.
-
----
-
-## 🔹 Operator `--`
-
-Decreases the value by `1`.
-
-```java
-int contador = 5;
-
 contador--;
 
 System.out.println(contador);
 ```
 
-Result:
-
-```text
-4
-```
-
-It can also be written as:
+There are also **pre** and **post** forms:
 
 ```java
-contador = contador - 1;
-```
+int a = 5;
 
-### Pre-decrement
-
-```java
-int numero = 5;
-
-int resultado = --numero;
-
-System.out.println(numero);
-System.out.println(resultado);
-```
-
-Result:
-
-```text
-4
-4
-```
-
-### Post-decrement
-
-```java
-int numero = 5;
-
-int resultado = numero--;
-
-System.out.println(numero);
-System.out.println(resultado);
-```
-
-Result:
-
-```text
-4
-5
+int x = ++a; // increments before
+int y = a++; // increments after
 ```
 
 ---
 
-# 📊 Summary of arithmetic operators
+## Assignment operators
 
-| Operator | Name          | Example    | Result      |
-| -------- | ------------- | ---------- | ----------- |
-| `+`      | Addition      | `10 + 5`   | `15`        |
-| `-`      | Subtraction   | `10 - 5`   | `5`         |
-| `*`      | Multiplication| `10 * 5`   | `50`        |
-| `/`      | Division      | `10 / 5`   | `2`         |
-| `%`      | Modulo        | `10 % 3`   | `1`         |
-| `++`     | Increment     | `numero++` | Adds `1`    |
-| `--`     | Decrement     | `numero--` | Subtracts `1` |
+Besides simple assignment, Java has shortened forms:
 
----
+| Operator | Equivalent  |
+| -------- | ----------- |
+| `=`      | `a = b`     |
+| `+=`     | `a = a + b` |
+| `-=`     | `a = a - b` |
+| `*=`     | `a = a * b` |
+| `/=`     | `a = a / b` |
+| `%=`     | `a = a % b` |
 
-# 🧮 Precedence of arithmetic operators
-
-When an expression has multiple operators, Java follows an order of precedence.
-
-The basic order is:
-
-```text
-1. Parentheses
-2. Multiplication, division and modulo
-3. Addition and subtraction
-```
-
-### Example
+Example:
 
 ```java
-int resultado = 2 + 3 * 4;
+int saldo = 100;
 
-System.out.println(resultado);
-```
+saldo += 50;
+saldo -= 20;
 
-Result:
-
-```text
-14
-```
-
-Multiplication is performed first:
-
-```text
-2 + (3 * 4)
-2 + 12
-14
-```
-
-### Using parentheses
-
-```java
-int resultado = (2 + 3) * 4;
-
-System.out.println(resultado);
-```
-
-Result:
-
-```text
-20
-```
-
-Parentheses change the execution order.
-
----
-
-# 🔎 Relational Operators
-
-Relational operators are used to **compare values**.
-
-The result of a comparison will always be a boolean value:
-
-```text
-true
-or
-false
+System.out.println(saldo); // 130
 ```
 
 ---
 
-## 🔹 Operator `==`
+# 🔎 Relational operators
 
-### What is it?
+Used to compare values. The result is always `true` or `false`.
 
-The `==` operator checks for equality.
-
-### What is it for?
-
-It allows you to check if two values are equal.
-
-### Syntax
-
-```java
-valor1 == valor2
-```
-
-### Simple example
+| Operator | Meaning          |
+| -------- | ---------------- |
+| `==`     | equal            |
+| `!=`     | different        |
+| `>`      | greater than     |
+| `<`      | less than        |
+| `>=`     | greater or equal |
+| `<=`     | less or equal    |
 
 ```java
-int numero = 10;
+int idade = 20;
 
-System.out.println(numero == 10);
+System.out.println(idade >= 18); // true
+System.out.println(idade == 20); // true
 ```
 
-Result:
+### `==` with objects
 
-```text
-true
-```
+For primitive types, `==` compares values.
 
-### Practical example
-
-```java
-int senhaDigitada = 1234;
-int senhaCorreta = 1234;
-
-if (senhaDigitada == senhaCorreta) {
-    System.out.println("Correct password");
-}
-```
-
-### ⚠️ Attention with `String`
-
-To compare the content of Strings, we normally use `.equals()`.
-
-Avoid:
+For objects, such as `String`, you should normally compare the content:
 
 ```java
 String nome = "Java";
 
-if (nome == "Java") {
-    System.out.println("Equal");
+if ("Java".equals(nome)) {
+    System.out.println("Correct name");
 }
 ```
 
-Prefer:
-
-```java
-if (nome.equals("Java")) {
-    System.out.println("Equal");
-}
-```
-
-`==` compares references when applied to objects.
+Avoid using `==` to compare the content of a `String`.
 
 ---
 
-## 🔹 Operator `!=`
+# 🧩 Logical operators
 
-### What is it?
+They allow you to combine conditions.
 
-Represents **different from**.
-
-### Syntax
-
-```java
-valor1 != valor2
-```
-
-### Example
-
-```java
-int idade = 20;
-
-if (idade != 18) {
-    System.out.println("Age is not 18");
-}
-```
-
----
-
-## 🔹 Operator `>`
-
-Represents **greater than**.
-
-```java
-int idade = 20;
-
-if (idade > 18) {
-    System.out.println("Greater than 18");
-}
-```
-
----
-
-## 🔹 Operator `<`
-
-Represents **less than**.
-
-```java
-int idade = 16;
-
-if (idade < 18) {
-    System.out.println("Minor");
-}
-```
-
----
-
-## 🔹 Operator `>=`
-
-Represents **greater than or equal**.
-
-```java
-int idade = 18;
-
-if (idade >= 18) {
-    System.out.println("Adult");
-}
-```
-
----
-
-## 🔹 Operator `<=`
-
-Represents **less than or equal**.
-
-```java
-int temperatura = 0;
-
-if (temperatura <= 0) {
-    System.out.println("Temperature equal to or below zero");
-}
-```
-
----
-
-# 📊 Summary of relational operators
-
-| Operator | Meaning        |
-| -------- | -------------- |
-| `==`     | Equal          |
-| `!=`     | Different      |
-| `>`      | Greater        |
-| `<`      | Less           |
-| `>=`     | Greater or equal |
-| `<=`     | Less or equal  |
-
----
-
-# 🧩 Logical Operators
-
-Logical operators allow you to combine boolean conditions.
-
-The main ones are:
-
-```text
-&&
-||
-!
-```
-
----
-
-# 🔹 Operator `&&` — AND
-
-### What is it?
-
-Represents the logical operator **AND**.
-
-All conditions must be true.
-
-### Syntax
-
-```java
-condicao1 && condicao2
-```
-
-### Example
+| Operator | Name | Rule                        |    |                                     |
+| -------- | ---- | --------------------------- | -- | ----------------------------------- |
+| `&&`     | AND  | all conditions must be true |    |                                     |
+| `        |      | `                           | OR | at least one condition must be true |
+| `!`      | NOT  | reverses the result         |    |                                     |
 
 ```java
 int idade = 20;
@@ -880,371 +173,82 @@ if (idade >= 18 && possuiCarteira) {
 }
 ```
 
-### How it works
+### Short-circuit
 
-```text
-true && true   → true
-true && false  → false
-false && true  → false
-false && false → false
-```
-
----
-
-# 🔹 Operator `||` — OR
-
-Represents the logical operator **OR**.
-
-Only one condition needs to be true.
+`&&` and `||` use short-circuit evaluation.
 
 ```java
-boolean administrador = false;
-boolean moderador = true;
-
-if (administrador || moderador) {
-    System.out.println("Access granted");
-}
-```
-
-Table:
-
-```text
-true  || true  → true
-true  || false → true
-false || true  → true
-false || false → false
-```
-
----
-
-# 🔹 Operator `!` — NOT
-
-The `!` operator performs logical negation.
-
-```java
-boolean conectado = false;
-
-if (!conectado) {
-    System.out.println("User disconnected");
-}
-```
-
-We have:
-
-```text
-!true  → false
-!false → true
-```
-
----
-
-# ⚡ Short-circuit
-
-`&&` and `||` have **short-circuit** behavior.
-
-Example:
-
-```java
-if (idade >= 18 && possuiCarteira()) {
+if (objeto != null && objeto.isValido()) {
     // ...
 }
 ```
 
-If:
-
-```java
-idade >= 18
-```
-
-is `false`, Java does not need to evaluate the second condition.
-
-The same happens with `||`.
-
-If the first condition is already `true`, the result of the expression is already determined.
+If `objeto != null` is false, the second condition will not be evaluated.
 
 ---
 
-# ⚙️ Bitwise Operators
+# ⚙️ Bitwise operators
 
-Java also has operators that work directly with bits.
+They work directly with the binary representation of numbers.
 
-They are:
-
-```text
-&
-|
-^
-~
-```
-
-These operators are different from the short-circuit logical operators `&&` and `||`.
-
----
-
-# 🔹 Operator `&` — Bitwise AND
-
-Performs the **AND bit by bit** operation.
+| Operator | Operation            |    |
+| -------- | -------------------- | -- |
+| `&`      | AND                  |    |
+| `        | `                    | OR |
+| `^`      | XOR                  |    |
+| `~`      | complement           |    |
+| `<<`     | left shift           |    |
+| `>>`     | signed right shift   |    |
+| `>>>`    | unsigned right shift |    |
 
 Example:
 
 ```java
-int a = 5;
-int b = 3;
+int a = 5; // 0101
+int b = 3; // 0011
 
-int resultado = a & b;
-
-System.out.println(resultado);
+System.out.println(a & b); // 1
+System.out.println(a | b); // 7
+System.out.println(a ^ b); // 6
 ```
 
-Representation:
-
-```text
-5 = 0101
-3 = 0011
----------
-    0001
-```
-
-Result:
-
-```text
-1
-```
+The `&` and `|` operators can also be used with `boolean`, but they do not have the same short-circuit behavior as `&&` and `||`.
 
 ---
 
-# 🔹 Operator `|` — Bitwise OR
+# 🔀 Conditional structures
 
-Performs **OR bit by bit**.
+## `if`
 
-```java
-int a = 5;
-int b = 3;
-
-int resultado = a | b;
-```
-
-Representation:
-
-```text
-0101
-0011
-----
-0111
-```
-
-Result:
-
-```text
-7
-```
-
----
-
-# 🔹 Operator `^` — XOR
-
-Represents **exclusive OR**.
-
-The result is `1` when the bits are different.
+Use `if` when an action depends on a condition.
 
 ```java
-int a = 5;
-int b = 3;
-
-int resultado = a ^ b;
-```
-
-```text
-0101
-0011
-----
-0110
-```
-
-Result:
-
-```text
-6
-```
-
----
-
-# 🔹 Operator `~` — Complement
-
-Inverts the bits of a number.
-
-```java
-int numero = 5;
-
-int resultado = ~numero;
-
-System.out.println(resultado);
-```
-
-In Java:
-
-```text
-~5 = -6
-```
-
-This happens due to the binary representation of signed integers.
-
----
-
-# ⚠️ `&` and `|` with booleans
-
-`&` and `|` can also work with boolean values.
-
-Example:
-
-```java
-boolean a = true;
-boolean b = false;
-
-System.out.println(a & b);
-System.out.println(a | b);
-```
-
-However, unlike `&&` and `||`, they **do not perform short-circuit**.
-
----
-
-# 🔀 `if`
-
-```text
-┌───────────────────────────────┐
-│ IF                            │
-├───────────────────────────────┤
-│ What is it? Conditional       │
-│ What is it for? Make decision │
-│ When to use? Simple condition │
-└───────────────────────────────┘
-```
-
-## What is it?
-
-`if` is a conditional structure used to execute a block of code only when a condition is true.
-
-### Syntax
-
-```java
-if (condicao) {
-    // código
-}
-```
-
-### Simple example
-
-```java
-int idade = 20;
-
 if (idade >= 18) {
     System.out.println("Adult");
 }
 ```
 
-### Flow
+---
 
-```text
-Condition
-   │
-   ▼
-Is it true?
-   │
- ┌─┴─┐
- │   │
-Yes No
- │
- ▼
-Execute
-```
+## `if / else`
 
-### Practical example
+When there are two possible paths:
 
 ```java
-double saldo = 500;
-double compra = 300;
-
-if (saldo >= compra) {
+if (saldo >= valor) {
     System.out.println("Purchase authorized");
+} else {
+    System.out.println("Insufficient balance");
 }
-```
-
-### Common mistake
-
-```java
-if (idade = 18)
-```
-
-This is incorrect.
-
-For comparison:
-
-```java
-if (idade == 18)
 ```
 
 ---
 
-# 🔀 `else`
+## `else if`
 
-`else` represents the path executed when the `if` condition is false.
-
-### Syntax
+For multiple conditions:
 
 ```java
-if (condicao) {
-    // true
-} else {
-    // false
-}
-```
-
-### Example
-
-```java
-int idade = 16;
-
-if (idade >= 18) {
-    System.out.println("Adult");
-} else {
-    System.out.println("Minor");
-}
-```
-
-### When to use?
-
-When there are two main paths:
-
-```text
-true
-or
-false
-```
-
----
-
-# 🔀 `else if`
-
-`else if` allows you to create multiple checks.
-
-### Syntax
-
-```java
-if (condicao1) {
-
-} else if (condicao2) {
-
-} else {
-
-}
-```
-
-### Simple example
-
-```java
-double nota = 8;
-
 if (nota >= 9) {
     System.out.println("Excellent");
 } else if (nota >= 7) {
@@ -1256,69 +260,25 @@ if (nota >= 9) {
 }
 ```
 
-### Flow
-
-```text
-Condition 1
-   │
-   ├── true → execute
-   │
-   ▼
-Condition 2
-   │
-   ├── true → execute
-   │
-   ▼
-Condition 3
-   │
-   ├── true → execute
-   │
-   ▼
-else
-```
+The first true condition stops the sequence.
 
 ---
 
-# 🧱 Nested `if`
+## Nested `if`
 
-A nested `if` occurs when there is an `if` inside another `if`.
-
-### Example
+An `if` can exist inside another:
 
 ```java
-int idade = 20;
-boolean possuiCarteira = true;
-
 if (idade >= 18) {
 
     if (possuiCarteira) {
         System.out.println("Can drive");
-    } else {
-        System.out.println("Needs license");
     }
 
-} else {
-    System.out.println("Minor");
 }
 ```
 
-### When to use?
-
-Can be useful when one condition depends on another.
-
-### Comparison
-
-This:
-
-```java
-if (idade >= 18) {
-    if (possuiCarteira) {
-        System.out.println("Can drive");
-    }
-}
-```
-
-can often be simplified to:
+When the logic can be expressed in a simple way, it is often better to combine the conditions:
 
 ```java
 if (idade >= 18 && possuiCarteira) {
@@ -1326,39 +286,15 @@ if (idade >= 18 && possuiCarteira) {
 }
 ```
 
-### ⚠️ Common mistake
-
-Creating many levels of nested `if` can hurt readability.
-
 ---
 
 # 🎛️ `switch`
 
-`switch` allows you to choose a path based on the value of an expression.
+It is a good option when the decision depends on **specific values**.
 
-### Traditional syntax
-
-```java
-switch (valor) {
-
-    case valor1:
-        // código
-        break;
-
-    case valor2:
-        // código
-        break;
-
-    default:
-        // código
-}
-```
-
-### Example
+### Traditional form
 
 ```java
-int opcao = 2;
-
 switch (opcao) {
 
     case 1:
@@ -1366,7 +302,7 @@ switch (opcao) {
         break;
 
     case 2:
-        System.out.println("Consult");
+        System.out.println("Search");
         break;
 
     case 3:
@@ -1378,174 +314,47 @@ switch (opcao) {
 }
 ```
 
----
-
-# 📌 `case`
-
-Each `case` represents a possible value.
-
-```java
-case 1:
-    System.out.println("Option 1");
-    break;
-```
-
-The `switch` compares the received value with each `case`.
+In the traditional `switch`, `break` prevents execution from continuing to the next `case`.
 
 ---
 
-# 📌 `default`
+## Modern `switch`
 
-`default` is executed when no `case` matches the received value.
-
-```java
-default:
-    System.out.println("Invalid option");
-```
-
-It works similarly to `else`.
-
----
-
-# 🛑 `break`
-
-Inside the traditional `switch`, `break` ends the execution of the corresponding block.
-
-Example:
+The syntax with `->` is more direct and prevents accidental `fall-through`:
 
 ```java
-case 1:
-    System.out.println("Register");
-    break;
-```
-
-Without `break`, **fall-through** can occur:
-
-```java
-int valor = 1;
-
-switch (valor) {
-
-    case 1:
-        System.out.println("One");
-
-    case 2:
-        System.out.println("Two");
-}
-```
-
-Result:
-
-```text
-One
-Two
-```
-
-This happens because execution continues to the next `case`.
-
----
-
-# ➡️ `switch` with `->`
-
-Modern versions of Java allow using `->`.
-
-### Example
-
-```java
-int opcao = 2;
-
 switch (opcao) {
 
     case 1 -> System.out.println("Register");
-
-    case 2 -> System.out.println("Consult");
-
+    case 2 -> System.out.println("Search");
     case 3 -> System.out.println("Delete");
-
     default -> System.out.println("Invalid option");
 }
 ```
 
-### Advantages
-
-* More compact;
-* Avoids accidental fall-through;
-* Does not require `break` for each case.
-
 ---
 
-# 🧠 `switch expression`
+## `switch expression`
 
-Modern `switch` can also return a value.
-
-### Example
+`switch` can also produce a value:
 
 ```java
-int numero = 2;
-
 String resultado = switch (numero) {
 
     case 1 -> "One";
-
     case 2 -> "Two";
-
     case 3 -> "Three";
-
-    default -> "Unknown";
-};
-
-System.out.println(resultado);
-```
-
-Result:
-
-```text
-Two
-```
-
-### Comparison
-
-Traditional form:
-
-```java
-String resultado;
-
-switch (numero) {
-
-    case 1:
-        resultado = "One";
-        break;
-
-    case 2:
-        resultado = "Two";
-        break;
-
-    default:
-        resultado = "Unknown";
-}
-```
-
-Modern form:
-
-```java
-String resultado = switch (numero) {
-    case 1 -> "One";
-    case 2 -> "Two";
     default -> "Unknown";
 };
 ```
 
 ---
 
-# 📤 `yield`
+## `yield`
 
-`yield` is used inside certain blocks of a `switch expression` to return a value.
-
-### Example
+When a `case` has multiple instructions, `yield` allows the block to produce a value:
 
 ```java
-int numero = 2;
-
 String resultado = switch (numero) {
 
     case 1 -> "One";
@@ -1559,97 +368,40 @@ String resultado = switch (numero) {
 };
 ```
 
-### Why use it?
-
-When the `case` needs to execute more than one instruction before producing the result.
-
-Example:
-
-```java
-int nota = 8;
-
-String status = switch (nota) {
-
-    case 10 -> "Perfect";
-
-    case 8, 9 -> {
-        System.out.println("Great performance");
-        yield "Approved";
-    }
-
-    default -> "Check result";
-};
-```
-
 ---
 
-# ❓ Ternary Operator `? :`
+# ❓ Ternary operator
 
-The ternary operator allows you to make a simple decision in a single expression.
-
-### Syntax
+Recommended for simple decisions that need to produce a value.
 
 ```java
-condicao ? valorSeTrue : valorSeFalse
-```
-
-### Example
-
-```java
-int idade = 20;
-
-String resultado =
+String status =
         idade >= 18
         ? "Adult"
         : "Minor";
 ```
 
-### Equivalent with `if`
+It is basically equivalent to:
 
 ```java
-String resultado;
+String status;
 
 if (idade >= 18) {
-    resultado = "Adult";
+    status = "Adult";
 } else {
-    resultado = "Minor";
+    status = "Minor";
 }
 ```
 
-### When to use?
-
-When the condition is small and simple.
-
-### Avoid
-
-Excessively complex ternaries:
-
-```java
-String resultado =
-    idade >= 18
-    ? nota >= 7
-        ? "A"
-        : "B"
-    : "C";
-```
-
-This can hurt readability.
+> If the ternary operator becomes difficult to read, prefer `if/else`.
 
 ---
 
-# 🔁 `while`
+# 🔁 Loop structures
 
-`while` repeats a block while a condition is true.
+## `while`
 
-### Syntax
-
-```java
-while (condicao) {
-    // código
-}
-```
-
-### Example
+Runs while the condition is true.
 
 ```java
 int contador = 0;
@@ -1662,273 +414,84 @@ while (contador < 5) {
 }
 ```
 
-Result:
-
-```text
-0
-1
-2
-3
-4
-```
-
-### Flow
-
-```text
-Check condition
-      │
-      ▼
-   true?
-   │    │
- Yes   No
- │      │
- ▼      ▼
-Execute End
- │
- └────────→ back
-```
-
-### Common mistake
-
-Forgetting to change the condition variable:
-
-```java
-int contador = 0;
-
-while (contador < 5) {
-    System.out.println(contador);
-}
-```
-
-This generates an infinite loop.
+Use it mainly when the number of repetitions depends on a condition that can change during execution.
 
 ---
 
-# ♾️ `while (true)`
+## `while (true)`
 
-`while (true)` creates a continuous loop.
-
-### Example
+Creates a continuous loop, normally ended with `break`.
 
 ```java
 while (true) {
+
     System.out.println("Running...");
-}
-```
 
-This code will continue indefinitely.
-
-We normally use a condition with `break`.
-
-```java
-int numero = 0;
-
-while (true) {
-
-    numero++;
-
-    System.out.println(numero);
-
-    if (numero == 5) {
+    if (condicaoDeSaida) {
         break;
     }
 }
 ```
 
-Result:
+It is very common in menus and interactive systems.
 
-```text
-1
-2
-3
-4
-5
-```
+---
 
-### Practical example — menu
+## `do while`
+
+Runs the block at least once.
 
 ```java
-Scanner scanner = new Scanner(System.in);
+int opcao;
 
-while (true) {
+do {
 
-    System.out.println("1 - Register");
-    System.out.println("2 - Consult");
+    System.out.println("1 - Continue");
     System.out.println("0 - Exit");
 
-    int opcao = scanner.nextInt();
+    opcao = scanner.nextInt();
 
-    if (opcao == 0) {
-        break;
-    }
-
-    System.out.println(
-        "Chosen option: " + opcao
-    );
-}
+} while (opcao != 0);
 ```
 
----
+Main difference:
 
-# 🔄 `do while`
-
-`do while` executes the block **at least once** before checking the condition.
-
-### Syntax
-
-```java
-do {
-
-    // código
-
-} while (condicao);
-```
-
-### Example
-
-```java
-int numero = 0;
-
-do {
-
-    System.out.println(numero);
-
-    numero++;
-
-} while (numero < 5);
-```
-
-### Difference from `while`
-
-`while`:
-
-```text
-Check
-   ↓
-Execute
-```
-
-`do while`:
-
-```text
-Execute
-   ↓
-Check
-```
-
-### Important example
-
-```java
-int numero = 10;
-
-do {
-    System.out.println(numero);
-} while (numero < 5);
-```
-
-Even with the condition being false, the program prints:
-
-```text
-10
-```
-
-because the block executes before the check.
+| Structure  | When it checks   |
+| ---------- | ---------------- |
+| `while`    | before execution |
+| `do while` | after execution  |
 
 ---
 
 # 🔂 `for`
 
-`for` is used mainly when we know the structure of the repetition.
-
-### Syntax
+Ideal when the loop has well-defined initialization, condition, and update.
 
 ```java
-for (inicializacao; condicao; incremento) {
-
-}
-```
-
-### Example
-
-```java
-for (int i = 0; i < 5; i++) {
-
+for (int i = 0; i < 10; i++) {
     System.out.println(i);
 }
 ```
 
-### Parts
+Structure:
 
 ```text
-int i = 0
-   ↓
-Initialization
-
-i < 5
-   ↓
-Condition
-
-i++
-   ↓
-Update
+for (initialization; condition; update)
 ```
 
-### Flow
-
-```text
-Initialization
-     ↓
-Condition
-     ↓
-Code
-     ↓
-Update
-     ↓
-Condition again
-```
-
----
-
-# 🧮 Practical example — multiplication table
+Classic example:
 
 ```java
-int numero = 5;
-
 for (int i = 1; i <= 10; i++) {
-
-    System.out.println(
-        numero + " x " +
-        i + " = " +
-        (numero * i)
-    );
+    System.out.println("5 x " + i + " = " + (5 * i));
 }
-```
-
-Result:
-
-```text
-5 x 1 = 5
-5 x 2 = 10
-5 x 3 = 15
-...
-5 x 10 = 50
 ```
 
 ---
 
 # 📦 `for-each`
 
-`for-each` is used mainly to traverse arrays and collections.
-
-### Syntax
-
-```java
-for (Tipo elemento : colecao) {
-
-}
-```
-
-### Example with array
+Mainly used to iterate through arrays and collections when the index is not needed.
 
 ```java
 String[] nomes = {
@@ -1938,86 +501,51 @@ String[] nomes = {
 };
 
 for (String nome : nomes) {
-
     System.out.println(nome);
 }
 ```
 
-### Flow
+Comparison:
 
-```text
-Array
- │
- ├── Ana
- ├── João
- └── Maria
-      ↓
-Each element
-      ↓
-Variable name
-```
-
-### Comparison
-
-Traditional `for`:
-
-```java
-for (int i = 0; i < nomes.length; i++) {
-
-    System.out.println(
-        nomes[i]
-    );
-}
-```
-
-`for-each`:
-
-```java
-for (String nome : nomes) {
-
-    System.out.println(nome);
-}
-```
-
-### When to use?
-
-Use when you need to traverse all elements and don't directly need the index.
+| Need                          | Structure  |
+| ----------------------------- | ---------- |
+| Need the index                | `for`      |
+| Need to iterate over elements | `for-each` |
+| Manual control of increment   | `for`      |
+| Simple collection reading     | `for-each` |
 
 ---
 
-# ⏭️ `continue`
+# 🛑 `break`
 
-`continue` interrupts the current iteration and moves to the next one.
-
-### Example
+Immediately ends the current loop or `switch`.
 
 ```java
-for (int i = 1; i <= 5; i++) {
+for (int i = 0; i < 10; i++) {
 
-    if (i == 3) {
-        continue;
+    if (i == 5) {
+        break;
     }
 
     System.out.println(i);
 }
 ```
 
-Result:
+Output:
 
 ```text
+0
 1
 2
+3
 4
-5
 ```
-
-The number `3` is skipped.
 
 ---
 
-# 🧪 Practical example
+# ⏭️ `continue`
 
-Display only even numbers:
+Skips the current iteration and continues with the next one.
 
 ```java
 for (int i = 1; i <= 10; i++) {
@@ -2030,7 +558,7 @@ for (int i = 1; i <= 10; i++) {
 }
 ```
 
-Result:
+Output:
 
 ```text
 2
@@ -2044,71 +572,7 @@ Result:
 
 # 🏷️ Labels
 
-Java allows naming certain structures using **labels**.
-
-### Syntax
-
-```java
-nomeDoLabel:
-for (...) {
-
-}
-```
-
-Example:
-
-```java
-externo:
-for (int i = 0; i < 3; i++) {
-
-    for (int j = 0; j < 3; j++) {
-
-        System.out.println(
-            i + " - " + j
-        );
-    }
-}
-```
-
-In this case:
-
-```text
-externo:
-```
-
-is a label.
-
-Labels are especially useful with nested loops.
-
----
-
-# 🛑 `break` with label
-
-`break` normally exits only the closest loop.
-
-Example:
-
-```java
-for (int i = 0; i < 3; i++) {
-
-    for (int j = 0; j < 3; j++) {
-
-        if (j == 1) {
-            break;
-        }
-
-        System.out.println(
-            i + " " + j
-        );
-    }
-}
-```
-
-The `break` exits only the second `for`.
-
----
-
-## With label
+Labels allow you to identify loops, mainly in nested structures.
 
 ```java
 externo:
@@ -2117,910 +581,172 @@ for (int i = 0; i < 3; i++) {
     for (int j = 0; j < 3; j++) {
 
         if (i == 1 && j == 1) {
-
             break externo;
         }
 
-        System.out.println(
-            i + " " + j
-        );
+        System.out.println(i + " - " + j);
     }
 }
 ```
 
-When:
-
-```java
-break externo;
-```
-
-is executed, the loop marked as:
-
-```java
-externo:
-```
-
-is exited.
-
-### Flow
-
-```text
-Outer loop
-   │
-   └── Inner loop
-          │
-          └── break externo
-                    │
-                    ▼
-             exit everything
-```
-
----
-
-# ⏭️ `continue` with label
-
-`continue` can also work with labels.
-
-Example:
-
-```java
-externo:
-for (int i = 0; i < 3; i++) {
-
-    for (int j = 0; j < 3; j++) {
-
-        if (j == 1) {
-
-            continue externo;
-        }
-
-        System.out.println(
-            i + " " + j
-        );
-    }
-}
-```
-
-When:
+It is also possible to use:
 
 ```java
 continue externo;
 ```
 
-is executed, execution continues to the **next iteration of the loop identified by the label**.
+> Labels are useful in specific cases, but they should be used carefully to avoid making the flow harder to understand.
 
 ---
 
-# ⚠️ Labels should be used carefully
+# 🧭 Which structure should you use?
 
-Although valid, labels can make algorithms harder to understand.
-
-Use when they really improve control of nested loops.
-
-Avoid turning the code into a collection of jumps that are hard to follow.
-
----
-
-# 📊 Comparisons
-
-## `if` vs `switch`
-
-| Characteristic                     | `if`             | `switch`                |
-| ---------------------------------- | ---------------- | ----------------------- |
-| Complex conditions                 | ✅                | Limited                 |
-| Ranges                             | ✅                | ❌ directly              |
-| Comparison of specific values      | ✅                | ✅                       |
-| Multiple options                   | Can get long     | Very suitable           |
-| Operators `&&` / `                 | ` ✅              | Not in the same way     |
-| Return value directly              | No               | ✅ with switch expression |
+| Situation                                      | Common choice |
+| ---------------------------------------------- | ------------- |
+| A simple condition                             | `if`          |
+| Two possible paths                             | `if / else`   |
+| Multiple conditions                            | `else if`     |
+| Multiple specific values                       | `switch`      |
+| Simple decision producing a value              | `?:`          |
+| Loop with a defined amount/controller          | `for`         |
+| Condition-based loop                           | `while`       |
+| Must execute at least once                     | `do while`    |
+| Iterate through array/collection without index | `for-each`    |
+| End a loop                                     | `break`       |
+| Skip an iteration                              | `continue`    |
 
 ---
 
-# `while` vs `do while`
+# 📊 Quick comparison
 
-| Characteristic             | `while` | `do while` |
-| -------------------------- | ------- | ---------- |
-| Checks before              | ✅       | ❌          |
-| Executes at least once     | ❌       | ✅          |
-| Condition at beginning     | ✅       | ❌          |
-| Condition at end           | ❌       | ✅          |
+### Conditionals
 
----
+| `if`               | `switch`                            |        |        |
+| ------------------ | ----------------------------------- | ------ | ------ |
+| Complex conditions | Specific values                     |        |        |
+| Ranges             | Defined cases                       |        |        |
+| `&&`, `            |                                     | `, `!` | `case` |
+| More flexibility   | More organized for multiple options |        |        |
 
-# `for` vs `while`
+### Loops
 
-| Situation                           | Better common option |
-| ---------------------------------- | ------------------- |
-| Known quantity of repetitions      | `for`               |
-| Dependence on dynamic condition    | `while`             |
-| Traverse array                     | `for` or `for-each` |
-| Continuous menu                    | `while`             |
-| Iteration with index               | `for`               |
+| `for`                               | `while`            | `do while`             |
+| ----------------------------------- | ------------------ | ---------------------- |
+| Controlled repetition               | Dynamic condition  | Executes at least once |
+| Indexes/counters                    | Menus/conditions   | Input and validation   |
+| Initialization + condition + update | Condition at start | Condition at the end   |
 
 ---
 
-# `for` vs `for-each`
+# ⚠️ Common mistakes
 
-| Characteristic                 | `for` | `for-each`    |
-| ------------------------------ | ----- | ------------- |
-| Access to index                | ✅     | ❌ directly   |
-| Traverse all elements          | ✅     | ✅             |
-| Simple syntax                  | Medium| ✅             |
-| Control of increment           | ✅     | ❌             |
-| Ideal for reading collections  | ✅     | ✅             |
+| Problem                              | Correct                     |
+| ------------------------------------ | --------------------------- |
+| `if (idade = 18)`                    | `if (idade == 18)`          |
+| `10 / 3` expecting `3.33`            | `10.0 / 3`                  |
+| Comparing `String` with `==`         | `"Java".equals(nome)`       |
+| Dividing by zero                     | Validate the divisor        |
+| Loop without an update               | Update the control variable |
+| Using `continue` to exit the loop    | Use `break`                 |
+| Traditional `switch` without `break` | Add `break` when necessary  |
+| Many nested `if` statements          | Simplify or extract methods |
 
 ---
 
-# `break` vs `continue`
+# 📁 Project structure
 
-| Command    | Function                       |
-| ---------- | ------------------------------ |
-| `break`    | Exits the loop                 |
-| `continue` | Skips only the current iteration |
-
-Example:
+Inside **JavaBasicCommands**, this content is organized as follows:
 
 ```text
-break
- ↓
-EXITS THE LOOP
+JavaBasicCommands/
+│
+├── Condicionais_Repeticoes_Operadores/
+│   │
+│   ├── Condicionais/
+│   │   └── Examples of conditional structures
+│   │
+│   ├── Operadores/
+│   │   └── Examples of operators
+│   │
+│   ├── Repeticao/
+│   │   └── Examples of loop structures
+│   │
+│   ├── CondicionaisRepeticoesOperadore.md
+│   └── ConditionalStructuresLoopsOperators.md
+│
+├── Entrada_Saida/
+│   ├── EntradaSaida.md
+│   ├── EntradaSaidaJava.java
+│   └── InputOutput.md
+│
+├── Metodos/
+│   ├── Methods.md
+│   ├── Metodos.md
+│   └── MetodosJava.java
+│
+├── Variaveis/
+│   ├── Variables.md
+│   ├── Variaveis.md
+│   └── VariaveisJava.java
+│
+├── README.md
+└── READMEbr.md
 ```
 
-```text
-continue
- ↓
-SKIPS THIS ITERATION
- ↓
-CONTINUES THE LOOP
-```
+The practical examples from this content are organized in the following folders:
+
+* **Condicionais**: examples of conditional structures;
+* **Operadores**: examples of Java language operators;
+* **Repeticao**: examples of loop structures.
+
+The Portuguese and English files allow you to consult the same content in different languages, while the directories separate the examples by subject.
 
 ---
 
-# `&&` vs `&`
+# ▶️ Running the examples
 
-| Operator | Usage                 | Short-circuit |
-| -------- | --------------------- | ------------- |
-| `&&`     | Boolean logic         | ✅             |
-| `&`      | Bitwise or boolean    | ❌             |
+You need to have a **JDK** configured.
 
----
-
-# `||` vs `|`
-
-| Operator | Usage                 | Short-circuit |
-| -------- | --------------------- | ------------- |
-| `        |                     ` | Boolean logic | ✅ |
-| `        | `                     | Bitwise or boolean | ❌ |
-
----
-
-# 🧪 Complete example
-
-The example below combines arithmetic operators, conditional structures and loop structures.
-
-```java
-import java.util.Scanner;
-
-public class Main {
-
-    public static void main(String[] args) {
-
-        Scanner scanner =
-                new Scanner(System.in);
-
-        while (true) {
-
-            System.out.println(
-                "\n=== MENU ==="
-            );
-
-            System.out.println(
-                "1 - Check age"
-            );
-
-            System.out.println(
-                "2 - Calculator"
-            );
-
-            System.out.println(
-                "3 - Show even numbers"
-            );
-
-            System.out.println(
-                "0 - Exit"
-            );
-
-            System.out.print(
-                "Choose: "
-            );
-
-            int opcao =
-                    scanner.nextInt();
-
-            switch (opcao) {
-
-                case 1 -> {
-
-                    System.out.print(
-                        "Enter your age: "
-                    );
-
-                    int idade =
-                            scanner.nextInt();
-
-                    if (idade < 0) {
-
-                        System.out.println(
-                            "Invalid age"
-                        );
-
-                    } else if (idade < 18) {
-
-                        System.out.println(
-                            "Minor"
-                        );
-
-                    } else if (
-                        idade >= 18 &&
-                        idade < 60
-                    ) {
-
-                        System.out.println(
-                            "Adult"
-                        );
-
-                    } else {
-
-                        System.out.println(
-                            "60 years or older"
-                        );
-                    }
-                }
-
-                case 2 -> {
-
-                    System.out.print(
-                        "Enter the first number: "
-                    );
-
-                    double numero1 =
-                            scanner.nextDouble();
-
-                    System.out.print(
-                        "Enter the second number: "
-                    );
-
-                    double numero2 =
-                            scanner.nextDouble();
-
-                    System.out.println(
-                        "Sum: " +
-                        (numero1 + numero2)
-                    );
-
-                    System.out.println(
-                        "Subtraction: " +
-                        (numero1 - numero2)
-                    );
-
-                    System.out.println(
-                        "Multiplication: " +
-                        (numero1 * numero2)
-                    );
-
-                    if (numero2 != 0) {
-
-                        System.out.println(
-                            "Division: " +
-                            (numero1 / numero2)
-                        );
-
-                        System.out.println(
-                            "Modulo: " +
-                            (numero1 % numero2)
-                        );
-
-                    } else {
-
-                        System.out.println(
-                            "Cannot divide by zero."
-                        );
-                    }
-                }
-
-                case 3 -> {
-
-                    for (
-                        int i = 1;
-                        i <= 20;
-                        i++
-                    ) {
-
-                        if (i % 2 != 0) {
-                            continue;
-                        }
-
-                        System.out.println(i);
-                    }
-                }
-
-                case 0 -> {
-
-                    System.out.println(
-                        "Program ended."
-                    );
-
-                    scanner.close();
-
-                    return;
-                }
-
-                default ->
-                    System.out.println(
-                        "Invalid option."
-                    );
-            }
-        }
-    }
-}
-```
-
-This example uses:
-
-* `+` operator;
-* `-` operator;
-* `*` operator;
-* `/` operator;
-* `%` operator;
-* Relational operators;
-* Logical operator `&&`;
-* `while (true)`;
-* `switch`;
-* `case`;
-* `default`;
-* `if`;
-* `else`;
-* `else if`;
-* `for`;
-* `continue`;
-* Data input;
-* Menu control.
-
----
-
-# 📋 General summary
-
-| Structure / Operator | Function                                                |
-| -------------------- | ----------------------------------------------------- |
-| `+`                  | Addition or concatenation                             |
-| `-`                  | Subtraction                                           |
-| `*`                  | Multiplication                                        |
-| `/`                  | Division                                              |
-| `%`                  | Remainder of division                                 |
-| `++`                 | Increment by one unit                                 |
-| `--`                 | Decrement by one unit                                 |
-| `if`                 | Executes when a condition is true                     |
-| `else`               | Executes when `if` is false                           |
-| `else if`            | Adds intermediate conditions                          |
-| Nested `if`          | Puts one condition inside another                     |
-| `switch`             | Selects between different cases                       |
-| `case`               | Represents an option in `switch`                      |
-| `default`            | Default path of `switch`                              |
-| `break`              | Interrupts loop or structure                          |
-| `switch ->`          | Modern syntax of switch                               |
-| `switch expression`  | Switch capable of producing value                     |
-| `yield`              | Produces a value in block of switch expression        |
-| `? :`                | Conditional in form of expression                     |
-| `while`              | Repeats while a condition is true                     |
-| `while (true)`       | Creates a continuous loop                             |
-| `do while`           | Executes before testing the condition                 |
-| `for`                | Loop with initialization, condition and update        |
-| `for-each`           | Traverses arrays and collections                      |
-| `continue`           | Skips the current iteration                           |
-| `label`              | Names a loop or block                                 |
-| `break label`        | Exits an identified structure                         |
-| `continue label`     | Continues the next iteration of the identified structure |
-| `==`                 | Equality                                              |
-| `!=`                 | Difference                                            |
-| `>`                  | Greater                                               |
-| `<`                  | Less                                                  |
-| `>=`                 | Greater or equal                                      |
-| `<=`                 | Less or equal                                         |
-| `&&`                 | Logical AND                                           |
-| `                    | `                                                     | Logical OR |
-| `!`                  | Negation                                              |
-| `&`                  | Bitwise AND                                           |
-| `                    | `                                                     | Bitwise OR |
-| `^`                  | XOR                                                   |
-| `~`                  | Bitwise complement                                    |
-
----
-
-# 🧠 Which structure to choose?
-
-```text
-Need to perform a calculation?
-        │
-        ▼
-Arithmetic operators
-        │
-        ├── add
-        │      ↓
-        │      +
-        │
-        ├── subtract
-        │      ↓
-        │      -
-        │
-        ├── multiply
-        │      ↓
-        │      *
-        │
-        ├── divide
-        │      ↓
-        │      /
-        │
-        └── get the remainder
-               ↓
-               %
-```
-
-For decisions:
-
-```text
-Need to make a decision?
-        │
-        ▼
-       if
-        │
-        ├── two options
-        │      ↓
-        │   if / else
-        │
-        ├── various conditions
-        │      ↓
-        │   else if
-        │
-        └── various specific values
-               ↓
-            switch
-```
-
-For repetitions:
-
-```text
-Need to repeat?
-      │
-      ▼
-Known quantity?
- │             │
-Yes           No
- │             │
- ▼             ▼
-for          while
-```
-
-Traverse collection:
-
-```text
-Array / Collection
-       ↓
-Need the index?
- │             │
-Yes           No
- │             │
- ▼             ▼
-for         for-each
-```
-
----
-
-# 🚫 Common mistakes
-
-## 1. Confusing `=` with `==`
-
-Wrong:
-
-```java
-if (numero = 10) {
-}
-```
-
-Correct:
-
-```java
-if (numero == 10) {
-}
-```
-
----
-
-## 2. Dividing integers expecting decimal result
-
-```java
-int resultado = 10 / 3;
-```
-
-Result:
-
-```text
-3
-```
-
-To get decimal places:
-
-```java
-double resultado = 10.0 / 3;
-```
-
----
-
-## 3. Dividing by zero
-
-Avoid:
-
-```java
-int resultado = numero / 0;
-```
-
-Always validate the divisor:
-
-```java
-if (divisor != 0) {
-    int resultado = numero / divisor;
-}
-```
-
----
-
-## 4. Comparing Strings with `==`
-
-Avoid:
-
-```java
-if (nome == "Java") {
-}
-```
-
-Prefer:
-
-```java
-if ("Java".equals(nome)) {
-}
-```
-
----
-
-## 5. Creating an infinite loop unintentionally
-
-```java
-int contador = 0;
-
-while (contador < 10) {
-
-    System.out.println(contador);
-}
-```
-
-Missing:
-
-```java
-contador++;
-```
-
----
-
-## 6. Forgetting `break` in traditional switch
-
-Without `break`, fall-through can occur.
-
----
-
-## 7. Using `continue` expecting to exit the loop
-
-`continue` does not exit the loop.
-
-To exit:
-
-```java
-break;
-```
-
----
-
-## 8. Creating many nested `if`
-
-Whenever possible, simplify conditions or extract responsibilities to methods.
-
----
-
-# 🧭 Decision hierarchy
-
-A way to visualize the evolution of these concepts:
-
-```text
-Variables
-    ↓
-Arithmetic operators
-    ↓
-Relational operators
-    ↓
-Logical operators
-    ↓
-Conditions
-    ↓
-if / else
-    ↓
-else if
-    ↓
-switch
-    ↓
-Loops
-    ↓
-while / do while
-    ↓
-for
-    ↓
-for-each
-    ↓
-break / continue
-    ↓
-labels
-    ↓
-More complex algorithms
-```
-
----
-
-# 📈 Study evolution
-
-These concepts form a fundamental foundation for more advanced topics in the Java language.
-
-```text
-Variables
-    ↓
-Data types
-    ↓
-Arithmetic operators
-    ↓
-Relational operators
-    ↓
-Logical operators
-    ↓
-Conditional Structures
-    ↓
-Loop Structures
-    ↓
-Methods
-    ↓
-Arrays
-    ↓
-Strings
-    ↓
-Classes and Objects
-    ↓
-Object-Oriented Programming
-    ↓
-Collections
-    ↓
-Exception Handling
-    ↓
-Database
-    ↓
-APIs
-    ↓
-Complete applications
-```
-
-The goal is to continue using these foundations in increasingly structured projects.
-
----
-
-# ✅ Content checklist
-
-## Arithmetic operators
-
-* [x] Addition `+`
-* [x] Subtraction `-`
-* [x] Multiplication `*`
-* [x] Division `/`
-* [x] Modulo `%`
-* [x] Increment `++`
-* [x] Decrement `--`
-* [x] Operator precedence
-
-## Conditionals
-
-* [x] `if`
-* [x] `else`
-* [x] `else if`
-* [x] Nested `if`
-* [x] `switch`
-* [x] `case`
-* [x] `default`
-* [x] `break`
-* [x] `switch ->`
-* [x] `switch expression`
-* [x] `yield`
-* [x] Ternary operator `? :`
-
-## Loops
-
-* [x] `while`
-* [x] `while (true)`
-* [x] `do while`
-* [x] `for`
-* [x] `for-each`
-* [x] `continue`
-
-## Labels
-
-* [x] `label`
-* [x] `break` with label
-* [x] `continue` with label
-
-## Relational operators
-
-* [x] `==`
-* [x] `!=`
-* [x] `>`
-* [x] `<`
-* [x] `>=`
-* [x] `<=`
-
-## Logical operators
-
-* [x] `&&`
-* [x] `||`
-* [x] `!`
-
-## Bitwise operators
-
-* [x] `&`
-* [x] `|`
-* [x] `^`
-* [x] `~`
-
----
-
-# ⚙️ Technologies used
-
-* **Java**
-* **JDK**
-
-Specific versions may vary depending on the environment used during studies.
-
----
-
-# 💻 Prerequisites
-
-To run the examples in this repository, you need to have:
-
-* JDK installed;
-* IDE compatible with Java or terminal;
-* Java environment configured.
-
-Check the installation:
+Check:
 
 ```bash
 java -version
 ```
 
-And:
-
 ```bash
 javac -version
 ```
 
----
-
-# ▶️ How to run
-
-Compile:
+To compile an example:
 
 ```bash
 javac Main.java
 ```
 
-Execute:
+To run:
 
 ```bash
 java Main
 ```
 
-It is also possible to run the examples through an IDE compatible with Java.
+You can also run the files directly using an IDE compatible with Java.
 
 ---
 
-# 📁 Code files organization
+# ☕ About
 
-The example codes are organized in the following folders:
+This directory is part of **JavaBasicCommands**, a study project focused on practicing the fundamentals of the Java language through small, organized, and progressive examples.
 
-* **Operadores/** — Contains all arithmetic, relational, logical and bitwise operator examples (.java files)
-* **Condicionais/** — Contains all conditional structure examples (if, else, switch, ternary operator, etc.) (.java files)
-* **Repeticao/** — Contains all loop structure examples (while, do while, for, for-each, etc.) (.java files)
+**Author:** Eduardo Fernandez Evangelista
 
-Each example is implemented as a separate `.java` file for easy understanding and testing.
-
----
-
-# 📝 Suggested exercises
-
-To practice the content in this repository:
-
-### Arithmetic operators
-
-* Basic calculator;
-* Sum of two numbers;
-* Subtraction of values;
-* Area calculation;
-* Average calculation;
-* Second conversion;
-* Check if number is even or odd;
-* Discount calculation;
-* Simple interest calculation;
-* Change calculation.
-
-### Conditionals
-
-* Age verification;
-* Grade classification;
-* Largest between two numbers;
-* Largest between three numbers;
-* Check if number is positive or negative;
-* Check if number is even or odd;
-* Calculator;
-* Menu with `switch`.
-
-### Loops
-
-* Growing count;
-* Descending count;
-* Multiplication table;
-* Sum of numbers;
-* Average;
-* Factorial;
-* Even numbers;
-* Odd numbers;
-* Number sequences.
-
-### Combined structures
-
-* Interactive menu;
-* Continuous calculator;
-* Simple login system;
-* Password validation;
-* Repetitive registration;
-* Search in arrays;
-* Attempt control;
-* Menu using `while (true)` and `switch`.
-
-> These are examples of possible exercises and do not necessarily mean that all are present in the repository.
-
----
-
-# 👨‍💻 Author
-
-**Eduardo Fernandez Evangelista**
-
-**GitHub:** [EduardoFernandezEvangelista](https://github.com/EduardoFernandezEvangelista)
-
----
-
-# 📄 License
-
-This project does not yet have a specific license defined.
-
-**License:** ``
+**GitHub:** `EduardoFernandezEvangelista`
 
 ---
 
 <div align="center">
 
-### ☕ Java • Conditionals • Loops • Operators
+### ☕ JavaBasicCommands
 
-**Learn → Practice → Understand → Apply → Evolve**
-
-📚 Material developed for study and continuous evolution in Java.
+**Learn → Practice → Apply → Evolve**
 
 </div>
