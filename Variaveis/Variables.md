@@ -6,7 +6,7 @@ This content is part of the Java basic commands study sequence and keeps the pra
 
 ---
 
-# 📚 Covered Topics
+# Covered Topics
 
 This material brings together the main aspects related to the use of data in Java, from **primitive types** to **reference types, Wrapper classes, constants, `enum`, `var`, and variables related to classes and objects**.
 
@@ -36,7 +36,7 @@ This material brings together the main aspects related to the use of data in Jav
 
 ---
 
-# 📖 Data Types in Java
+# Data Types in Java
 
 Java uses **static typing**, which means that the type of a variable is defined at compile time.
 
@@ -58,7 +58,7 @@ Java Types
 
 ---
 
-## 🔹 Primitive Types
+## Primitive Types
 
 Java has **8 primitive types**:
 
@@ -93,7 +93,7 @@ boolean Boolean = false;
 
 ---
 
-# 🔢 Range of Numeric Types
+# Range of Numeric Types
 
 | Type     |                  Minimum |                 Maximum |
 | -------- | -----------------------: | ----------------------: |
@@ -106,7 +106,7 @@ boolean Boolean = false;
 
 ---
 
-# 🔹 `byte`
+# `byte`
 
 An integer type with an **8-bit** representation.
 
@@ -118,7 +118,7 @@ It is suitable for small integer values.
 
 ---
 
-# 🔹 `short`
+# `short`
 
 An integer type with a **16-bit** representation.
 
@@ -130,7 +130,7 @@ Although it is part of the language, it is less commonly used than `int`.
 
 ---
 
-# 🔹 `int`
+# `int`
 
 An integer type with a **32-bit** representation and one of the most commonly used options for integer values.
 
@@ -142,7 +142,7 @@ int result = 10 + 20;
 
 ---
 
-# 🔹 `long`
+# `long`
 
 An integer type with a **64-bit** representation, used for larger integer values.
 
@@ -154,7 +154,7 @@ The `L` suffix identifies the literal as a `long`.
 
 ---
 
-# 🔹 `float`
+# `float`
 
 A decimal type with a **32-bit** representation.
 
@@ -167,7 +167,7 @@ The `f` suffix indicates that the literal should be treated as a `float`.
 
 ---
 
-# 🔹 `double`
+# `double`
 
 A decimal type with a **64-bit** representation.
 
@@ -180,7 +180,7 @@ Decimal literals are considered `double` by default.
 
 ---
 
-# 🔹 `char`
+# `char`
 
 Represents a single Unicode character.
 
@@ -193,7 +193,7 @@ Represents a single Unicode character.
 
 ---
 
-# 🔹 `boolean`
+# `boolean`
 
 Represents two states:
 
@@ -219,7 +219,7 @@ if (approved) {
 
 ---
 
-# 🧩 Reference Types
+# Reference Types
 
 Reference types represent values related to **objects**.
 
@@ -237,7 +237,7 @@ Unlike a primitive type, a reference variable stores a reference to an object.
 
 ---
 
-## 📦 Main Reference Types
+## Main Reference Types
 
 | Type     | Example                         |
 | -------- | ------------------------------- |
@@ -249,7 +249,7 @@ Unlike a primitive type, a reference variable stores a reference to an object.
 
 ---
 
-# 📝 `String`
+# `String`
 
 `String` represents a sequence of characters.
 
@@ -273,7 +273,7 @@ String word = "Java";
 
 ---
 
-# 📦 Arrays
+# Arrays
 
 Arrays store multiple values of the same type.
 
@@ -299,7 +299,7 @@ System.out.println(numbers[0]);
 
 ---
 
-# 📦 Wrapper Classes
+# Wrapper Classes
 
 Wrapper classes represent primitive types as objects.
 
@@ -325,7 +325,7 @@ Character letter = 'A';
 
 ---
 
-## 🔄 Autoboxing and Unboxing
+## Autoboxing and Unboxing
 
 | Process        | Conversion          |
 | -------------- | ------------------- |
@@ -352,7 +352,7 @@ Java performs these conversions automatically in several situations.
 
 ---
 
-# ⚠️ `null`
+# `null`
 
 `null` represents the absence of a reference to an object.
 
@@ -375,7 +375,7 @@ String name = "";
 
 ---
 
-# 📍 Variable Scope
+# Variable Scope
 
 Scope determines **where a variable can be accessed**.
 
@@ -388,7 +388,7 @@ Scope determines **where a variable can be accessed**.
 
 ---
 
-# 📍 Local Variables
+# Local Variables
 
 They are declared inside methods, constructors, or blocks.
 
@@ -405,7 +405,7 @@ The `age` variable can only be accessed inside the scope where it was declared.
 
 ---
 
-# 🏠 Instance Variables
+# Instance Variables
 
 They are declared inside a class, but outside methods, constructors, or blocks.
 
@@ -434,7 +434,7 @@ person2.name = "Maria";
 
 ---
 
-# 🌐 `static` Variables
+# `static` Variables
 
 A `static` variable belongs to the class instead of belonging individually to each object.
 
@@ -458,7 +458,7 @@ Person.numberOfPeople++;
 
 ---
 
-# 🔒 `final`
+# `final`
 
 A `final` variable cannot receive a new assignment after it has been initialized.
 
@@ -474,7 +474,7 @@ age = 20;
 
 ---
 
-# ⭐ `static final`
+# `static final`
 
 The combination `static final` is used to represent constants.
 
@@ -498,7 +498,7 @@ By convention, constants use uppercase names.
 
 ---
 
-# 🧩 Parameter Variables
+# Parameter Variables
 
 Parameters are variables declared in the signature of a method.
 
@@ -527,7 +527,7 @@ The provided values are the **arguments** of the method call.
 
 ---
 
-# 🔐 Access Modifiers
+# Access Modifiers
 
 Access modifiers control access to members of a class.
 
@@ -555,7 +555,7 @@ class Person {
 
 ---
 
-# 🏷️ `enum`
+# `enum`
 
 `enum` represents a fixed set of constants.
 
@@ -582,7 +582,7 @@ It is useful when there is a limited set of possible values.
 
 ---
 
-# 🔌 Variables in Interfaces
+# Variables in Interfaces
 
 Variables declared directly inside interfaces are implicitly:
 
@@ -610,7 +610,7 @@ interface Configuration {
 
 ---
 
-# 🧠 `var`
+# `var`
 
 `var` allows the compiler to infer the type of a **local variable** during initialization.
 
@@ -652,7 +652,7 @@ var number;
 
 ---
 
-# 👤 Classes and Objects
+# Classes and Objects
 
 Variables can also represent attributes of objects.
 
@@ -689,7 +689,7 @@ In this example:
 
 ---
 
-# 🔎 `this`
+# `this`
 
 `this` represents the current instance of the class.
 
@@ -715,7 +715,7 @@ parameter
 
 ---
 
-# 🔗 Reference Variables
+# Reference Variables
 
 A reference variable can point to an object.
 
@@ -745,7 +745,7 @@ Person person = null;
 
 ---
 
-# 📊 Primitives vs References
+# Primitives vs References
 
 | Characteristic     | Primitive                  | Reference                            |
 | ------------------ | -------------------------- | ------------------------------------ |
@@ -757,7 +757,7 @@ Person person = null;
 
 ---
 
-# 📊 Variable Summary
+# Variable Summary
 
 | Type           | Example                      | Associated With                |
 | -------------- | ---------------------------- | ------------------------------ |
@@ -774,7 +774,7 @@ Person person = null;
 
 ---
 
-# 📁 Material Organization
+# Material Organization
 
 The contents of this study are organized together with the other Java fundamentals:
 
@@ -824,7 +824,5 @@ The Markdown files contain the conceptual documentation, while the `.java` files
 ☕ **Java — Variables and Data Types**
 
 📚 Research • 🔬 Study • 💻 Practice • 🧠 Fundamentals
-
-**Research → Understand → Practice**
 
 </div>
