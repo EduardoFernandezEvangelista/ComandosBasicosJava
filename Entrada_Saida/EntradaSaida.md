@@ -28,7 +28,7 @@ Java possui diferentes APIs de I/O porque cada situação exige uma abordagem es
 
 ---
 
-# 💻 `System.in`, `System.out` e `System.err`
+# `System.in`, `System.out` e `System.err`
 
 A classe `System` disponibiliza os principais fluxos padrão da aplicação.
 
@@ -224,13 +224,13 @@ public class ExemploScanner {
 
 ---
 
-# 📚 Outras APIs de Entrada e Saída
+# Outras APIs de Entrada e Saída
 
 As APIs abaixo são organizadas por biblioteca ou grupo de classes. Cada tabela apresenta as principais funções e a finalidade de cada recurso.
 
 ---
 
-## 📖 `BufferedReader`
+## `BufferedReader`
 
 A classe `BufferedReader` pertence ao pacote `java.io` e serve para realizar a leitura eficiente de caracteres. Ela utiliza um buffer para reduzir o número de acessos à origem dos dados.
 
@@ -249,7 +249,7 @@ A classe `BufferedReader` pertence ao pacote `java.io` e serve para realizar a l
 
 ---
 
-## 🔄 `InputStreamReader`
+## `InputStreamReader`
 
 A classe `InputStreamReader` pertence ao pacote `java.io` e serve para converter um fluxo de bytes em um fluxo de caracteres. É útil quando a origem fornece bytes, mas o programa precisa trabalhar com texto.
 
@@ -267,7 +267,7 @@ A classe `InputStreamReader` pertence ao pacote `java.io` e serve para converter
 
 ---
 
-## 📄 `Reader`
+## `Reader`
 
 A classe abstrata `Reader` pertence ao pacote `java.io` e serve como base para as classes que realizam leitura de caracteres.
 
@@ -286,7 +286,7 @@ A classe abstrata `Reader` pertence ao pacote `java.io` e serve como base para a
 
 ---
 
-## 📁 `FileReader`
+## `FileReader`
 
 A classe `FileReader` pertence ao pacote `java.io` e serve para ler caracteres diretamente de arquivos de texto.
 
@@ -302,7 +302,7 @@ A classe `FileReader` pertence ao pacote `java.io` e serve para ler caracteres d
 
 ---
 
-## 🧵 `StringReader`
+## `StringReader`
 
 A classe `StringReader` pertence ao pacote `java.io` e serve para tratar o conteúdo de uma `String` como uma fonte de leitura de caracteres.
 
@@ -320,7 +320,7 @@ A classe `StringReader` pertence ao pacote `java.io` e serve para tratar o conte
 
 ---
 
-## 📝 `Writer`
+## `Writer`
 
 A classe abstrata `Writer` pertence ao pacote `java.io` e serve como base para as classes que escrevem caracteres.
 
@@ -339,7 +339,7 @@ A classe abstrata `Writer` pertence ao pacote `java.io` e serve como base para a
 
 ---
 
-## 🧾 `BufferedWriter`
+## `BufferedWriter`
 
 A classe `BufferedWriter` pertence ao pacote `java.io` e serve para escrever texto utilizando um buffer, reduzindo acessos diretos ao destino.
 
@@ -358,7 +358,7 @@ A classe `BufferedWriter` pertence ao pacote `java.io` e serve para escrever tex
 
 ---
 
-## 📄 `FileWriter`
+## `FileWriter`
 
 A classe `FileWriter` pertence ao pacote `java.io` e serve para escrever caracteres em arquivos de texto.
 
@@ -376,7 +376,7 @@ A classe `FileWriter` pertence ao pacote `java.io` e serve para escrever caracte
 
 ---
 
-## 🔄 `OutputStreamWriter`
+## `OutputStreamWriter`
 
 A classe `OutputStreamWriter` pertence ao pacote `java.io` e serve para converter caracteres em bytes. É utilizada quando o destino trabalha com bytes, mas o programa produz texto.
 
@@ -395,7 +395,7 @@ A classe `OutputStreamWriter` pertence ao pacote `java.io` e serve para converte
 
 ---
 
-## 🖨️ `PrintWriter`
+## `PrintWriter`
 
 A classe `PrintWriter` pertence ao pacote `java.io` e serve para facilitar a escrita de texto, mensagens e dados formatados.
 
@@ -414,7 +414,7 @@ A classe `PrintWriter` pertence ao pacote `java.io` e serve para facilitar a esc
 
 ---
 
-## 📥 `InputStream`
+## `InputStream`
 
 A classe abstrata `InputStream` pertence ao pacote `java.io` e serve como base para a leitura de dados em bytes.
 
@@ -435,7 +435,7 @@ A classe abstrata `InputStream` pertence ao pacote `java.io` e serve como base p
 
 ---
 
-## 📤 `OutputStream`
+## `OutputStream`
 
 A classe abstrata `OutputStream` pertence ao pacote `java.io` e serve como base para a escrita de dados em bytes.
 
@@ -449,7 +449,7 @@ A classe abstrata `OutputStream` pertence ao pacote `java.io` e serve como base 
 
 ---
 
-## 📁 `FileInputStream`
+## `FileInputStream`
 
 A classe `FileInputStream` pertence ao pacote `java.io` e serve para ler bytes diretamente de arquivos.
 
@@ -466,7 +466,7 @@ A classe `FileInputStream` pertence ao pacote `java.io` e serve para ler bytes d
 
 ---
 
-## 📁 `FileOutputStream`
+## `FileOutputStream`
 
 A classe `FileOutputStream` pertence ao pacote `java.io` e serve para escrever bytes diretamente em arquivos.
 
@@ -482,7 +482,7 @@ A classe `FileOutputStream` pertence ao pacote `java.io` e serve para escrever b
 
 ---
 
-## ⚡ `BufferedInputStream`
+## `BufferedInputStream`
 
 A classe `BufferedInputStream` pertence ao pacote `java.io` e serve para melhorar a leitura de bytes utilizando um buffer interno.
 
@@ -500,7 +500,7 @@ A classe `BufferedInputStream` pertence ao pacote `java.io` e serve para melhora
 
 ---
 
-## ⚡ `BufferedOutputStream`
+## `BufferedOutputStream`
 
 A classe `BufferedOutputStream` pertence ao pacote `java.io` e serve para melhorar a escrita de bytes utilizando um buffer interno.
 
@@ -514,7 +514,7 @@ A classe `BufferedOutputStream` pertence ao pacote `java.io` e serve para melhor
 
 ---
 
-## 🧠 `ByteArrayInputStream`
+## `ByteArrayInputStream`
 
 A classe `ByteArrayInputStream` pertence ao pacote `java.io` e serve para ler bytes armazenados em um array na memória.
 
@@ -533,7 +533,7 @@ A classe `ByteArrayInputStream` pertence ao pacote `java.io` e serve para ler by
 
 ---
 
-## 🧠 `ByteArrayOutputStream`
+## `ByteArrayOutputStream`
 
 A classe `ByteArrayOutputStream` pertence ao pacote `java.io` e serve para escrever bytes em uma estrutura de memória que pode ser convertida posteriormente em array ou string.
 
@@ -553,7 +553,7 @@ A classe `ByteArrayOutputStream` pertence ao pacote `java.io` e serve para escre
 
 ---
 
-## 🔢 `DataInputStream`
+## `DataInputStream`
 
 A classe `DataInputStream` pertence ao pacote `java.io` e serve para ler tipos primitivos em formato binário.
 
@@ -577,7 +577,7 @@ A classe `DataInputStream` pertence ao pacote `java.io` e serve para ler tipos p
 
 ---
 
-## 🔢 `DataOutputStream`
+## `DataOutputStream`
 
 A classe `DataOutputStream` pertence ao pacote `java.io` e serve para escrever tipos primitivos em formato binário.
 
@@ -599,7 +599,7 @@ A classe `DataOutputStream` pertence ao pacote `java.io` e serve para escrever t
 
 ---
 
-## 📦 `ObjectInputStream`
+## `ObjectInputStream`
 
 A classe `ObjectInputStream` pertence ao pacote `java.io` e serve para ler e desserializar objetos gravados em formato binário.
 
@@ -622,7 +622,7 @@ A classe `ObjectInputStream` pertence ao pacote `java.io` e serve para ler e des
 
 ---
 
-## 📦 `ObjectOutputStream`
+## `ObjectOutputStream`
 
 A classe `ObjectOutputStream` pertence ao pacote `java.io` e serve para serializar objetos e gravá-los em formato binário.
 
@@ -646,7 +646,7 @@ A classe `ObjectOutputStream` pertence ao pacote `java.io` e serve para serializ
 
 ---
 
-## 🔗 `SequenceInputStream`
+## `SequenceInputStream`
 
 A classe `SequenceInputStream` pertence ao pacote `java.io` e serve para combinar dois ou mais fluxos de entrada em uma única sequência contínua.
 
@@ -660,7 +660,7 @@ A classe `SequenceInputStream` pertence ao pacote `java.io` e serve para combina
 
 ---
 
-## 📄 `File`
+## `File`
 
 A classe `File` pertence ao pacote `java.io` e representa arquivos e diretórios. É uma API tradicional para consultar propriedades e realizar operações básicas no sistema de arquivos.
 
@@ -690,7 +690,7 @@ A classe `File` pertence ao pacote `java.io` e representa arquivos e diretórios
 
 ---
 
-## 🎯 `RandomAccessFile`
+## `RandomAccessFile`
 
 A classe `RandomAccessFile` pertence ao pacote `java.io` e serve para ler e escrever dados em posições específicas de um arquivo.
 
@@ -716,13 +716,13 @@ A classe `RandomAccessFile` pertence ao pacote `java.io` e serve para ler e escr
 
 ---
 
-# 📂 Java NIO.2 — `Path`, `Files` e `Paths`
+# Java NIO.2 — `Path`, `Files` e `Paths`
 
 O pacote `java.nio.file` fornece uma API moderna para trabalhar com arquivos, diretórios e caminhos. Em projetos atuais, `Path` e `Files` geralmente são preferíveis à classe `File`.
 
 ---
 
-## 🛣️ `Path`
+## `Path`
 
 A interface `Path` representa o caminho de um arquivo ou diretório.
 
@@ -748,7 +748,7 @@ A interface `Path` representa o caminho de um arquivo ou diretório.
 
 ---
 
-## 🗂️ `Paths`
+## `Paths`
 
 A classe `Paths` pertence ao pacote `java.nio.file` e serve para criar objetos `Path`.
 
@@ -758,7 +758,7 @@ A classe `Paths` pertence ao pacote `java.nio.file` e serve para criar objetos `
 
 ---
 
-## 📁 `Files`
+## `Files`
 
 A classe `Files` pertence ao pacote `java.nio.file` e fornece operações modernas para criar, ler, escrever, copiar, mover, excluir e consultar arquivos e diretórios.
 
@@ -801,7 +801,7 @@ A classe `Files` pertence ao pacote `java.nio.file` e fornece operações modern
 
 ---
 
-## 🗃️ `DirectoryStream`
+## `DirectoryStream`
 
 A interface `DirectoryStream` pertence ao pacote `java.nio.file` e serve para percorrer o conteúdo de um diretório.
 
@@ -812,7 +812,7 @@ A interface `DirectoryStream` pertence ao pacote `java.nio.file` e serve para pe
 
 ---
 
-## 🖥️ `FileSystem`
+## `FileSystem`
 
 A classe abstrata `FileSystem` representa um sistema de arquivos e fornece informações sobre seus caminhos, provedores e recursos disponíveis.
 
@@ -831,7 +831,7 @@ A classe abstrata `FileSystem` representa um sistema de arquivos e fornece infor
 
 ---
 
-## 🗄️ `FileSystems`
+## `FileSystems`
 
 A classe `FileSystems` pertence ao pacote `java.nio.file` e serve para acessar o sistema de arquivos padrão ou criar sistemas de arquivos adicionais.
 
@@ -843,7 +843,7 @@ A classe `FileSystems` pertence ao pacote `java.nio.file` e serve para acessar o
 
 ---
 
-## 💾 `FileStore`
+## `FileStore`
 
 A classe `FileStore` representa uma unidade ou dispositivo de armazenamento.
 
@@ -860,7 +860,7 @@ A classe `FileStore` representa uma unidade ou dispositivo de armazenamento.
 
 ---
 
-## 👁️ `WatchService`
+## `WatchService`
 
 A interface `WatchService` pertence ao pacote `java.nio.file` e serve para monitorar alterações em arquivos e diretórios.
 
@@ -873,7 +873,7 @@ A interface `WatchService` pertence ao pacote `java.nio.file` e serve para monit
 
 ---
 
-## 🔑 `WatchKey`
+## `WatchKey`
 
 A classe `WatchKey` representa o registro de um diretório no serviço de monitoramento.
 
@@ -887,7 +887,7 @@ A classe `WatchKey` representa o registro de um diretório no serviço de monito
 
 ---
 
-## 🔔 `WatchEvent`
+## `WatchEvent`
 
 A interface `WatchEvent` representa uma alteração detectada em um diretório monitorado.
 
@@ -908,13 +908,13 @@ Tipos comuns de eventos:
 
 ---
 
-# ⚡ Java NIO — Buffers e Channels
+# Java NIO — Buffers e Channels
 
 Java NIO oferece uma abordagem baseada em buffers e canais. Essa API é útil para operações de I/O mais eficientes, comunicação não bloqueante e aplicações que precisam lidar com várias conexões.
 
 ---
 
-## 🧠 `Buffer`
+## `Buffer`
 
 A classe abstrata `Buffer` representa uma área de memória utilizada temporariamente durante operações de leitura e escrita.
 
@@ -939,7 +939,7 @@ A classe abstrata `Buffer` representa uma área de memória utilizada temporaria
 
 ---
 
-## 🔢 `ByteBuffer`
+## `ByteBuffer`
 
 A classe `ByteBuffer` serve para armazenar e manipular bytes em memória.
 
@@ -973,7 +973,7 @@ A classe `ByteBuffer` serve para armazenar e manipular bytes em memória.
 
 ---
 
-## 🔗 `Channel`
+## `Channel`
 
 A interface `Channel` representa um canal de comunicação com arquivos, sockets ou outros recursos de I/O.
 
@@ -984,7 +984,7 @@ A interface `Channel` representa um canal de comunicação com arquivos, sockets
 
 ---
 
-## 📁 `FileChannel`
+## `FileChannel`
 
 A classe `FileChannel` serve para realizar operações de leitura, escrita, posicionamento e transferência em arquivos utilizando canais.
 
@@ -1010,7 +1010,7 @@ A classe `FileChannel` serve para realizar operações de leitura, escrita, posi
 
 ---
 
-## 🌐 `SocketChannel`
+## `SocketChannel`
 
 A classe `SocketChannel` serve para realizar comunicação TCP utilizando canais, podendo operar em modo bloqueante ou não bloqueante.
 
@@ -1035,7 +1035,7 @@ A classe `SocketChannel` serve para realizar comunicação TCP utilizando canais
 
 ---
 
-## 🖥️ `ServerSocketChannel`
+## `ServerSocketChannel`
 
 A classe `ServerSocketChannel` serve para criar servidores TCP baseados em canais.
 
@@ -1054,7 +1054,7 @@ A classe `ServerSocketChannel` serve para criar servidores TCP baseados em canai
 
 ---
 
-## 📡 `DatagramChannel`
+## `DatagramChannel`
 
 A classe `DatagramChannel` serve para realizar comunicação UDP utilizando canais.
 
@@ -1077,7 +1077,7 @@ A classe `DatagramChannel` serve para realizar comunicação UDP utilizando cana
 
 ---
 
-## 🔍 `Selector`
+## `Selector`
 
 A classe `Selector` serve para monitorar vários canais de forma centralizada, principalmente em aplicações não bloqueantes.
 
@@ -1095,7 +1095,7 @@ A classe `Selector` serve para monitorar vários canais de forma centralizada, p
 
 ---
 
-## 🔑 `SelectionKey`
+## `SelectionKey`
 
 A classe `SelectionKey` representa o registro de um canal em um `Selector`.
 
@@ -1117,13 +1117,13 @@ A classe `SelectionKey` representa o registro de um canal em um `Selector`.
 
 ---
 
-# 🌐 Comunicação de Rede
+# Comunicação de Rede
 
 As APIs de rede pertencem principalmente ao pacote `java.net` e permitem criar clientes, servidores e aplicações que trocam dados por TCP, UDP ou HTTP.
 
 ---
 
-## 🔌 `Socket`
+## `Socket`
 
 A classe `Socket` representa uma conexão TCP do lado do cliente.
 
@@ -1149,7 +1149,7 @@ A classe `Socket` representa uma conexão TCP do lado do cliente.
 
 ---
 
-## 🖥️ `ServerSocket`
+## `ServerSocket`
 
 A classe `ServerSocket` serve para criar servidores TCP que aguardam conexões de clientes.
 
@@ -1170,7 +1170,7 @@ A classe `ServerSocket` serve para criar servidores TCP que aguardam conexões d
 
 ---
 
-## 📡 `DatagramSocket`
+## `DatagramSocket`
 
 A classe `DatagramSocket` serve para enviar e receber pacotes UDP.
 
@@ -1194,7 +1194,7 @@ A classe `DatagramSocket` serve para enviar e receber pacotes UDP.
 
 ---
 
-## 📦 `DatagramPacket`
+## `DatagramPacket`
 
 A classe `DatagramPacket` representa um pacote utilizado na comunicação UDP.
 
@@ -1214,7 +1214,7 @@ A classe `DatagramPacket` representa um pacote utilizado na comunicação UDP.
 
 ---
 
-## 🌍 `InetAddress`
+## `InetAddress`
 
 A classe `InetAddress` representa endereços IP e nomes de hosts.
 
@@ -1236,7 +1236,7 @@ A classe `InetAddress` representa endereços IP e nomes de hosts.
 
 ---
 
-## 🌐 `URL`
+## `URL`
 
 A classe `URL` representa o endereço de um recurso localizado na rede.
 
@@ -1258,7 +1258,7 @@ A classe `URL` representa o endereço de um recurso localizado na rede.
 
 ---
 
-## 🔗 `URLConnection`
+## `URLConnection`
 
 A classe `URLConnection` representa uma conexão com um recurso acessado por uma URL.
 
@@ -1287,7 +1287,7 @@ A classe `URLConnection` representa uma conexão com um recurso acessado por uma
 
 ---
 
-## 🌐 `HttpClient`
+## `HttpClient`
 
 A classe `HttpClient` pertence ao pacote `java.net.http` e serve para realizar requisições HTTP e HTTPS de forma moderna.
 
@@ -1307,7 +1307,7 @@ A classe `HttpClient` pertence ao pacote `java.net.http` e serve para realizar r
 
 ---
 
-## 📤 `HttpRequest`
+## `HttpRequest`
 
 A classe `HttpRequest` pertence ao pacote `java.net.http` e representa uma requisição HTTP.
 
@@ -1324,7 +1324,7 @@ A classe `HttpRequest` pertence ao pacote `java.net.http` e representa uma requi
 
 ---
 
-## 📥 `HttpResponse`
+## `HttpResponse`
 
 A interface `HttpResponse` pertence ao pacote `java.net.http` e representa a resposta recebida de uma requisição HTTP.
 
@@ -1341,7 +1341,7 @@ A interface `HttpResponse` pertence ao pacote `java.net.http` e representa a res
 
 ---
 
-# 📊 Bytes x Caracteres
+# Bytes x Caracteres
 
 A escolha entre bytes e caracteres depende do tipo de dado que será processado.
 
@@ -1366,7 +1366,7 @@ Reader / Writer
 
 ---
 
-# 🌐 Comunicação de Rede
+# Comunicação de Rede
 
 As APIs de rede permitem enviar e receber dados entre máquinas ou processos.
 
@@ -1404,7 +1404,7 @@ SERVIDOR
 
 ---
 
-# 📌 Resumo
+# Resumo
 
 Entrada e saída em Java não se limita a imprimir mensagens no console. O mesmo conceito aparece quando uma aplicação:
 
@@ -1466,7 +1466,5 @@ Para começar, `System.out`, `System.in` e `Scanner` já cobrem boa parte dos ex
 <div align="center">
 
 ☕ **Java • Entrada e Saída • I/O**
-
-📚 **Estudo • Prática • Evolução**
 
 </div>
