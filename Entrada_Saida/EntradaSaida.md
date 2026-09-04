@@ -133,7 +133,7 @@ Por ser um fluxo de bytes, `System.in` geralmente é utilizado junto com classes
 
 ---
 
-# ⌨️ `Scanner`
+# `Scanner`
 
 A classe `Scanner` facilita a leitura de dados digitados pelo usuário. Ela funciona como uma camada de leitura sobre `System.in` e consegue converter os valores para tipos primitivos.
 
