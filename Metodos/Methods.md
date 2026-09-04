@@ -6,7 +6,7 @@ Methods help organize code into smaller and reusable parts. This material presen
 
 ---
 
-# 📚 Contents
+# Contents
 
 | Topic            | Content                                     |
 | ---------------- | ------------------------------------------- |
@@ -30,7 +30,7 @@ Methods help organize code into smaller and reusable parts. This material presen
 
 ---
 
-# 🧱 Method Structure
+# Method Structure
 
 A method is a block of code created to perform a specific task. It can receive values, process information, return a result, or simply perform an action.
 
@@ -42,7 +42,7 @@ modifier returnType methodName(parameters) {
 
 ---
 
-## 🔁 Method with a Return Value
+## Method with a Return Value
 
 A method can process information and return a value using the `return` statement.
 
@@ -68,7 +68,7 @@ Output:
 
 ---
 
-## ⚙️ Method without a Return Value
+## Method without a Return Value
 
 When a method does not need to return a value, we use `void`.
 
@@ -92,7 +92,7 @@ Hello, Java!
 
 ---
 
-# 🧩 Method Elements
+# Method Elements
 
 | Element    | Function                                         |
 | ---------- | ------------------------------------------------ |
@@ -106,11 +106,11 @@ Hello, Java!
 
 ---
 
-# 🚀 The `main` Method
+# The `main` Method
 
 The `main` method is used as the entry point of a Java application.
 
-## 🏛️ Traditional Form
+## Traditional Form
 
 ```java
 public static void main(String[] args) {
@@ -158,7 +158,7 @@ Java
 
 ---
 
-## ✨ Simplified Forms
+## Simplified Forms
 
 Recent versions of Java also support simplified forms of the `main` method.
 
@@ -182,13 +182,13 @@ void main(String[] args) {
 
 ---
 
-# 🧰 Useful Methods from the Standard Library
+# Useful Methods from the Standard Library
 
 In addition to methods created by programmers, Java provides many ready-to-use classes with methods for common tasks, such as working with text, lists, files, dates, and numbers.
 
 ---
 
-# 🧮 `Math`
+# `Math`
 
 The `Math` class provides methods for performing mathematical calculations.
 
@@ -229,7 +229,7 @@ Output:
 
 ---
 
-# 🔤 `String`
+# `String`
 
 The `String` class represents text. Because its objects are immutable, methods that modify text return a new `String`.
 
@@ -281,7 +281,7 @@ J
 
 ---
 
-# 🧬 `Object`
+# `Object`
 
 `Object` is the base class of all Java classes.
 
@@ -300,11 +300,11 @@ J
 
 ---
 
-# 📦 Collections
+# Collections
 
 Collections are used to store and manipulate groups of objects.
 
-## 📋 `List`
+## `List`
 
 `List` represents an ordered collection that allows duplicate elements.
 
@@ -339,7 +339,7 @@ System.out.println(names.get(0));
 
 ---
 
-## 🧱 `Set`
+## `Set`
 
 `Set` represents a collection that does not allow duplicate elements.
 
@@ -358,7 +358,7 @@ System.out.println(names.get(0));
 
 ---
 
-## 🗺️ `Map`
+## `Map`
 
 `Map` stores data in **key-value pairs**.
 
@@ -396,7 +396,7 @@ System.out.println(ages.get("John"));
 
 ---
 
-# 🧮 `Arrays`
+# `Arrays`
 
 The `Arrays` class provides methods for sorting, searching, copying, and comparing arrays.
 
@@ -430,7 +430,7 @@ System.out.println(Arrays.toString(numbers));
 
 ---
 
-# 🔎 `Scanner`
+# `Scanner`
 
 `Scanner` allows you to read data entered by the user or obtained from other sources.
 
@@ -466,9 +466,9 @@ scanner.close();
 
 ---
 
-# 📁 Files
+# Files
 
-## 📄 `File`
+## `File`
 
 `File` represents file and directory paths and allows basic operations on them.
 
@@ -494,7 +494,7 @@ scanner.close();
 
 ---
 
-## 🗃️ `Files`
+## `Files`
 
 `Files`, from the `java.nio.file` package, provides methods for working with files and directories.
 
@@ -539,11 +539,11 @@ System.out.println(content);
 
 ---
 
-# 🔌 I/O
+# I/O
 
 I/O classes are used to read and write bytes and characters.
 
-## 📥 `InputStream`
+## `InputStream`
 
 | Method           | Function                         |
 | ---------------- | -------------------------------- |
@@ -555,7 +555,7 @@ I/O classes are used to read and write bytes and characters.
 | `close()`        | Closes the stream                |
 | `transferTo()`   | Transfers data to another stream |
 
-## 📤 `OutputStream`
+## `OutputStream`
 
 | Method    | Function                      |
 | --------- | ----------------------------- |
@@ -563,7 +563,7 @@ I/O classes are used to read and write bytes and characters.
 | `flush()` | Forces the data to be written |
 | `close()` | Closes the stream             |
 
-## 📖 `Reader`
+## `Reader`
 
 | Method    | Function                           |
 | --------- | ---------------------------------- |
@@ -572,13 +572,13 @@ I/O classes are used to read and write bytes and characters.
 | `ready()` | Checks if reading can be performed |
 | `close()` | Closes the reader                  |
 
-## 📚 `BufferedReader`
+## `BufferedReader`
 
 | Method       | Function              |
 | ------------ | --------------------- |
 | `readLine()` | Reads a complete line |
 
-## ✍️ `Writer`
+## `Writer`
 
 | Method     | Function                      |
 | ---------- | ----------------------------- |
@@ -589,11 +589,11 @@ I/O classes are used to read and write bytes and characters.
 
 ---
 
-# 🌊 Stream API
+# Stream API
 
 The Stream API allows collections to be processed in a more organized way by applying filters, transformations, and other operations.
 
-## 🔄 Intermediate Operations
+## Intermediate Operations
 
 | Method       | Function                            |
 | ------------ | ----------------------------------- |
@@ -606,7 +606,7 @@ The Stream API allows collections to be processed in a more organized way by app
 | `skip()`     | Skips elements                      |
 | `peek()`     | Observes elements during processing |
 
-## ✅ Terminal Operations
+## Terminal Operations
 
 | Method             | Function                                    |
 | ------------------ | ------------------------------------------- |
@@ -645,7 +645,7 @@ Output:
 
 ---
 
-# 🧵 Threads
+# Threads
 
 The `Thread` class allows tasks to be executed separately.
 
@@ -675,9 +675,9 @@ thread.start();
 
 ---
 
-# 🗓️ Dates and Times
+# Dates and Times
 
-## 📅 `LocalDate`
+## `LocalDate`
 
 `LocalDate` represents a date without a time.
 
@@ -699,7 +699,7 @@ thread.start();
 | `isAfter()`       | Checks if it is later     |
 | `isEqual()`       | Compares two dates        |
 
-## ⏰ `LocalDateTime`
+## `LocalDateTime`
 
 `LocalDateTime` represents a date and time without a time zone.
 
@@ -719,7 +719,7 @@ thread.start();
 
 ---
 
-# 🎲 `Random`
+# `Random`
 
 The `Random` class generates pseudo-random values.
 
@@ -744,7 +744,7 @@ System.out.println(number);
 
 ---
 
-# 🖥️ `System`
+# `System`
 
 The `System` class provides methods related to the execution environment.
 
@@ -763,7 +763,7 @@ The `System` class provides methods related to the execution environment.
 
 ---
 
-# 🧱 `StringBuilder`
+# `StringBuilder`
 
 `StringBuilder` allows text to be built and modified.
 
@@ -795,7 +795,7 @@ System.out.println(text);
 
 ---
 
-# ⚠️ Exceptions
+# Exceptions
 
 The `Exception` and `Throwable` classes provide methods for checking information about errors.
 
@@ -823,7 +823,7 @@ try {
 
 ---
 
-# 🧪 Integrated Example
+# Integrated Example
 
 ```java
 import java.util.Arrays;
@@ -870,7 +870,7 @@ public class Main {
 
 ---
 
-# 🗂️ Material Organization
+# Material Organization
 
 This content is part of the **JavaBasicCommands** repository and follows the studies about variables, conditionals, loops, operators, and other Java fundamentals.
 
@@ -892,7 +892,5 @@ Metodos/
 <div align="center">
 
 ☕ **Java — Methods**
-
-**Concepts → Examples → Practice**
 
 </div>
