@@ -6,7 +6,7 @@ The material is organized as a practical reference: essential concepts, syntax, 
 
 ---
 
-## 📚 Contents
+## Contents
 
 | Category                  | Main features                          |                                |        |
 | ------------------------- | -------------------------------------- | ------------------------------ | ------ |
@@ -25,7 +25,7 @@ The material is organized as a practical reference: essential concepts, syntax, 
 
 ---
 
-# 🧮 Operators
+# Operators
 
 Operators are used to perform calculations, comparisons, assignments, and logical operations.
 
@@ -116,7 +116,7 @@ System.out.println(saldo); // 130
 
 ---
 
-# 🔎 Relational operators
+# Relational operators
 
 Used to compare values. The result is always `true` or `false`.
 
@@ -154,7 +154,7 @@ Avoid using `==` to compare the content of a `String`.
 
 ---
 
-# 🧩 Logical operators
+# Logical operators
 
 They allow you to combine conditions.
 
@@ -187,7 +187,7 @@ If `objeto != null` is false, the second condition will not be evaluated.
 
 ---
 
-# ⚙️ Bitwise operators
+# Bitwise operators
 
 They work directly with the binary representation of numbers.
 
@@ -216,7 +216,7 @@ The `&` and `|` operators can also be used with `boolean`, but they do not have 
 
 ---
 
-# 🔀 Conditional structures
+# Conditional structures
 
 ## `if`
 
@@ -288,7 +288,7 @@ if (idade >= 18 && possuiCarteira) {
 
 ---
 
-# 🎛️ `switch`
+# `switch`
 
 It is a good option when the decision depends on **specific values**.
 
@@ -370,7 +370,7 @@ String resultado = switch (numero) {
 
 ---
 
-# ❓ Ternary operator
+# Ternary operator
 
 Recommended for simple decisions that need to produce a value.
 
@@ -397,7 +397,7 @@ if (idade >= 18) {
 
 ---
 
-# 🔁 Loop structures
+# Loop structures
 
 ## `while`
 
@@ -463,7 +463,7 @@ Main difference:
 
 ---
 
-# 🔂 `for`
+# `for`
 
 Ideal when the loop has well-defined initialization, condition, and update.
 
@@ -489,7 +489,7 @@ for (int i = 1; i <= 10; i++) {
 
 ---
 
-# 📦 `for-each`
+# `for-each`
 
 Mainly used to iterate through arrays and collections when the index is not needed.
 
@@ -516,7 +516,7 @@ Comparison:
 
 ---
 
-# 🛑 `break`
+# `break`
 
 Immediately ends the current loop or `switch`.
 
@@ -543,7 +543,7 @@ Output:
 
 ---
 
-# ⏭️ `continue`
+# `continue`
 
 Skips the current iteration and continues with the next one.
 
@@ -570,7 +570,7 @@ Output:
 
 ---
 
-# 🏷️ Labels
+# Labels
 
 Labels allow you to identify loops, mainly in nested structures.
 
@@ -599,7 +599,7 @@ continue externo;
 
 ---
 
-# 🧭 Which structure should you use?
+# Which structure should you use?
 
 | Situation                                      | Common choice |
 | ---------------------------------------------- | ------------- |
@@ -617,7 +617,7 @@ continue externo;
 
 ---
 
-# 📊 Quick comparison
+# Quick comparison
 
 ### Conditionals
 
@@ -638,7 +638,7 @@ continue externo;
 
 ---
 
-# ⚠️ Common mistakes
+# Common mistakes
 
 | Problem                              | Correct                     |
 | ------------------------------------ | --------------------------- |
@@ -653,7 +653,7 @@ continue externo;
 
 ---
 
-# 📁 Project structure
+# Project structure
 
 Inside **JavaBasicCommands**, this content is organized as follows:
 
@@ -703,7 +703,7 @@ The Portuguese and English files allow you to consult the same content in differ
 
 ---
 
-# ▶️ Running the examples
+# Running the examples
 
 You need to have a **JDK** configured.
 
@@ -733,7 +733,7 @@ You can also run the files directly using an IDE compatible with Java.
 
 ---
 
-# ☕ About
+# About
 
 This directory is part of **JavaBasicCommands**, a study project focused on practicing the fundamentals of the Java language through small, organized, and progressive examples.
 
@@ -746,7 +746,5 @@ This directory is part of **JavaBasicCommands**, a study project focused on prac
 <div align="center">
 
 ### ☕ JavaBasicCommands
-
-**Learn → Practice → Apply → Evolve**
 
 </div>
