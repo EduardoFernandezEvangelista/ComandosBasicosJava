@@ -823,6 +823,4 @@ The Markdown files contain the conceptual documentation, while the `.java` files
 
 ☕ **Java — Variables and Data Types**
 
-📚 Research • 🔬 Study • 💻 Practice • 🧠 Fundamentals
-
 </div>
