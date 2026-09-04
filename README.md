@@ -6,7 +6,7 @@ The content is organized by topics, with **`.java`** files containing practical 
 
 ---
 
-## 📚 About the Project
+## About the Project
 
 This repository brings together studies and examples of the main fundamentals used in the early stages of Java development.
 
@@ -25,7 +25,7 @@ The project is organized in a simple way and separated by topics, making it easi
 
 ---
 
-# 📂 Repository Structure
+# Repository Structure
 
 ```text
 JavaBasicCommands/
@@ -65,9 +65,9 @@ JavaBasicCommands/
 
 ---
 
-# 🗂️ Content Organization
+# Content Organization
 
-### ☑️ Variables
+### Variables
 
 The `Variaveis` folder contains examples and materials related to the use of variables in Java.
 
@@ -79,7 +79,7 @@ The `Variaveis` folder contains examples and materials related to the use of var
 
 ---
 
-### ⌨️ Input and Output
+### Input and Output
 
 The `Entrada_Saida` folder contains examples related to input and output of information.
 
@@ -91,7 +91,7 @@ The `Entrada_Saida` folder contains examples related to input and output of info
 
 ---
 
-### 🧩 Methods
+### Methods
 
 The `Metodos` folder contains examples and materials related to creating and using methods.
 
@@ -103,7 +103,7 @@ The `Metodos` folder contains examples and materials related to creating and usi
 
 ---
 
-### 🔀 Conditionals, Loops, and Operators
+### Conditionals, Loops, and Operators
 
 These three topics are grouped into the same section because they are directly related to **programming logic**.
 
@@ -120,7 +120,7 @@ These three topics are grouped into the same section because they are directly r
 
 ---
 
-# 📖 Repository Contents
+# Repository Contents
 
 | Category             | Examples of Topics                                          |
 | -------------------- | ----------------------------------------------------------- |
@@ -135,7 +135,7 @@ These three topics are grouped into the same section because they are directly r
 
 ---
 
-# 💻 Java Files
+# Java Files
 
 The `.java` files contain practical examples of the topics studied in the repository.
 
@@ -150,7 +150,7 @@ The `.java` files contain practical examples of the topics studied in the reposi
 
 ---
 
-# 📝 Markdown Files
+# Markdown Files
 
 The `.md` files are used as documentation and reference materials.
 
@@ -165,7 +165,7 @@ Each topic has, when available, a **Portuguese** version and an **English** vers
 
 ---
 
-# 🌎 Languages
+# Languages
 
 The repository contains documentation in two languages:
 
@@ -183,34 +183,34 @@ In addition to the individual files, the project also has two main README files:
 
 ---
 
-# 🎯 Goal
+# Goal
 
 The main goal of this repository is to keep an organized collection of examples of **basic Java commands and fundamentals**.
 
 The project can be used for:
 
-* 📚 Studying;
-* 🔎 Quick reference;
-* 💻 Programming practice;
-* 🧠 Logic exercises;
-* 📝 Concept review;
-* 🌎 Accessing content in Portuguese and English;
-* 📈 Following the progress of Java studies.
+* Studying;
+* Quick reference;
+* Programming practice;
+* Logic exercises;
+* Concept review;
+* Accessing content in Portuguese and English;
+* Following the progress of Java studies.
 
 ---
 
-# ⚙️ Technologies
+# Technologies
 
 | Technology      | Usage                        |
 | --------------- | ---------------------------- |
-| ☕ **Java**      | Development of the examples  |
-| 📄 **Markdown** | Documentation of the content |
-| 🔧 **Git**      | Version control              |
-| 🐙 **GitHub**   | Project storage and sharing  |
+| **Java**      | Development of the examples  |
+| **Markdown** | Documentation of the content |
+| **Git**      | Version control              |
+| **GitHub**   | Project storage and sharing  |
 
 ---
 
-# 💻 Requirements
+# Requirements
 
 To run the Java examples, you need to have a **JDK (Java Development Kit)** installed.
 
@@ -228,7 +228,7 @@ javac -version
 
 ---
 
-# ▶️ Running the Examples
+# Running the Examples
 
 The `.java` files can be run using an IDE or through the terminal.
 
@@ -263,7 +263,7 @@ public static void main(String[] args)
 
 ---
 
-# 📌 Summary
+# Summary
 
 | Area             | Java Examples | Documentation |
 | ---------------- | :-----------: | :-----------: |
@@ -276,7 +276,7 @@ public static void main(String[] args)
 
 ---
 
-# 👨‍💻 Author
+# Author
 
 **Eduardo Fernandez Evangelista**
 
@@ -284,7 +284,7 @@ GitHub: [EduardoFernandezEvangelista](https://github.com/EduardoFernandezEvangel
 
 ---
 
-# 📄 License
+# License
 
 This project does not currently have a specific license.
 
@@ -297,7 +297,5 @@ This project does not currently have a specific license.
 ☕ **Java Basic Commands**
 
 📚 Fundamentals • 💻 Java • 🧠 Logic • 📝 Studies
-
-**Study → Practice → Learn**
 
 </div>
