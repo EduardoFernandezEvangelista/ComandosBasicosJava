@@ -823,6 +823,4 @@ Os arquivos Markdown apresentam a documentação conceitual, enquanto os arquivo
 
 ☕ **Java — Variáveis e Tipos de Dados**
 
-📚 Pesquisa • 🔬 Estudo • 💻 Prática • 🧠 Fundamentos
-
 </div>
