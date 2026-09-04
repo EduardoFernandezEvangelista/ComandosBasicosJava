@@ -90,7 +90,6 @@ public class VariaveisJava {
 
     // Variáveis não primitivas podem ser null,
     // pois são referências para objetos.
-
     String stringNula = null;
     Pessoa pessoaNula = null;
     int[] numerosNulos = null;
@@ -370,19 +369,18 @@ public class VariaveisJava {
 
         // String
         String String = "Hello, World!";
-
+        
         // Array de inteiros
         int[] Array = {
                 1, 2, 3, 4, 5
         };
-
+        
         // Array de Strings
         String[] ArrayString = {
                 "Java",
                 "é",
                 "legal"
         };
-
 
         System.out.println(
                 "String: " + String
@@ -401,9 +399,7 @@ public class VariaveisJava {
 
         // Variáveis não primitivas podem receber null
         String Null = null;
-
         int[] numeros = null;
-
         Pessoa pessoa = null;
 
 
@@ -436,24 +432,14 @@ public class VariaveisJava {
          * char      -> Character
          * boolean   -> Boolean
          */
-
-
         Byte Byte = 127;
-
         Short Short = 32767;
-
         Integer Integer = 2147483647;
-
         Long Long = 9223372036854775807L;
-
         Float Float = 3.14f;
-
         Double Double = 3.14159;
-
         Character Character = 'J';
-
         Boolean Boolean = true;
-
 
         System.out.println(
                 "Byte: " + Byte
@@ -487,7 +473,6 @@ public class VariaveisJava {
                 "Boolean: " + Boolean
         );
 
-
         // Wrappers podem receber null
         Integer IntegerNull = null;
 
@@ -518,7 +503,6 @@ public class VariaveisJava {
 
 
         pessoa1.apresentar();
-
         pessoa2.apresentar();
 
         System.out.println(
@@ -537,28 +521,19 @@ public class VariaveisJava {
          * através do valor inicial.
          */
 
-
+        // int
         var variavelVar = 0;
 
-        // int
-
-
+        // String
         var variavelVar2 = "Hello";
 
-        // String
-
-
+        // double
         var variavelVar3 = 3.14;
 
-        // double
-
-
+        // int[]
         var variavelVar4 = new int[]{
                 1, 2, 3
         };
-
-        // int[]
-
 
         System.out.println(
                 "var variavelVar: "
@@ -589,7 +564,6 @@ public class VariaveisJava {
      * Elas só podem ser utilizadas dentro
      * daquele método.
      */
-
     void metodoComParametro(int variavelParametro) {
 
         System.out.println(
