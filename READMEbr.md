@@ -6,7 +6,7 @@ O conteúdo está organizado por temas, com arquivos **`.java`** contendo exempl
 
 ---
 
-## 📚 Sobre o projeto
+## Sobre o projeto
 
 Este repositório reúne estudos e exemplos dos principais fundamentos utilizados no desenvolvimento inicial com Java.
 
@@ -25,7 +25,7 @@ A organização foi feita de forma simples e separada por assuntos, facilitando 
 
 ---
 
-## 📂 Estrutura do repositório
+## Estrutura do repositório
 
 ```text
 JavaBasicCommands/
@@ -65,9 +65,9 @@ JavaBasicCommands/
 
 ---
 
-## 🗂️ Organização dos conteúdos
+## Organização dos conteúdos
 
-### ☑️ Variáveis
+### Variáveis
 
 A pasta `Variaveis` contém os exemplos e materiais relacionados ao uso de variáveis em Java.
 
@@ -79,7 +79,7 @@ A pasta `Variaveis` contém os exemplos e materiais relacionados ao uso de vari�
 
 ---
 
-### ⌨️ Entrada e Saída
+### Entrada e Saída
 
 A pasta `Entrada_Saida` reúne exemplos relacionados à entrada e saída de informações.
 
@@ -91,7 +91,7 @@ A pasta `Entrada_Saida` reúne exemplos relacionados à entrada e saída de info
 
 ---
 
-### 🧩 Métodos
+### Métodos
 
 A pasta `Metodos` reúne exemplos e materiais relacionados à criação e utilização de métodos.
 
@@ -103,7 +103,7 @@ A pasta `Metodos` reúne exemplos e materiais relacionados à criação e utiliz
 
 ---
 
-### 🔀 Condicionais, Repetições e Operadores
+### Condicionais, Repetições e Operadores
 
 Esses três assuntos estão agrupados em uma mesma seção, pois são fundamentos diretamente relacionados à lógica de programação.
 
@@ -120,7 +120,7 @@ Esses três assuntos estão agrupados em uma mesma seção, pois são fundamento
 
 ---
 
-## 📖 Conteúdos do repositório
+## Conteúdos do repositório
 
 | Categoria             | Exemplos de assuntos                                     |
 | --------------------- | -------------------------------------------------------- |
@@ -135,7 +135,7 @@ Esses três assuntos estão agrupados em uma mesma seção, pois são fundamento
 
 ---
 
-## 💻 Arquivos Java
+## Arquivos Java
 
 Os arquivos `.java` possuem exemplos práticos dos conteúdos estudados.
 
@@ -150,7 +150,7 @@ Os arquivos `.java` possuem exemplos práticos dos conteúdos estudados.
 
 ---
 
-## 📝 Arquivos Markdown
+## Arquivos Markdown
 
 Os arquivos `.md` são utilizados como materiais de documentação e consulta.
 
@@ -165,7 +165,7 @@ Cada tema possui, quando aplicável, uma versão em **português** e outra em **
 
 ---
 
-## 🌎 Idiomas
+## Idiomas
 
 O repositório possui documentação em dois idiomas:
 
@@ -183,34 +183,34 @@ Além dos arquivos individuais, o projeto também possui dois arquivos principai
 
 ---
 
-## 🎯 Objetivo
+## Objetivo
 
 O principal objetivo deste repositório é manter uma coleção organizada de exemplos dos **comandos e fundamentos básicos de Java**.
 
 O projeto pode ser utilizado para:
 
-* 📚 Estudo;
-* 🔎 Consulta rápida;
-* 💻 Prática de programação;
-* 🧠 Exercícios de lógica;
-* 📝 Revisão de conceitos;
-* 🌎 Consulta dos conteúdos em português e inglês;
-* 📈 Acompanhamento dos estudos de Java.
+* Estudo;
+* Consulta rápida;
+* Prática de programação;
+* Exercícios de lógica;
+* Revisão de conceitos;
+* Consulta dos conteúdos em português e inglês;
+* Acompanhamento dos estudos de Java.
 
 ---
 
-## ⚙️ Tecnologias
+## Tecnologias
 
 | Tecnologia      | Utilização                                  |
 | --------------- | ------------------------------------------- |
-| ☕ **Java**      | Desenvolvimento dos exemplos                |
-| 📄 **Markdown** | Documentação dos conteúdos                  |
-| 🔧 **Git**      | Controle de versão                          |
-| 🐙 **GitHub**   | Armazenamento e compartilhamento do projeto |
+| **Java**      | Desenvolvimento dos exemplos                |
+| **Markdown** | Documentação dos conteúdos                  |
+| **Git**      | Controle de versão                          |
+| **GitHub**   | Armazenamento e compartilhamento do projeto |
 
 ---
 
-## 💻 Pré-requisitos
+## Pré-requisitos
 
 Para executar os exemplos Java, é necessário possuir um **JDK (Java Development Kit)** instalado.
 
@@ -228,7 +228,7 @@ javac -version
 
 ---
 
-## ▶️ Execução
+## Execução
 
 Os arquivos `.java` podem ser executados através de uma IDE ou pelo terminal.
 
@@ -263,7 +263,7 @@ public static void main(String[] args)
 
 ---
 
-## 📌 Resumo
+## Resumo
 
 | Área            | Possui exemplos Java | Possui documentação |
 | --------------- | :------------------: | :-----------------: |
@@ -276,7 +276,7 @@ public static void main(String[] args)
 
 ---
 
-## 👨‍💻 Autor
+## Autor
 
 **Eduardo Fernandez Evangelista**
 
@@ -284,7 +284,7 @@ GitHub: [EduardoFernandezEvangelista](https://github.com/EduardoFernandezEvangel
 
 ---
 
-## 📄 Licença
+## Licença
 
 Este projeto ainda não possui uma licença específica definida.
 
@@ -297,7 +297,5 @@ Este projeto ainda não possui uma licença específica definida.
 ☕ **Java Basic Commands**
 
 📚 Fundamentos • 💻 Java • 🧠 Lógica • 📝 Estudos
-
-**Estudar → Praticar → Aprender**
 
 </div>
