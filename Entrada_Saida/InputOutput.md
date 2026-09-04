@@ -1467,6 +1467,4 @@ To get started, `System.out`, `System.in`, and `Scanner` already cover many exer
 
 ☕ **Java • Input and Output • I/O**
 
-📚 **Study • Practice • Progress**
-
 </div>
