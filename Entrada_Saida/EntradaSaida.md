@@ -1,286 +1,222 @@
-# 📥📤 Entrada e Saída (I/O) em Java
+# 📥📤 Java — Entrada e Saída (I/O)
 
-Um guia completo e profissional sobre **Input/Output (I/O)** em Java, explorando como programas recebem, processam e enviam dados através de diferentes canais e recursos.
+> Entrada e saída, ou **I/O (Input/Output)**, é a forma como uma aplicação Java recebe, processa e envia dados.
 
----
+No dia a dia, uma aplicação pode:
 
-## 🎯 Introdução
+| Operação             | Exemplos                                      |
+| -------------------- | --------------------------------------------- |
+| 📥 **Input**         | Ler dados do teclado, arquivos ou rede        |
+| ⚙️ **Processamento** | Validar, transformar ou armazenar informações |
+| 📤 **Output**        | Exibir dados, salvar arquivos ou enviar dados |
 
-Toda aplicação Java interage com o mundo exterior. Programas:
-
-- **Recebem dados** do usuário, arquivos, rede ou sensores (Input)
-- **Processam** esses dados internamente
-- **Enviam resultados** para o console, arquivos, rede ou outros dispositivos (Output)
-
-Java oferece um conjunto robusto de classes para gerenciar entrada e saída de dados, organizadas em diferentes categorias conforme a origem ou destino dos dados, e o tipo de dado (bytes vs. caracteres).
-
-### ⚠️ Nota Importante Sobre os Exemplos
-
-Os exemplos de código apresentados neste README são **conceituais e educacionais**. Nem todos os exemplos práticos possuem arquivos executáveis depositados no repositório. Os códigos aqui servem como:
-
-- **Referência de sintaxe e uso**
-- **Base para aprendizado e compreensão**
-- **Ponto de partida para seus próprios projetos**
-
-Para executar os exemplos, você deverá:
-
-1. Copiar o código apresentado
-2. Criar um arquivo `.java` em seu ambiente
-3. Adaptar conforme necessário para seu caso de uso
-4. Compilar e executar localmente
-
-Se houver **arquivos de exemplo completos** no repositório, eles estarão explicitamente referenciados em suas respectivas seções.
-
----
-
-## 💡 Conceitos Fundamentais
-
-### O que é Input/Output (I/O)?
-
-- **Input (Entrada)**: Fluxo de dados entrando na aplicação
-- **Output (Saída)**: Fluxo de dados saindo da aplicação
-
-### De onde vêm os dados?
-
-```
-┌─────────────────────────────────┐
-│    ORIGEM DOS DADOS             │
-├─────────────────────────────────┤
-│ • Teclado (console)             │
-│ • Arquivos no disco             │
-│ • Rede (internet/sockets)       │
-│ • Sensores e dispositivos       │
-│ • Memória (strings, arrays)     │
-└─────────────────────────────────┘
-         ↓
-    PROGRAMA JAVA
-         ↓
-┌─────────────────────────────────┐
-│    DESTINO DOS DADOS            │
-├─────────────────────────────────┤
-│ • Tela (console)                │
-│ • Arquivos no disco             │
-│ • Rede (internet/sockets)       │
-│ • Impressora                    │
-│ • Memória (strings, arrays)     │
-└─────────────────────────────────┘
-```
-
-### Por que existem diferentes classes?
-
-Java oferece diferentes classes porque cada situação de I/O tem características únicas:
-
-- **Bytes vs. Caracteres**: Arquivos binários usam bytes; textos usam caracteres
-- **Buffering**: Ler um caractere de cada vez é ineficiente; buffers armazenam múltiplos dados
-- **Bloqueante vs. Não-bloqueante**: Tradicional (bloqueante) vs. NIO (não-bloqueante)
-- **Origem**: Console, arquivo, rede e memória precisam de abordagens diferentes
-
----
-
-## 💻 Entrada e Saída pelo Console
-
-O console é o canal de comunicação padrão entre programa e usuário através do terminal/linha de comando.
-
-### System.in, System.out e System.err
-
-Java oferece três fluxos padrão através da classe `System`:
-
-#### **System.in** (Entrada)
-```
-Usuário digita no teclado
-         ↓
-    System.in
-         ↓
-Programa Java recebe bytes
-```
-
-- Representa a entrada padrão do programa
-- Normalmente recebe dados digitados pelo usuário
-- Retorna um `InputStream` (fluxo de bytes)
-
-#### **System.out** (Saída Padrão)
-```
+```text
+Origem dos dados
+       ↓
+Entrada (Input)
+       ↓
 Programa Java
-         ↓
-  System.out
-         ↓
-Mensagens exibidas no console
+       ↓
+Processamento
+       ↓
+Saída (Output)
+       ↓
+Destino dos dados
 ```
 
-- Saída padrão do programa
-- Normalmente exibe informações e resultados
-- É um `PrintStream`
+Java possui diferentes APIs de I/O porque cada situação exige uma abordagem específica. Ler um nome digitado no teclado, copiar uma imagem, escrever um arquivo ou receber dados de uma rede são operações semelhantes em conceito, mas diferentes na implementação.
 
-#### **System.err** (Saída de Erros)
-```
-Programa Java (erro)
-         ↓
-  System.err
-         ↓
-Mensagens de erro exibidas no console
-```
+---
 
-- Saída destinada especificamente a mensagens de erro
-- Permite separar informações normais de problemas
-- É um `PrintStream`
+# 💻 `System.in`, `System.out` e `System.err`
 
-### PrintStream
+A classe `System` disponibiliza os principais fluxos padrão da aplicação.
 
-`PrintStream` é a classe que oferece métodos convenientes para impressão de dados formatados. Tanto `System.out` quanto `System.err` são instâncias de `PrintStream`.
+| Fluxo        | Tipo          | Utilização                            |
+| ------------ | ------------- | ------------------------------------- |
+| `System.in`  | `InputStream` | Entrada padrão, normalmente o teclado |
+| `System.out` | `PrintStream` | Saída padrão, normalmente o console   |
+| `System.err` | `PrintStream` | Mensagens de erro e avisos            |
 
-### Exemplos Práticos
+## `System.out`
 
-#### Usando System.out
+`System.out` é utilizado para exibir informações no console.
+
+| Método      | Função                                          |
+| ----------- | ----------------------------------------------- |
+| `print()`   | Exibe o conteúdo sem quebrar a linha            |
+| `println()` | Exibe o conteúdo e quebra a linha               |
+| `printf()`  | Exibe o conteúdo com formatação                 |
+| `format()`  | Exibe o conteúdo utilizando formatação          |
+| `flush()`   | Força o envio imediato do conteúdo para a saída |
+
+## Outras formas de escrever no Java atual
+
+Em versões recentes do Java, também é possível utilizar referências estáticas ou criar uma referência local para o fluxo de saída.
+
+### Importação estática de `System.out`
 
 ```java
-// Método print() - não adiciona quebra de linha
-System.out.print("Olá");
-System.out.print(" Mundo");  // Output: Olá Mundo
+import static java.lang.System.out;
 
-// Método println() - adiciona quebra de linha automaticamente
-System.out.println("Primeira linha");
-System.out.println("Segunda linha");
-// Output:
-// Primeira linha
-// Segunda linha
+public class Main {
 
-// Método printf() - impressão formatada (similar a C)
-String nome = "João";
-int idade = 25;
-double salario = 3500.50;
-
-System.out.printf("Nome: %s, Idade: %d, Salário: R$ %.2f%n", 
-                  nome, idade, salario);
-// Output: Nome: João, Idade: 25, Salário: R$ 3500.50
-```
-
-#### Usando System.err
-
-```java
-// Similar a System.out, mas destinado a erros
-System.err.println("⚠️ AVISO: Operação não autorizada!");
-System.err.printf("Erro: Campo '%s' é obrigatório%n", "email");
-
-try {
-    int resultado = 10 / 0;
-} catch (ArithmeticException e) {
-    System.err.println("Erro aritmético detectado!");
-    e.printStackTrace(System.err);  // Imprime stack trace no stderr
+    public static void main(String[] args) {
+        out.println("Olá, Java!");
+        out.print("Mensagem sem quebra de linha");
+    }
 }
 ```
 
-#### Diferenças Práticas
+### Referência local para `System.out`
 
 ```java
-// Informação normal
-System.out.println("Processando arquivo: dados.txt");
+import java.io.PrintStream;
 
-// Informação de sucesso
-System.out.println("✓ Arquivo processado com sucesso!");
+public class Main {
 
-// Mensagem de erro
-System.err.println("✗ Erro: Arquivo não encontrado!");
+    public static void main(String[] args) {
 
-// Debug
-System.out.printf("[DEBUG] Variável x = %d%n", x);
+        PrintStream output = System.out;
 
-// Progresso
-System.out.print(".");  // Mostra progresso sem quebra de linha
+        output.println("Olá, Java!");
+        output.print("Outra mensagem");
+    }
+}
 ```
+
+### `System.console()`
+
+Também é possível utilizar `System.console()` em aplicações executadas diretamente no terminal.
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+
+        var console = System.console();
+
+        if (console != null) {
+            console.writer().println("Mensagem no console");
+        }
+    }
+}
+```
+
+Apesar dessas alternativas, `System.out.println()` continua sendo a forma mais comum e direta para exemplos, testes rápidos e aplicações simples.
+
+## `System.in`
+
+`System.in` representa a entrada padrão da aplicação. Normalmente, essa entrada vem do teclado.
+
+```text
+Teclado
+   ↓
+System.in
+   ↓
+Programa Java
+```
+
+Por ser um fluxo de bytes, `System.in` geralmente é utilizado junto com classes como `Scanner`, `InputStreamReader` ou `BufferedReader`.
+
+## `System.err`
+
+`System.err` é utilizado para mensagens de erro ou avisos.
+
+| Método              | Função                                         |
+| ------------------- | ---------------------------------------------- |
+| `print()`           | Exibe uma mensagem de erro sem quebrar a linha |
+| `println()`         | Exibe uma mensagem de erro e quebra a linha    |
+| `printf()`          | Exibe uma mensagem de erro formatada           |
+| `flush()`           | Força o envio imediato da mensagem de erro     |
+| `printStackTrace()` | Exibe informações detalhadas de uma exceção    |
 
 ---
 
-## ⌨️ Scanner - Leitura Simplificada
+# ⌨️ `Scanner`
 
-`Scanner` é uma classe da biblioteca padrão Java que **facilita a leitura de dados de entrada**, agindo como um intermediário entre `System.in` e o programa.
+A classe `Scanner` facilita a leitura de dados digitados pelo usuário. Ela funciona como uma camada de leitura sobre `System.in` e consegue converter os valores para tipos primitivos.
 
-### Por que usar Scanner?
-
-- `System.in` trabalha apenas com bytes brutos
-- `Scanner` processa bytes e converte para tipos específicos (int, double, String, etc.)
-- Oferece métodos intuitivos para diferentes tipos de dados
-- Tratamento automático de espaços em branco e quebras de linha
-
-### Fluxo de Dados
-
-```
-Usuário digita: "João 25 3500.50"
-         ↓
-    Teclado
-         ↓
-  System.in (bytes)
-         ↓
-   Scanner
-         ↓
-Programa recebe dados formatados
+```text
+Teclado
+   ↓
+System.in
+   ↓
+Scanner
+   ↓
+Programa Java
 ```
 
-### Métodos Principais
+## Principais métodos
 
-```java
-Scanner scanner = new Scanner(System.in);
+| Método                | Função                                     |
+| --------------------- | ------------------------------------------ |
+| `next()`              | Lê o próximo token                         |
+| `nextLine()`          | Lê uma linha completa                      |
+| `nextInt()`           | Lê um número inteiro                       |
+| `nextDouble()`        | Lê um número decimal                       |
+| `nextFloat()`         | Lê um número decimal do tipo `float`       |
+| `nextLong()`          | Lê um número do tipo `long`                |
+| `nextShort()`         | Lê um número do tipo `short`               |
+| `nextByte()`          | Lê um número do tipo `byte`                |
+| `nextBoolean()`       | Lê um valor booleano                       |
+| `hasNext()`           | Verifica se existe outro token             |
+| `hasNextLine()`       | Verifica se existe outra linha             |
+| `hasNextInt()`        | Verifica se o próximo valor é inteiro      |
+| `hasNextDouble()`     | Verifica se o próximo valor é decimal      |
+| `hasNextFloat()`      | Verifica se o próximo valor é `float`      |
+| `hasNextLong()`       | Verifica se o próximo valor é `long`       |
+| `hasNextBoolean()`    | Verifica se o próximo valor é booleano     |
+| `useDelimiter()`      | Define o separador utilizado na leitura    |
+| `useLocale()`         | Define a localidade utilizada na conversão |
+| `skip()`              | Ignora parte do conteúdo de entrada        |
+| `findInLine()`        | Procura um padrão na linha atual           |
+| `findWithinHorizon()` | Procura um padrão dentro de um limite      |
+| `close()`             | Fecha o scanner                            |
 
-// next() - lê a próxima palavra (até espaço/quebra de linha)
-String palavra = scanner.next();
+## `next()` x `nextLine()`
 
-// nextLine() - lê a linha inteira (incluindo espaços)
-String linha = scanner.nextLine();
+A diferença entre esses métodos costuma causar confusão.
 
-// nextInt() - lê um inteiro
-int numero = scanner.nextInt();
+| Método       | Comportamento                         |
+| ------------ | ------------------------------------- |
+| `next()`     | Lê apenas o próximo token             |
+| `nextLine()` | Lê toda a linha até a quebra de linha |
 
-// nextDouble() - lê um número decimal
-double valor = scanner.nextDouble();
+Exemplo:
 
-// nextBoolean() - lê um booleano (true/false)
-boolean ativo = scanner.nextBoolean();
+```text
+Entrada:
+João Silva 25
 
-// Importante: fechar o Scanner após usar
-scanner.close();
+next()
+→ João
+
+nextLine()
+→ João Silva 25
 ```
 
-### Diferença: next() vs nextLine()
-
-```
-Entrada do usuário: "João Silva 25"
-
-Usando next():
-String nome = scanner.next();  // "João"
-                               // " Silva 25" permanece no buffer
-
-Usando nextLine():
-String linha = scanner.nextLine();  // "João Silva 25"
-                                    // Buffer limpo
-```
-
-### Exemplo Completo
+Ao misturar métodos como `nextInt()` com `nextLine()`, é necessário prestar atenção ao caractere de quebra de linha que permanece no buffer:
 
 ```java
 import java.util.Scanner;
 
-public class LeitorDados {
+public class ExemploScanner {
+
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Digite seu nome: ");
-        String nome = scanner.nextLine();
-        
+
         System.out.print("Digite sua idade: ");
         int idade = scanner.nextInt();
-        
-        System.out.print("Digite sua altura (em metros): ");
-        double altura = scanner.nextDouble();
-        
-        System.out.print("É estudante? (true/false): ");
-        boolean estudante = scanner.nextBoolean();
-        
-        // Exibir dados coletados
-        System.out.println("\n--- Dados Coletados ---");
-        System.out.printf("Nome: %s%n", nome);
-        System.out.printf("Idade: %d anos%n", idade);
-        System.out.printf("Altura: %.2f m%n", altura);
-        System.out.printf("Estudante: %s%n", estudante);
-        
+
+        scanner.nextLine();
+
+        System.out.print("Digite seu nome completo: ");
+        String nome = scanner.nextLine();
+
+        System.out.println(nome + " tem " + idade + " anos.");
+
         scanner.close();
     }
 }
@@ -288,727 +224,1249 @@ public class LeitorDados {
 
 ---
 
-## 📖 BufferedReader e InputStreamReader
+# 📚 Outras APIs de Entrada e Saída
 
-Essas classes oferecem uma abordagem alternativa e mais eficiente para ler dados de entrada.
+As APIs abaixo são organizadas por biblioteca ou grupo de classes. Cada tabela apresenta as principais funções e a finalidade de cada recurso.
 
-### O Fluxo de Conversão
+---
 
-```
-System.in (bytes brutos)
-         ↓
-InputStreamReader (converte bytes em caracteres)
-         ↓
-BufferedReader (armazena caracteres em buffer)
-         ↓
-Programa Java (acessa caracteres/linhas)
-```
+## 📖 `BufferedReader`
 
-### InputStreamReader
+A classe `BufferedReader` pertence ao pacote `java.io` e serve para realizar a leitura eficiente de caracteres. Ela utiliza um buffer para reduzir o número de acessos à origem dos dados.
 
-- **O que é**: Converter (bridge) entre bytes e caracteres
-- **Para que serve**: Ler `System.in` como caracteres, não bytes
-- **Vantagem**: Permite trabalhar com caracteres Unicode
+| Método                                | Função                                                |
+| ------------------------------------- | ----------------------------------------------------- |
+| `read()`                              | Lê um caractere                                       |
+| `read(char[] cbuf)`                   | Lê caracteres para um array                           |
+| `read(char[] cbuf, int off, int len)` | Lê uma quantidade específica de caracteres            |
+| `readLine()`                          | Lê uma linha completa                                 |
+| `skip(long n)`                        | Ignora uma quantidade de caracteres                   |
+| `ready()`                             | Verifica se a leitura pode ser realizada sem bloqueio |
+| `mark(int readAheadLimit)`            | Marca uma posição para possível retorno               |
+| `reset()`                             | Retorna à posição marcada                             |
+| `markSupported()`                     | Verifica se a marcação de posição é suportada         |
+| `close()`                             | Fecha o leitor                                        |
 
-### BufferedReader
+---
 
-- **O que é**: Wrapper que armazena dados em um buffer
-- **Para que serve**: Otimizar leitura, evitar ler um byte/caractere de cada vez
-- **Vantagem**: Operações mais eficientes e método `readLine()` conveniente
+## 🔄 `InputStreamReader`
 
-### Comparação: Scanner vs BufferedReader
+A classe `InputStreamReader` pertence ao pacote `java.io` e serve para converter um fluxo de bytes em um fluxo de caracteres. É útil quando a origem fornece bytes, mas o programa precisa trabalhar com texto.
 
-| Aspecto | Scanner | BufferedReader |
-|---------|---------|---|
-| Conversão de tipos | Automática | Manual |
-| Facilidade de uso | Alta | Média |
-| Performance | Boa | Melhor |
-| Método para ler linha | `nextLine()` | `readLine()` |
-| Tratamento de exceções | Simplificado | Requer try-catch |
+| Método                                | Função                                                |
+| ------------------------------------- | ----------------------------------------------------- |
+| `read()`                              | Lê um caractere                                       |
+| `read(char[] cbuf)`                   | Lê caracteres para um array                           |
+| `read(char[] cbuf, int off, int len)` | Lê uma quantidade específica de caracteres            |
+| `ready()`                             | Verifica se a leitura pode ser realizada sem bloqueio |
+| `getEncoding()`                       | Retorna a codificação utilizada                       |
+| `skip(long n)`                        | Ignora caracteres                                     |
+| `mark(int readAheadLimit)`            | Marca uma posição de leitura                          |
+| `reset()`                             | Retorna à posição marcada                             |
+| `close()`                             | Fecha o leitor                                        |
 
-### Exemplo Prático
+---
 
-```java
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.IOException;
+## 📄 `Reader`
 
-public class LeitorComBufferedReader {
-    public static void main(String[] args) {
-        try {
-            // Criar a cadeia de leitura
-            InputStreamReader isr = new InputStreamReader(System.in);
-            BufferedReader br = new BufferedReader(isr);
-            
-            System.out.print("Digite seu nome: ");
-            String nome = br.readLine();  // Lê a linha inteira
-            
-            System.out.print("Digite sua idade: ");
-            String idadeStr = br.readLine();
-            int idade = Integer.parseInt(idadeStr);  // Conversão manual
-            
-            System.out.println("\n--- Dados Coletados ---");
-            System.out.printf("Nome: %s%n", nome);
-            System.out.printf("Idade: %d%n", idade);
-            
-            br.close();  // Fechar quando terminar
-            
-        } catch (IOException e) {
-            System.err.println("Erro ao ler entrada: " + e.getMessage());
-        }
-    }
-}
+A classe abstrata `Reader` pertence ao pacote `java.io` e serve como base para as classes que realizam leitura de caracteres.
+
+| Método                                | Função                                     |
+| ------------------------------------- | ------------------------------------------ |
+| `read()`                              | Lê um caractere                            |
+| `read(char[] cbuf)`                   | Lê caracteres para um array                |
+| `read(char[] cbuf, int off, int len)` | Lê uma quantidade específica de caracteres |
+| `skip(long n)`                        | Ignora caracteres                          |
+| `ready()`                             | Verifica se existem caracteres disponíveis |
+| `mark(int readAheadLimit)`            | Marca uma posição de leitura               |
+| `reset()`                             | Retorna à posição marcada                  |
+| `markSupported()`                     | Verifica se a marcação é suportada         |
+| `transferTo(Writer out)`              | Transfere caracteres para um escritor      |
+| `close()`                             | Fecha o leitor                             |
+
+---
+
+## 📁 `FileReader`
+
+A classe `FileReader` pertence ao pacote `java.io` e serve para ler caracteres diretamente de arquivos de texto.
+
+| Método                                | Função                                     |
+| ------------------------------------- | ------------------------------------------ |
+| `read()`                              | Lê um caractere                            |
+| `read(char[] cbuf)`                   | Lê caracteres para um array                |
+| `read(char[] cbuf, int off, int len)` | Lê uma quantidade específica de caracteres |
+| `skip(long n)`                        | Ignora caracteres do arquivo               |
+| `ready()`                             | Verifica se existem dados disponíveis      |
+| `getEncoding()`                       | Retorna a codificação utilizada            |
+| `close()`                             | Fecha o arquivo                            |
+
+---
+
+## 🧵 `StringReader`
+
+A classe `StringReader` pertence ao pacote `java.io` e serve para tratar o conteúdo de uma `String` como uma fonte de leitura de caracteres.
+
+| Método                                | Função                                     |
+| ------------------------------------- | ------------------------------------------ |
+| `read()`                              | Lê um caractere da string                  |
+| `read(char[] cbuf)`                   | Lê caracteres para um array                |
+| `read(char[] cbuf, int off, int len)` | Lê uma quantidade específica de caracteres |
+| `skip(long n)`                        | Ignora caracteres                          |
+| `ready()`                             | Verifica se existem caracteres disponíveis |
+| `mark(int readAheadLimit)`            | Marca uma posição                          |
+| `reset()`                             | Retorna à posição marcada                  |
+| `markSupported()`                     | Verifica se a marcação é suportada         |
+| `close()`                             | Fecha o leitor                             |
+
+---
+
+## 📝 `Writer`
+
+A classe abstrata `Writer` pertence ao pacote `java.io` e serve como base para as classes que escrevem caracteres.
+
+| Método                                         | Função                               |
+| ---------------------------------------------- | ------------------------------------ |
+| `write(int c)`                                 | Escreve um caractere                 |
+| `write(char[] cbuf)`                           | Escreve um array de caracteres       |
+| `write(char[] cbuf, int off, int len)`         | Escreve parte de um array            |
+| `write(String str)`                            | Escreve uma string                   |
+| `write(String str, int off, int len)`          | Escreve parte de uma string          |
+| `append(char c)`                               | Adiciona um caractere                |
+| `append(CharSequence csq)`                     | Adiciona uma sequência de caracteres |
+| `append(CharSequence csq, int start, int end)` | Adiciona parte de uma sequência      |
+| `flush()`                                      | Envia os dados pendentes             |
+| `close()`                                      | Fecha o escritor                     |
+
+---
+
+## 🧾 `BufferedWriter`
+
+A classe `BufferedWriter` pertence ao pacote `java.io` e serve para escrever texto utilizando um buffer, reduzindo acessos diretos ao destino.
+
+| Método                                 | Função                                  |
+| -------------------------------------- | --------------------------------------- |
+| `write(int c)`                         | Escreve um caractere                    |
+| `write(char[] cbuf)`                   | Escreve um array de caracteres          |
+| `write(char[] cbuf, int off, int len)` | Escreve parte de um array               |
+| `write(String s)`                      | Escreve uma string                      |
+| `write(String s, int off, int len)`    | Escreve parte de uma string             |
+| `newLine()`                            | Escreve o separador de linha do sistema |
+| `append(char c)`                       | Adiciona um caractere                   |
+| `append(CharSequence csq)`             | Adiciona uma sequência de caracteres    |
+| `flush()`                              | Envia os dados do buffer                |
+| `close()`                              | Fecha o escritor                        |
+
+---
+
+## 📄 `FileWriter`
+
+A classe `FileWriter` pertence ao pacote `java.io` e serve para escrever caracteres em arquivos de texto.
+
+| Método                                 | Função                               |
+| -------------------------------------- | ------------------------------------ |
+| `write(int c)`                         | Escreve um caractere                 |
+| `write(char[] cbuf)`                   | Escreve um array de caracteres       |
+| `write(char[] cbuf, int off, int len)` | Escreve parte de um array            |
+| `write(String str)`                    | Escreve uma string                   |
+| `write(String str, int off, int len)`  | Escreve parte de uma string          |
+| `append(char c)`                       | Adiciona um caractere                |
+| `append(CharSequence csq)`             | Adiciona uma sequência de caracteres |
+| `flush()`                              | Envia os dados pendentes             |
+| `close()`                              | Fecha o arquivo                      |
+
+---
+
+## 🔄 `OutputStreamWriter`
+
+A classe `OutputStreamWriter` pertence ao pacote `java.io` e serve para converter caracteres em bytes. É utilizada quando o destino trabalha com bytes, mas o programa produz texto.
+
+| Método                                 | Função                              |
+| -------------------------------------- | ----------------------------------- |
+| `write(int c)`                         | Escreve um caractere                |
+| `write(char[] cbuf)`                   | Escreve caracteres                  |
+| `write(char[] cbuf, int off, int len)` | Escreve parte de um array           |
+| `write(String str)`                    | Escreve uma string                  |
+| `write(String str, int off, int len)`  | Escreve parte de uma string         |
+| `getEncoding()`                        | Retorna a codificação utilizada     |
+| `append(char c)`                       | Adiciona um caractere               |
+| `append(CharSequence csq)`             | Adiciona uma sequência              |
+| `flush()`                              | Converte e envia os dados pendentes |
+| `close()`                              | Fecha o escritor                    |
+
+---
+
+## 🖨️ `PrintWriter`
+
+A classe `PrintWriter` pertence ao pacote `java.io` e serve para facilitar a escrita de texto, mensagens e dados formatados.
+
+| Método         | Função                               |
+| -------------- | ------------------------------------ |
+| `print()`      | Escreve um valor sem quebra de linha |
+| `println()`    | Escreve um valor e quebra a linha    |
+| `printf()`     | Escreve dados formatados             |
+| `format()`     | Escreve dados utilizando formatação  |
+| `append()`     | Adiciona caracteres ou sequências    |
+| `write()`      | Escreve caracteres ou strings        |
+| `flush()`      | Envia os dados pendentes             |
+| `checkError()` | Verifica se ocorreu algum erro       |
+| `clearError()` | Limpa o estado de erro               |
+| `close()`      | Fecha o escritor                     |
+
+---
+
+## 📥 `InputStream`
+
+A classe abstrata `InputStream` pertence ao pacote `java.io` e serve como base para a leitura de dados em bytes.
+
+| Método                             | Função                                      |
+| ---------------------------------- | ------------------------------------------- |
+| `read()`                           | Lê um byte                                  |
+| `read(byte[] b)`                   | Lê bytes para um array                      |
+| `read(byte[] b, int off, int len)` | Lê uma quantidade específica de bytes       |
+| `readAllBytes()`                   | Lê todos os bytes disponíveis               |
+| `readNBytes()`                     | Lê até uma quantidade determinada de bytes  |
+| `skip(long n)`                     | Ignora bytes                                |
+| `available()`                      | Retorna uma estimativa de bytes disponíveis |
+| `mark(int readlimit)`              | Marca uma posição de leitura                |
+| `reset()`                          | Retorna à posição marcada                   |
+| `markSupported()`                  | Verifica se a marcação é suportada          |
+| `transferTo(OutputStream out)`     | Transfere dados para um fluxo de saída      |
+| `close()`                          | Fecha o fluxo                               |
+
+---
+
+## 📤 `OutputStream`
+
+A classe abstrata `OutputStream` pertence ao pacote `java.io` e serve como base para a escrita de dados em bytes.
+
+| Método                              | Função                    |
+| ----------------------------------- | ------------------------- |
+| `write(int b)`                      | Escreve um byte           |
+| `write(byte[] b)`                   | Escreve um array de bytes |
+| `write(byte[] b, int off, int len)` | Escreve parte de um array |
+| `flush()`                           | Envia os dados pendentes  |
+| `close()`                           | Fecha o fluxo             |
+
+---
+
+## 📁 `FileInputStream`
+
+A classe `FileInputStream` pertence ao pacote `java.io` e serve para ler bytes diretamente de arquivos.
+
+| Método                             | Função                                      |
+| ---------------------------------- | ------------------------------------------- |
+| `read()`                           | Lê um byte                                  |
+| `read(byte[] b)`                   | Lê bytes para um array                      |
+| `read(byte[] b, int off, int len)` | Lê parte dos dados                          |
+| `skip(long n)`                     | Ignora bytes                                |
+| `available()`                      | Retorna uma estimativa de bytes disponíveis |
+| `getChannel()`                     | Retorna o canal associado ao arquivo        |
+| `getFD()`                          | Retorna o descritor do arquivo              |
+| `close()`                          | Fecha o arquivo                             |
+
+---
+
+## 📁 `FileOutputStream`
+
+A classe `FileOutputStream` pertence ao pacote `java.io` e serve para escrever bytes diretamente em arquivos.
+
+| Método                              | Função                               |
+| ----------------------------------- | ------------------------------------ |
+| `write(int b)`                      | Escreve um byte                      |
+| `write(byte[] b)`                   | Escreve um array de bytes            |
+| `write(byte[] b, int off, int len)` | Escreve parte de um array            |
+| `flush()`                           | Envia os dados pendentes             |
+| `getChannel()`                      | Retorna o canal associado ao arquivo |
+| `getFD()`                           | Retorna o descritor do arquivo       |
+| `close()`                           | Fecha o arquivo                      |
+
+---
+
+## ⚡ `BufferedInputStream`
+
+A classe `BufferedInputStream` pertence ao pacote `java.io` e serve para melhorar a leitura de bytes utilizando um buffer interno.
+
+| Método                             | Função                                      |
+| ---------------------------------- | ------------------------------------------- |
+| `read()`                           | Lê um byte                                  |
+| `read(byte[] b)`                   | Lê bytes para um array                      |
+| `read(byte[] b, int off, int len)` | Lê parte dos dados                          |
+| `skip(long n)`                     | Ignora bytes                                |
+| `available()`                      | Retorna uma estimativa de bytes disponíveis |
+| `mark(int readlimit)`              | Marca uma posição                           |
+| `reset()`                          | Retorna à posição marcada                   |
+| `markSupported()`                  | Verifica se a marcação é suportada          |
+| `close()`                          | Fecha o fluxo                               |
+
+---
+
+## ⚡ `BufferedOutputStream`
+
+A classe `BufferedOutputStream` pertence ao pacote `java.io` e serve para melhorar a escrita de bytes utilizando um buffer interno.
+
+| Método                              | Função                    |
+| ----------------------------------- | ------------------------- |
+| `write(int b)`                      | Escreve um byte no buffer |
+| `write(byte[] b)`                   | Escreve bytes no buffer   |
+| `write(byte[] b, int off, int len)` | Escreve parte de um array |
+| `flush()`                           | Envia os dados do buffer  |
+| `close()`                           | Fecha o fluxo             |
+
+---
+
+## 🧠 `ByteArrayInputStream`
+
+A classe `ByteArrayInputStream` pertence ao pacote `java.io` e serve para ler bytes armazenados em um array na memória.
+
+| Método                             | Função                                    |
+| ---------------------------------- | ----------------------------------------- |
+| `read()`                           | Lê um byte                                |
+| `read(byte[] b)`                   | Lê bytes para um array                    |
+| `read(byte[] b, int off, int len)` | Lê parte dos dados                        |
+| `readAllBytes()`                   | Lê todos os bytes restantes               |
+| `skip(long n)`                     | Ignora bytes                              |
+| `available()`                      | Retorna a quantidade de bytes disponíveis |
+| `mark(int readAheadLimit)`         | Marca uma posição                         |
+| `reset()`                          | Retorna ao início ou à posição marcada    |
+| `markSupported()`                  | Informa se a marcação é suportada         |
+| `close()`                          | Fecha o fluxo em memória                  |
+
+---
+
+## 🧠 `ByteArrayOutputStream`
+
+A classe `ByteArrayOutputStream` pertence ao pacote `java.io` e serve para escrever bytes em uma estrutura de memória que pode ser convertida posteriormente em array ou string.
+
+| Método                              | Função                                         |
+| ----------------------------------- | ---------------------------------------------- |
+| `write(int b)`                      | Escreve um byte                                |
+| `write(byte[] b)`                   | Escreve um array de bytes                      |
+| `write(byte[] b, int off, int len)` | Escreve parte de um array                      |
+| `writeBytes(byte[] b)`              | Escreve todos os bytes do array                |
+| `writeTo(OutputStream out)`         | Envia o conteúdo para outro fluxo              |
+| `toByteArray()`                     | Retorna os dados como array de bytes           |
+| `toString()`                        | Converte os dados para string                  |
+| `reset()`                           | Limpa o conteúdo armazenado                    |
+| `size()`                            | Retorna a quantidade de bytes armazenados      |
+| `flush()`                           | Não realiza operação significativa nesse fluxo |
+| `close()`                           | Fecha o fluxo em memória                       |
+
+---
+
+## 🔢 `DataInputStream`
+
+A classe `DataInputStream` pertence ao pacote `java.io` e serve para ler tipos primitivos em formato binário.
+
+| Método                | Função                                 |
+| --------------------- | -------------------------------------- |
+| `readBoolean()`       | Lê um booleano                         |
+| `readByte()`          | Lê um byte                             |
+| `readUnsignedByte()`  | Lê um byte sem sinal                   |
+| `readShort()`         | Lê um `short`                          |
+| `readUnsignedShort()` | Lê um `short` sem sinal                |
+| `readChar()`          | Lê um caractere                        |
+| `readInt()`           | Lê um inteiro                          |
+| `readLong()`          | Lê um `long`                           |
+| `readFloat()`         | Lê um `float`                          |
+| `readDouble()`        | Lê um `double`                         |
+| `readUTF()`           | Lê uma string no formato UTF           |
+| `readFully()`         | Garante a leitura completa de um array |
+| `skipBytes()`         | Ignora uma quantidade de bytes         |
+| `read()`              | Lê um byte                             |
+| `close()`             | Fecha o fluxo                          |
+
+---
+
+## 🔢 `DataOutputStream`
+
+A classe `DataOutputStream` pertence ao pacote `java.io` e serve para escrever tipos primitivos em formato binário.
+
+| Método           | Função                                 |
+| ---------------- | -------------------------------------- |
+| `writeBoolean()` | Escreve um booleano                    |
+| `writeByte()`    | Escreve um byte                        |
+| `writeShort()`   | Escreve um `short`                     |
+| `writeChar()`    | Escreve um caractere                   |
+| `writeInt()`     | Escreve um inteiro                     |
+| `writeLong()`    | Escreve um `long`                      |
+| `writeFloat()`   | Escreve um `float`                     |
+| `writeDouble()`  | Escreve um `double`                    |
+| `writeUTF()`     | Escreve uma string no formato UTF      |
+| `write()`        | Escreve um byte ou array de bytes      |
+| `size()`         | Retorna a quantidade de bytes escritos |
+| `flush()`        | Envia os dados pendentes               |
+| `close()`        | Fecha o fluxo                          |
+
+---
+
+## 📦 `ObjectInputStream`
+
+A classe `ObjectInputStream` pertence ao pacote `java.io` e serve para ler e desserializar objetos gravados em formato binário.
+
+| Método                 | Função                                                 |
+| ---------------------- | ------------------------------------------------------ |
+| `readObject()`         | Lê e reconstrói um objeto                              |
+| `readUnshared()`       | Lê um objeto sem reutilizar referências compartilhadas |
+| `readBoolean()`        | Lê um booleano                                         |
+| `readByte()`           | Lê um byte                                             |
+| `readShort()`          | Lê um `short`                                          |
+| `readChar()`           | Lê um caractere                                        |
+| `readInt()`            | Lê um inteiro                                          |
+| `readLong()`           | Lê um `long`                                           |
+| `readFloat()`          | Lê um `float`                                          |
+| `readDouble()`         | Lê um `double`                                         |
+| `readUTF()`            | Lê uma string UTF                                      |
+| `defaultReadObject()`  | Lê os campos padrão de um objeto                       |
+| `registerValidation()` | Registra uma validação durante a desserialização       |
+| `close()`              | Fecha o fluxo                                          |
+
+---
+
+## 📦 `ObjectOutputStream`
+
+A classe `ObjectOutputStream` pertence ao pacote `java.io` e serve para serializar objetos e gravá-los em formato binário.
+
+| Método                 | Função                                         |
+| ---------------------- | ---------------------------------------------- |
+| `writeObject()`        | Serializa e escreve um objeto                  |
+| `writeUnshared()`      | Escreve um objeto sem compartilhar referências |
+| `writeBoolean()`       | Escreve um booleano                            |
+| `writeByte()`          | Escreve um byte                                |
+| `writeShort()`         | Escreve um `short`                             |
+| `writeChar()`          | Escreve um caractere                           |
+| `writeInt()`           | Escreve um inteiro                             |
+| `writeLong()`          | Escreve um `long`                              |
+| `writeFloat()`         | Escreve um `float`                             |
+| `writeDouble()`        | Escreve um `double`                            |
+| `writeUTF()`           | Escreve uma string UTF                         |
+| `defaultWriteObject()` | Escreve os campos padrão de um objeto          |
+| `reset()`              | Limpa o estado de referências do fluxo         |
+| `flush()`              | Envia os dados pendentes                       |
+| `close()`              | Fecha o fluxo                                  |
+
+---
+
+## 🔗 `SequenceInputStream`
+
+A classe `SequenceInputStream` pertence ao pacote `java.io` e serve para combinar dois ou mais fluxos de entrada em uma única sequência contínua.
+
+| Método                             | Função                                      |
+| ---------------------------------- | ------------------------------------------- |
+| `read()`                           | Lê um byte do fluxo atual                   |
+| `read(byte[] b)`                   | Lê bytes para um array                      |
+| `read(byte[] b, int off, int len)` | Lê parte dos dados                          |
+| `available()`                      | Retorna uma estimativa de bytes disponíveis |
+| `close()`                          | Fecha todos os fluxos combinados            |
+
+---
+
+## 📄 `File`
+
+A classe `File` pertence ao pacote `java.io` e representa arquivos e diretórios. É uma API tradicional para consultar propriedades e realizar operações básicas no sistema de arquivos.
+
+| Método               | Função                                         |
+| -------------------- | ---------------------------------------------- |
+| `exists()`           | Verifica se o arquivo ou diretório existe      |
+| `isFile()`           | Verifica se representa um arquivo              |
+| `isDirectory()`      | Verifica se representa um diretório            |
+| `createNewFile()`    | Cria um novo arquivo                           |
+| `mkdir()`            | Cria um diretório                              |
+| `mkdirs()`           | Cria diretórios e subdiretórios necessários    |
+| `delete()`           | Exclui o arquivo ou diretório                  |
+| `renameTo()`         | Renomeia ou move o arquivo                     |
+| `list()`             | Lista os nomes do conteúdo de um diretório     |
+| `listFiles()`        | Lista os arquivos e diretórios de um diretório |
+| `length()`           | Retorna o tamanho do arquivo                   |
+| `lastModified()`     | Retorna a data da última modificação           |
+| `getName()`          | Retorna o nome do arquivo                      |
+| `getPath()`          | Retorna o caminho informado                    |
+| `getAbsolutePath()`  | Retorna o caminho absoluto                     |
+| `getCanonicalPath()` | Retorna o caminho canônico                     |
+| `canRead()`          | Verifica se o arquivo pode ser lido            |
+| `canWrite()`         | Verifica se o arquivo pode ser alterado        |
+| `canExecute()`       | Verifica se o arquivo pode ser executado       |
+| `isHidden()`         | Verifica se o arquivo está oculto              |
+| `toURI()`            | Converte o caminho para uma URI                |
+
+---
+
+## 🎯 `RandomAccessFile`
+
+A classe `RandomAccessFile` pertence ao pacote `java.io` e serve para ler e escrever dados em posições específicas de um arquivo.
+
+| Método             | Função                                    |
+| ------------------ | ----------------------------------------- |
+| `read()`           | Lê um byte                                |
+| `readInt()`        | Lê um inteiro                             |
+| `readLong()`       | Lê um `long`                              |
+| `readDouble()`     | Lê um `double`                            |
+| `readUTF()`        | Lê uma string UTF                         |
+| `write()`          | Escreve bytes                             |
+| `writeInt()`       | Escreve um inteiro                        |
+| `writeLong()`      | Escreve um `long`                         |
+| `writeDouble()`    | Escreve um `double`                       |
+| `writeUTF()`       | Escreve uma string UTF                    |
+| `seek()`           | Move o cursor para uma posição específica |
+| `getFilePointer()` | Retorna a posição atual do cursor         |
+| `length()`         | Retorna o tamanho do arquivo              |
+| `setLength()`      | Define o tamanho do arquivo               |
+| `skipBytes()`      | Avança uma quantidade de bytes            |
+| `readFully()`      | Garante a leitura completa dos dados      |
+| `close()`          | Fecha o arquivo                           |
+
+---
+
+# 📂 Java NIO.2 — `Path`, `Files` e `Paths`
+
+O pacote `java.nio.file` fornece uma API moderna para trabalhar com arquivos, diretórios e caminhos. Em projetos atuais, `Path` e `Files` geralmente são preferíveis à classe `File`.
+
+---
+
+## 🛣️ `Path`
+
+A interface `Path` representa o caminho de um arquivo ou diretório.
+
+| Método             | Função                                         |
+| ------------------ | ---------------------------------------------- |
+| `getFileName()`    | Retorna o último elemento do caminho           |
+| `getParent()`      | Retorna o diretório pai                        |
+| `getRoot()`        | Retorna a raiz do caminho                      |
+| `getName()`        | Retorna um elemento específico do caminho      |
+| `getNameCount()`   | Retorna a quantidade de elementos              |
+| `subpath()`        | Retorna uma parte do caminho                   |
+| `startsWith()`     | Verifica se começa com determinado caminho     |
+| `endsWith()`       | Verifica se termina com determinado caminho    |
+| `normalize()`      | Remove elementos redundantes                   |
+| `resolve()`        | Combina dois caminhos                          |
+| `resolveSibling()` | Combina um caminho com o diretório pai         |
+| `relativize()`     | Calcula o caminho relativo entre dois caminhos |
+| `toAbsolutePath()` | Converte para caminho absoluto                 |
+| `toRealPath()`     | Retorna o caminho real existente               |
+| `toFile()`         | Converte para um objeto `File`                 |
+| `toUri()`          | Converte para uma URI                          |
+| `iterator()`       | Percorre os elementos do caminho               |
+
+---
+
+## 🗂️ `Paths`
+
+A classe `Paths` pertence ao pacote `java.nio.file` e serve para criar objetos `Path`.
+
+| Método                              | Função                                          |
+| ----------------------------------- | ----------------------------------------------- |
+| `get(String first, String... more)` | Cria um `Path` a partir de partes de um caminho |
+
+---
+
+## 📁 `Files`
+
+A classe `Files` pertence ao pacote `java.nio.file` e fornece operações modernas para criar, ler, escrever, copiar, mover, excluir e consultar arquivos e diretórios.
+
+| Método                      | Função                                                |
+| --------------------------- | ----------------------------------------------------- |
+| `exists()`                  | Verifica se o caminho existe                          |
+| `notExists()`               | Verifica se o caminho não existe                      |
+| `isRegularFile()`           | Verifica se o caminho representa um arquivo comum     |
+| `isDirectory()`             | Verifica se o caminho representa um diretório         |
+| `isReadable()`              | Verifica se o caminho pode ser lido                   |
+| `isWritable()`              | Verifica se o caminho pode ser alterado               |
+| `isExecutable()`            | Verifica se o caminho pode ser executado              |
+| `createFile()`              | Cria um arquivo vazio                                 |
+| `createDirectory()`         | Cria um diretório                                     |
+| `createDirectories()`       | Cria diretórios e subdiretórios necessários           |
+| `delete()`                  | Exclui um arquivo ou diretório                        |
+| `deleteIfExists()`          | Exclui se o caminho existir                           |
+| `copy()`                    | Copia um arquivo ou diretório                         |
+| `move()`                    | Move ou renomeia um arquivo ou diretório              |
+| `readAllBytes()`            | Lê todos os bytes de um arquivo                       |
+| `readString()`              | Lê todo o conteúdo como string                        |
+| `readAllLines()`            | Lê todas as linhas de um arquivo                      |
+| `newBufferedReader()`       | Cria um leitor com buffer                             |
+| `newInputStream()`          | Cria um fluxo de entrada                              |
+| `write()`                   | Escreve bytes em um arquivo                           |
+| `writeString()`             | Escreve uma string em um arquivo                      |
+| `newBufferedWriter()`       | Cria um escritor com buffer                           |
+| `newOutputStream()`         | Cria um fluxo de saída                                |
+| `size()`                    | Retorna o tamanho do arquivo                          |
+| `getLastModifiedTime()`     | Retorna a data da última modificação                  |
+| `getOwner()`                | Retorna o proprietário                                |
+| `getPosixFilePermissions()` | Retorna permissões POSIX                              |
+| `setLastModifiedTime()`     | Altera a data de modificação                          |
+| `list()`                    | Lista o conteúdo de um diretório                      |
+| `walk()`                    | Percorre uma árvore de diretórios                     |
+| `find()`                    | Localiza caminhos usando um filtro                    |
+| `lines()`                   | Retorna as linhas como um stream                      |
+| `isSameFile()`              | Verifica se dois caminhos representam o mesmo arquivo |
+| `probeContentType()`        | Tenta identificar o tipo de conteúdo                  |
+
+---
+
+## 🗃️ `DirectoryStream`
+
+A interface `DirectoryStream` pertence ao pacote `java.nio.file` e serve para percorrer o conteúdo de um diretório.
+
+| Método       | Função                                             |
+| ------------ | -------------------------------------------------- |
+| `iterator()` | Retorna um iterador para os elementos do diretório |
+| `close()`    | Fecha o fluxo do diretório                         |
+
+---
+
+## 🖥️ `FileSystem`
+
+A classe abstrata `FileSystem` representa um sistema de arquivos e fornece informações sobre seus caminhos, provedores e recursos disponíveis.
+
+| Método                 | Função                                        |
+| ---------------------- | --------------------------------------------- |
+| `getPath()`            | Cria um caminho dentro do sistema de arquivos |
+| `getRootDirectories()` | Retorna os diretórios raiz                    |
+| `getFileStores()`      | Retorna os dispositivos de armazenamento      |
+| `getSeparator()`       | Retorna o separador de caminhos               |
+| `getPathMatcher()`     | Cria um mecanismo para comparar caminhos      |
+| `newWatchService()`    | Cria um serviço de monitoramento              |
+| `provider()`           | Retorna o provedor do sistema de arquivos     |
+| `isOpen()`             | Verifica se o sistema está aberto             |
+| `isReadOnly()`         | Verifica se o sistema é somente leitura       |
+| `close()`              | Fecha o sistema de arquivos                   |
+
+---
+
+## 🗄️ `FileSystems`
+
+A classe `FileSystems` pertence ao pacote `java.nio.file` e serve para acessar o sistema de arquivos padrão ou criar sistemas de arquivos adicionais.
+
+| Método            | Função                                             |
+| ----------------- | -------------------------------------------------- |
+| `getDefault()`    | Retorna o sistema de arquivos padrão               |
+| `getFileSystem()` | Retorna um sistema de arquivos associado a uma URI |
+| `newFileSystem()` | Cria ou abre um sistema de arquivos                |
+
+---
+
+## 💾 `FileStore`
+
+A classe `FileStore` representa uma unidade ou dispositivo de armazenamento.
+
+| Método                        | Função                                           |
+| ----------------------------- | ------------------------------------------------ |
+| `name()`                      | Retorna o nome do armazenamento                  |
+| `type()`                      | Retorna o tipo do armazenamento                  |
+| `getTotalSpace()`             | Retorna o espaço total                           |
+| `getUsableSpace()`            | Retorna o espaço disponível para a aplicação     |
+| `getUnallocatedSpace()`       | Retorna o espaço não alocado                     |
+| `supportsFileAttributeView()` | Verifica se suporta determinado tipo de atributo |
+| `getFileStoreAttributeView()` | Retorna uma visão de atributos                   |
+| `getAttribute()`              | Retorna um atributo específico                   |
+
+---
+
+## 👁️ `WatchService`
+
+A interface `WatchService` pertence ao pacote `java.nio.file` e serve para monitorar alterações em arquivos e diretórios.
+
+| Método                              | Função                                      |
+| ----------------------------------- | ------------------------------------------- |
+| `poll()`                            | Obtém um evento disponível sem aguardar     |
+| `poll(long timeout, TimeUnit unit)` | Aguarda por um evento durante um período    |
+| `take()`                            | Aguarda até que um evento esteja disponível |
+| `close()`                           | Fecha o serviço de monitoramento            |
+
+---
+
+## 🔑 `WatchKey`
+
+A classe `WatchKey` representa o registro de um diretório no serviço de monitoramento.
+
+| Método         | Função                                     |
+| -------------- | ------------------------------------------ |
+| `pollEvents()` | Retorna os eventos detectados              |
+| `reset()`      | Reativa a chave para receber novos eventos |
+| `isValid()`    | Verifica se a chave ainda é válida         |
+| `cancel()`     | Cancela o monitoramento                    |
+| `watchable()`  | Retorna o caminho monitorado               |
+
+---
+
+## 🔔 `WatchEvent`
+
+A interface `WatchEvent` representa uma alteração detectada em um diretório monitorado.
+
+| Método      | Função                                 |
+| ----------- | -------------------------------------- |
+| `kind()`    | Retorna o tipo do evento               |
+| `count()`   | Retorna a quantidade de ocorrências    |
+| `context()` | Retorna o contexto associado ao evento |
+
+Tipos comuns de eventos:
+
+| Evento         | Função                                            |
+| -------------- | ------------------------------------------------- |
+| `ENTRY_CREATE` | Indica a criação de um arquivo ou diretório       |
+| `ENTRY_DELETE` | Indica a exclusão de um arquivo ou diretório      |
+| `ENTRY_MODIFY` | Indica a alteração de um arquivo ou diretório     |
+| `OVERFLOW`     | Indica que alguns eventos podem ter sido perdidos |
+
+---
+
+# ⚡ Java NIO — Buffers e Channels
+
+Java NIO oferece uma abordagem baseada em buffers e canais. Essa API é útil para operações de I/O mais eficientes, comunicação não bloqueante e aplicações que precisam lidar com várias conexões.
+
+---
+
+## 🧠 `Buffer`
+
+A classe abstrata `Buffer` representa uma área de memória utilizada temporariamente durante operações de leitura e escrita.
+
+| Método                      | Função                                      |
+| --------------------------- | ------------------------------------------- |
+| `capacity()`                | Retorna a capacidade total do buffer        |
+| `position()`                | Retorna a posição atual                     |
+| `position(int newPosition)` | Altera a posição atual                      |
+| `limit()`                   | Retorna o limite atual                      |
+| `limit(int newLimit)`       | Altera o limite                             |
+| `remaining()`               | Retorna a quantidade de elementos restantes |
+| `hasRemaining()`            | Verifica se existem elementos restantes     |
+| `flip()`                    | Prepara o buffer para leitura               |
+| `clear()`                   | Prepara o buffer para nova escrita          |
+| `rewind()`                  | Retorna a posição para o início             |
+| `mark()`                    | Marca a posição atual                       |
+| `reset()`                   | Retorna à posição marcada                   |
+| `compact()`                 | Move os dados restantes para o início       |
+| `isReadOnly()`              | Verifica se o buffer é somente leitura      |
+| `array()`                   | Retorna o array interno, quando disponível  |
+| `arrayOffset()`             | Retorna o deslocamento do array interno     |
+
+---
+
+## 🔢 `ByteBuffer`
+
+A classe `ByteBuffer` serve para armazenar e manipular bytes em memória.
+
+| Método                   | Função                                    |
+| ------------------------ | ----------------------------------------- |
+| `allocate()`             | Cria um buffer na memória                 |
+| `allocateDirect()`       | Cria um buffer direto                     |
+| `wrap()`                 | Cria um buffer a partir de um array       |
+| `get()`                  | Lê um byte                                |
+| `get(byte[] dst)`        | Lê bytes para um array                    |
+| `get(int index)`         | Lê um byte em uma posição específica      |
+| `put()`                  | Escreve um byte                           |
+| `put(byte[] src)`        | Escreve um array de bytes                 |
+| `put(int index, byte b)` | Escreve um byte em uma posição específica |
+| `getChar()`              | Lê um caractere                           |
+| `getShort()`             | Lê um `short`                             |
+| `getInt()`               | Lê um inteiro                             |
+| `getLong()`              | Lê um `long`                              |
+| `getFloat()`             | Lê um `float`                             |
+| `getDouble()`            | Lê um `double`                            |
+| `putChar()`              | Escreve um caractere                      |
+| `putShort()`             | Escreve um `short`                        |
+| `putInt()`               | Escreve um inteiro                        |
+| `putLong()`              | Escreve um `long`                         |
+| `putFloat()`             | Escreve um `float`                        |
+| `putDouble()`            | Escreve um `double`                       |
+| `order()`                | Consulta ou altera a ordem dos bytes      |
+| `slice()`                | Cria uma visão parcial do buffer          |
+| `duplicate()`            | Cria uma cópia da estrutura do buffer     |
+| `asReadOnlyBuffer()`     | Cria uma visão somente leitura            |
+
+---
+
+## 🔗 `Channel`
+
+A interface `Channel` representa um canal de comunicação com arquivos, sockets ou outros recursos de I/O.
+
+| Método     | Função                          |
+| ---------- | ------------------------------- |
+| `isOpen()` | Verifica se o canal está aberto |
+| `close()`  | Fecha o canal                   |
+
+---
+
+## 📁 `FileChannel`
+
+A classe `FileChannel` serve para realizar operações de leitura, escrita, posicionamento e transferência em arquivos utilizando canais.
+
+| Método                                 | Função                                    |
+| -------------------------------------- | ----------------------------------------- |
+| `open()`                               | Abre ou cria um canal de arquivo          |
+| `read(ByteBuffer dst)`                 | Lê dados para um buffer                   |
+| `read(ByteBuffer dst, long position)`  | Lê dados a partir de uma posição          |
+| `write(ByteBuffer src)`                | Escreve dados de um buffer                |
+| `write(ByteBuffer src, long position)` | Escreve dados em uma posição              |
+| `position()`                           | Retorna a posição atual                   |
+| `position(long newPosition)`           | Altera a posição atual                    |
+| `size()`                               | Retorna o tamanho do arquivo              |
+| `truncate()`                           | Reduz o tamanho do arquivo                |
+| `force()`                              | Força a gravação dos dados no dispositivo |
+| `transferTo()`                         | Transfere dados para outro canal          |
+| `transferFrom()`                       | Transfere dados de outro canal            |
+| `map()`                                | Mapeia uma região do arquivo na memória   |
+| `lock()`                               | Obtém um bloqueio no arquivo              |
+| `tryLock()`                            | Tenta obter um bloqueio sem aguardar      |
+| `isOpen()`                             | Verifica se o canal está aberto           |
+| `close()`                              | Fecha o canal                             |
+
+---
+
+## 🌐 `SocketChannel`
+
+A classe `SocketChannel` serve para realizar comunicação TCP utilizando canais, podendo operar em modo bloqueante ou não bloqueante.
+
+| Método                  | Função                                                |
+| ----------------------- | ----------------------------------------------------- |
+| `open()`                | Cria ou abre um canal TCP                             |
+| `connect()`             | Conecta o canal a um servidor                         |
+| `finishConnect()`       | Finaliza uma conexão iniciada de forma não bloqueante |
+| `isConnected()`         | Verifica se o canal está conectado                    |
+| `isConnectionPending()` | Verifica se existe uma conexão pendente               |
+| `read(ByteBuffer dst)`  | Lê dados do socket                                    |
+| `write(ByteBuffer src)` | Envia dados pelo socket                               |
+| `shutdownInput()`       | Desativa a entrada do socket                          |
+| `shutdownOutput()`      | Desativa a saída do socket                            |
+| `bind()`                | Associa o canal a um endereço local                   |
+| `setOption()`           | Define uma opção do socket                            |
+| `getRemoteAddress()`    | Retorna o endereço remoto                             |
+| `getLocalAddress()`     | Retorna o endereço local                              |
+| `configureBlocking()`   | Define o modo bloqueante ou não bloqueante            |
+| `isBlocking()`          | Verifica se o canal está em modo bloqueante           |
+| `close()`               | Fecha o canal                                         |
+
+---
+
+## 🖥️ `ServerSocketChannel`
+
+A classe `ServerSocketChannel` serve para criar servidores TCP baseados em canais.
+
+| Método                | Função                                     |
+| --------------------- | ------------------------------------------ |
+| `open()`              | Cria um canal de servidor                  |
+| `bind()`              | Associa o servidor a um endereço e porta   |
+| `accept()`            | Aceita uma conexão de cliente              |
+| `isOpen()`            | Verifica se o canal está aberto            |
+| `configureBlocking()` | Define o modo bloqueante ou não bloqueante |
+| `isBlocking()`        | Verifica o modo de operação                |
+| `register()`          | Registra o canal em um `Selector`          |
+| `setOption()`         | Define uma opção do servidor               |
+| `getLocalAddress()`   | Retorna o endereço local                   |
+| `close()`             | Fecha o canal                              |
+
+---
+
+## 📡 `DatagramChannel`
+
+A classe `DatagramChannel` serve para realizar comunicação UDP utilizando canais.
+
+| Método                | Função                                     |
+| --------------------- | ------------------------------------------ |
+| `open()`              | Cria um canal UDP                          |
+| `bind()`              | Associa o canal a um endereço local        |
+| `connect()`           | Associa o canal a um endereço remoto       |
+| `disconnect()`        | Remove a associação remota                 |
+| `receive()`           | Recebe um datagrama                        |
+| `send()`              | Envia um datagrama                         |
+| `read()`              | Lê dados de um canal conectado             |
+| `write()`             | Escreve dados em um canal conectado        |
+| `isConnected()`       | Verifica se o canal está conectado         |
+| `getRemoteAddress()`  | Retorna o endereço remoto                  |
+| `getLocalAddress()`   | Retorna o endereço local                   |
+| `configureBlocking()` | Define o modo bloqueante ou não bloqueante |
+| `register()`          | Registra o canal em um `Selector`          |
+| `close()`             | Fecha o canal                              |
+
+---
+
+## 🔍 `Selector`
+
+A classe `Selector` serve para monitorar vários canais de forma centralizada, principalmente em aplicações não bloqueantes.
+
+| Método                 | Função                                   |
+| ---------------------- | ---------------------------------------- |
+| `open()`               | Cria um selector                         |
+| `select()`             | Aguarda canais prontos para operação     |
+| `select(long timeout)` | Aguarda durante um período               |
+| `selectNow()`          | Verifica imediatamente os canais prontos |
+| `selectedKeys()`       | Retorna as chaves selecionadas           |
+| `keys()`               | Retorna todas as chaves registradas      |
+| `wakeup()`             | Interrompe uma operação de seleção       |
+| `isOpen()`             | Verifica se o selector está aberto       |
+| `close()`              | Fecha o selector                         |
+
+---
+
+## 🔑 `SelectionKey`
+
+A classe `SelectionKey` representa o registro de um canal em um `Selector`.
+
+| Método                 | Função                                       |
+| ---------------------- | -------------------------------------------- |
+| `channel()`            | Retorna o canal associado                    |
+| `selector()`           | Retorna o selector associado                 |
+| `isValid()`            | Verifica se a chave é válida                 |
+| `cancel()`             | Cancela o registro                           |
+| `interestOps()`        | Consulta as operações de interesse           |
+| `interestOps(int ops)` | Define as operações de interesse             |
+| `readyOps()`           | Retorna as operações prontas                 |
+| `isReadable()`         | Verifica se o canal está pronto para leitura |
+| `isWritable()`         | Verifica se o canal está pronto para escrita |
+| `isConnectable()`      | Verifica se o canal está pronto para conexão |
+| `isAcceptable()`       | Verifica se o servidor pode aceitar conexão  |
+| `attach()`             | Associa um objeto à chave                    |
+| `attachment()`         | Retorna o objeto associado                   |
+
+---
+
+# 🌐 Comunicação de Rede
+
+As APIs de rede pertencem principalmente ao pacote `java.net` e permitem criar clientes, servidores e aplicações que trocam dados por TCP, UDP ou HTTP.
+
+---
+
+## 🔌 `Socket`
+
+A classe `Socket` representa uma conexão TCP do lado do cliente.
+
+| Método              | Função                                             |
+| ------------------- | -------------------------------------------------- |
+| `connect()`         | Conecta o socket a um servidor                     |
+| `getInputStream()`  | Retorna o fluxo de entrada                         |
+| `getOutputStream()` | Retorna o fluxo de saída                           |
+| `getInetAddress()`  | Retorna o endereço remoto                          |
+| `getLocalAddress()` | Retorna o endereço local                           |
+| `getPort()`         | Retorna a porta remota                             |
+| `getLocalPort()`    | Retorna a porta local                              |
+| `setSoTimeout()`    | Define o tempo limite de leitura                   |
+| `getSoTimeout()`    | Retorna o tempo limite de leitura                  |
+| `setTcpNoDelay()`   | Ativa ou desativa o algoritmo de Nagle             |
+| `getTcpNoDelay()`   | Consulta o estado do algoritmo de Nagle            |
+| `setKeepAlive()`    | Ativa ou desativa o envio de pacotes de manutenção |
+| `isConnected()`     | Verifica se o socket está conectado                |
+| `isClosed()`        | Verifica se o socket está fechado                  |
+| `shutdownInput()`   | Desativa a entrada                                 |
+| `shutdownOutput()`  | Desativa a saída                                   |
+| `close()`           | Fecha a conexão                                    |
+
+---
+
+## 🖥️ `ServerSocket`
+
+A classe `ServerSocket` serve para criar servidores TCP que aguardam conexões de clientes.
+
+| Método                    | Função                                              |
+| ------------------------- | --------------------------------------------------- |
+| `accept()`                | Aguarda e aceita uma conexão                        |
+| `bind()`                  | Associa o servidor a um endereço e porta            |
+| `getInetAddress()`        | Retorna o endereço local                            |
+| `getLocalPort()`          | Retorna a porta local                               |
+| `getLocalSocketAddress()` | Retorna o endereço local completo                   |
+| `setSoTimeout()`          | Define o tempo limite para aguardar conexões        |
+| `getSoTimeout()`          | Retorna o tempo limite configurado                  |
+| `setReuseAddress()`       | Permite reutilizar o endereço                       |
+| `getReuseAddress()`       | Consulta a reutilização do endereço                 |
+| `isBound()`               | Verifica se o servidor está associado a um endereço |
+| `isClosed()`              | Verifica se o servidor está fechado                 |
+| `close()`                 | Fecha o servidor                                    |
+
+---
+
+## 📡 `DatagramSocket`
+
+A classe `DatagramSocket` serve para enviar e receber pacotes UDP.
+
+| Método              | Função                                |
+| ------------------- | ------------------------------------- |
+| `send()`            | Envia um pacote UDP                   |
+| `receive()`         | Aguarda e recebe um pacote UDP        |
+| `connect()`         | Associa o socket a um endereço remoto |
+| `disconnect()`      | Remove a associação remota            |
+| `getInetAddress()`  | Retorna o endereço remoto             |
+| `getLocalAddress()` | Retorna o endereço local              |
+| `getPort()`         | Retorna a porta remota                |
+| `getLocalPort()`    | Retorna a porta local                 |
+| `setSoTimeout()`    | Define o tempo limite de recebimento  |
+| `getSoTimeout()`    | Retorna o tempo limite configurado    |
+| `setBroadcast()`    | Permite ou bloqueia broadcast         |
+| `getBroadcast()`    | Consulta o estado de broadcast        |
+| `isConnected()`     | Verifica se está conectado            |
+| `isClosed()`        | Verifica se está fechado              |
+| `close()`           | Fecha o socket                        |
+
+---
+
+## 📦 `DatagramPacket`
+
+A classe `DatagramPacket` representa um pacote utilizado na comunicação UDP.
+
+| Método               | Função                         |
+| -------------------- | ------------------------------ |
+| `getData()`          | Retorna o array de dados       |
+| `setData()`          | Define o array de dados        |
+| `getLength()`        | Retorna o tamanho dos dados    |
+| `setLength()`        | Define o tamanho dos dados     |
+| `getOffset()`        | Retorna o deslocamento inicial |
+| `setAddress()`       | Define o endereço de destino   |
+| `getAddress()`       | Retorna o endereço associado   |
+| `setPort()`          | Define a porta de destino      |
+| `getPort()`          | Retorna a porta associada      |
+| `getSocketAddress()` | Retorna o endereço completo    |
+| `setSocketAddress()` | Define o endereço completo     |
+
+---
+
+## 🌍 `InetAddress`
+
+A classe `InetAddress` representa endereços IP e nomes de hosts.
+
+| Método                   | Função                                    |
+| ------------------------ | ----------------------------------------- |
+| `getByName()`            | Obtém o endereço de um host               |
+| `getAllByName()`         | Obtém todos os endereços de um host       |
+| `getLocalHost()`         | Obtém o endereço da máquina local         |
+| `getLoopbackAddress()`   | Obtém o endereço de loopback              |
+| `getHostName()`          | Retorna o nome do host                    |
+| `getCanonicalHostName()` | Retorna o nome canônico                   |
+| `getHostAddress()`       | Retorna o endereço IP em texto            |
+| `getAddress()`           | Retorna o endereço como array de bytes    |
+| `isReachable()`          | Verifica se o endereço pode ser alcançado |
+| `isLoopbackAddress()`    | Verifica se é um endereço de loopback     |
+| `isAnyLocalAddress()`    | Verifica se é um endereço local curinga   |
+| `isMulticastAddress()`   | Verifica se é um endereço multicast       |
+| `isSiteLocalAddress()`   | Verifica se é um endereço local de rede   |
+
+---
+
+## 🌐 `URL`
+
+A classe `URL` representa o endereço de um recurso localizado na rede.
+
+| Método             | Função                                             |
+| ------------------ | -------------------------------------------------- |
+| `openConnection()` | Abre uma conexão com o recurso                     |
+| `openStream()`     | Abre um fluxo de entrada                           |
+| `getProtocol()`    | Retorna o protocolo utilizado                      |
+| `getHost()`        | Retorna o host                                     |
+| `getPort()`        | Retorna a porta                                    |
+| `getDefaultPort()` | Retorna a porta padrão do protocolo                |
+| `getPath()`        | Retorna o caminho do recurso                       |
+| `getQuery()`       | Retorna os parâmetros da consulta                  |
+| `getFile()`        | Retorna o caminho e a consulta                     |
+| `getRef()`         | Retorna a referência do recurso                    |
+| `toURI()`          | Converte a URL para uma URI                        |
+| `toExternalForm()` | Converte para representação textual                |
+| `sameFile()`       | Verifica se duas URLs apontam para o mesmo recurso |
+
+---
+
+## 🔗 `URLConnection`
+
+A classe `URLConnection` representa uma conexão com um recurso acessado por uma URL.
+
+| Método                 | Função                                 |
+| ---------------------- | -------------------------------------- |
+| `connect()`            | Estabelece a conexão                   |
+| `getInputStream()`     | Retorna o fluxo de entrada             |
+| `getOutputStream()`    | Retorna o fluxo de saída               |
+| `getContent()`         | Obtém o conteúdo do recurso            |
+| `getContentType()`     | Retorna o tipo de conteúdo             |
+| `getContentLength()`   | Retorna o tamanho do conteúdo          |
+| `getContentEncoding()` | Retorna a codificação do conteúdo      |
+| `getDate()`            | Retorna a data do recurso              |
+| `getLastModified()`    | Retorna a data da última modificação   |
+| `getExpiration()`      | Retorna a data de expiração            |
+| `getHeaderField()`     | Retorna o valor de um cabeçalho        |
+| `getHeaderFields()`    | Retorna todos os cabeçalhos            |
+| `setConnectTimeout()`  | Define o tempo limite de conexão       |
+| `getConnectTimeout()`  | Retorna o tempo limite de conexão      |
+| `setReadTimeout()`     | Define o tempo limite de leitura       |
+| `getReadTimeout()`     | Retorna o tempo limite de leitura      |
+| `setDoInput()`         | Define se haverá entrada               |
+| `setDoOutput()`        | Define se haverá saída                 |
+| `setRequestProperty()` | Define uma propriedade da requisição   |
+| `getRequestProperty()` | Consulta uma propriedade da requisição |
+
+---
+
+## 🌐 `HttpClient`
+
+A classe `HttpClient` pertence ao pacote `java.net.http` e serve para realizar requisições HTTP e HTTPS de forma moderna.
+
+| Método              | Função                                   |
+| ------------------- | ---------------------------------------- |
+| `newHttpClient()`   | Cria um cliente HTTP padrão              |
+| `newBuilder()`      | Cria um construtor de cliente            |
+| `send()`            | Envia uma requisição de forma bloqueante |
+| `sendAsync()`       | Envia uma requisição de forma assíncrona |
+| `executor()`        | Retorna o executor utilizado             |
+| `version()`         | Retorna a versão HTTP utilizada          |
+| `cookieHandler()`   | Retorna o gerenciador de cookies         |
+| `connectTimeout()`  | Retorna o tempo limite de conexão        |
+| `followRedirects()` | Retorna a política de redirecionamento   |
+| `proxy()`           | Retorna a configuração de proxy          |
+| `authenticator()`   | Retorna o autenticador utilizado         |
+
+---
+
+## 📤 `HttpRequest`
+
+A classe `HttpRequest` pertence ao pacote `java.net.http` e representa uma requisição HTTP.
+
+| Método             | Função                                     |
+| ------------------ | ------------------------------------------ |
+| `newBuilder()`     | Cria um construtor de requisição           |
+| `uri()`            | Retorna a URI da requisição                |
+| `method()`         | Retorna o método HTTP                      |
+| `headers()`        | Retorna os cabeçalhos                      |
+| `bodyPublisher()`  | Retorna o conteúdo enviado                 |
+| `timeout()`        | Retorna o tempo limite                     |
+| `version()`        | Retorna a versão HTTP                      |
+| `expectContinue()` | Verifica se utiliza `Expect: 100-continue` |
+
+---
+
+## 📥 `HttpResponse`
+
+A interface `HttpResponse` pertence ao pacote `java.net.http` e representa a resposta recebida de uma requisição HTTP.
+
+| Método               | Função                                       |
+| -------------------- | -------------------------------------------- |
+| `statusCode()`       | Retorna o código de status HTTP              |
+| `body()`             | Retorna o corpo da resposta                  |
+| `headers()`          | Retorna os cabeçalhos da resposta            |
+| `request()`          | Retorna a requisição associada               |
+| `uri()`              | Retorna a URI final                          |
+| `version()`          | Retorna a versão HTTP utilizada              |
+| `previousResponse()` | Retorna uma resposta anterior, quando houver |
+| `sslSession()`       | Retorna informações da sessão SSL            |
+
+---
+
+# 📊 Bytes x Caracteres
+
+A escolha entre bytes e caracteres depende do tipo de dado que será processado.
+
+| Bytes          | Caracteres        |
+| -------------- | ----------------- |
+| `InputStream`  | `Reader`          |
+| `OutputStream` | `Writer`          |
+| Dados binários | Dados textuais    |
+| Imagens        | Arquivos de texto |
+| Áudio          | Documentos        |
+| Vídeos         | Strings           |
+
+```text
+Dados binários
+     ↓
+InputStream / OutputStream
+
+Dados textuais
+     ↓
+Reader / Writer
 ```
 
 ---
 
-## 🌐 Entrada e Saída pela Rede
+# 🌐 Comunicação de Rede
 
-Programas frequentemente se comunicam através da rede (internet/LAN). Java oferece classes para facilitar essa comunicação.
+As APIs de rede permitem enviar e receber dados entre máquinas ou processos.
 
-### Conceitos Básicos de Rede
+| Conceito     | Significado                                        |
+| ------------ | -------------------------------------------------- |
+| **Cliente**  | Inicia uma conexão                                 |
+| **Servidor** | Aguarda conexões                                   |
+| **IP**       | Identifica um dispositivo na rede                  |
+| **Porta**    | Identifica um serviço ou processo                  |
+| **Socket**   | Representa uma comunicação de rede                 |
+| **TCP**      | Comunicação confiável e orientada à conexão        |
+| **UDP**      | Comunicação mais simples e sem garantia de entrega |
 
-```
-         CLIENTE                          SERVIDOR
-            ↓                                 ↓
-       Endereço IP: 192.168.1.100     Endereço IP: 192.168.1.200
-       Porta: 54321                    Porta: 8080
-            ↓                                 ↓
-            └─────── Rede (TCP/UDP) ────────┘
-```
-
-### Terminologia
-
-- **Cliente**: Aplicação que inicia a conexão
-- **Servidor**: Aplicação que aguarda conexões
-- **IP (Internet Protocol)**: Endereço único da máquina na rede (ex: 192.168.1.100)
-- **Porta**: Canal específico na máquina (ex: 8080, 3306)
-- **Socket**: Representa uma conexão entre cliente e servidor
-- **TCP**: Conexão confiável, orientada à conexão (garante entrega)
-- **UDP**: Comunicação por datagramas, sem conexão (sem garantia)
-
----
-
-## 🔌 Socket
-
-### O que é?
-
-Um `Socket` representa uma **conexão de rede entre dois computadores**, geralmente usado pelo cliente.
-
-### Para que serve?
-
-- Enviar e receber dados através da rede
-- Comunicação cliente-servidor
-- Criar aplicações de rede (chat, web, etc.)
-
-### Como funciona?
-
-```
-Cliente Java
-     ↓
-Socket (endereço IP + porta do servidor)
-     ↓
-InputStream  ← Receber dados do servidor
-OutputStream → Enviar dados ao servidor
-     ↓
+```text
+CLIENTE
+   ↓
+Socket
+   ↓
 Rede
-     ↓
-Servidor
+   ↓
+Socket
+   ↓
+SERVIDOR
 ```
 
-### Métodos Principais
+## TCP e UDP
 
-```java
-// Criar conexão com servidor
-Socket socket = new Socket("192.168.1.100", 8080);
-
-// Obter fluxos de entrada e saída
-InputStream entrada = socket.getInputStream();
-OutputStream saida = socket.getOutputStream();
-
-// Fechar conexão quando terminar
-socket.close();
-```
-
-### Exemplo: Cliente Simples
-
-```java
-import java.io.*;
-import java.net.Socket;
-
-public class ClienteSimples {
-    public static void main(String[] args) {
-        try {
-            // Conectar ao servidor
-            Socket socket = new Socket("localhost", 8080);
-            System.out.println("✓ Conectado ao servidor!");
-            
-            // Criar fluxos de entrada e saída
-            PrintWriter saida = new PrintWriter(
-                socket.getOutputStream(), true
-            );
-            BufferedReader entrada = new BufferedReader(
-                new InputStreamReader(socket.getInputStream())
-            );
-            
-            // Enviar mensagem
-            saida.println("Olá, Servidor!");
-            
-            // Receber resposta
-            String resposta = entrada.readLine();
-            System.out.println("Servidor respondeu: " + resposta);
-            
-            // Fechar conexão
-            entrada.close();
-            saida.close();
-            socket.close();
-            
-        } catch (IOException e) {
-            System.err.println("Erro na conexão: " + e.getMessage());
-        }
-    }
-}
-```
+| Característica    | TCP                                   | UDP                                                   |
+| ----------------- | ------------------------------------- | ----------------------------------------------------- |
+| Conexão           | Orientado à conexão                   | Sem conexão tradicional                               |
+| Entrega garantida | Sim                                   | Não                                                   |
+| Ordem dos dados   | Preservada                            | Não garantida                                         |
+| Controle          | Maior                                 | Menor                                                 |
+| Uso comum         | Web, arquivos e sistemas corporativos | Jogos, áudio, vídeo e aplicações sensíveis à latência |
 
 ---
 
-## 🖥️ ServerSocket
+# 📌 Resumo
 
-### O que é?
+Entrada e saída em Java não se limita a imprimir mensagens no console. O mesmo conceito aparece quando uma aplicação:
 
-Um `ServerSocket` é uma **porta aberta no servidor esperando por conexões de clientes**.
+* Recebe dados do teclado;
+* Lê um arquivo;
+* Salva informações;
+* Processa uma imagem;
+* Envia uma requisição HTTP;
+* Se comunica com outro sistema;
+* Monitora alterações em um diretório.
 
-### Para que serve?
+As APIs mais importantes podem ser organizadas assim:
 
-- Criar servidores que aguardam conexões
-- Aceitar múltiplas conexões de clientes
-- Gerenciar comunicação com vários clientes
-
-### Como funciona?
-
-```
-Servidor Java
-     ↓
-ServerSocket (na porta 8080)
-     ↓
-Aguarda conexões...
-     ↓
-Cliente conecta
-     ↓
-Socket (aceito)
-     ↓
-Comunicação estabelecida
-```
-
-### Métodos Principais
-
-```java
-// Abrir servidor na porta 8080
-ServerSocket servidor = new ServerSocket(8080);
-
-// Aguardar conexão de cliente (bloqueante)
-Socket cliente = servidor.accept();
-
-// Trabalhar com cliente...
-
-// Fechar servidor
-servidor.close();
-```
-
-### Exemplo: Servidor Simples
-
-```java
-import java.io.*;
-import java.net.ServerSocket;
-import java.net.Socket;
-
-public class ServidorSimples {
-    public static void main(String[] args) {
-        try {
-            // Abrir servidor na porta 8080
-            ServerSocket servidor = new ServerSocket(8080);
-            System.out.println("🖥️  Servidor iniciado na porta 8080");
-            System.out.println("Aguardando conexões...");
-            
-            // Aceitar uma conexão
-            Socket cliente = servidor.accept();
-            System.out.println("✓ Cliente conectado de: " + 
-                             cliente.getInetAddress().getHostAddress());
-            
-            // Criar fluxos de comunicação
-            BufferedReader entrada = new BufferedReader(
-                new InputStreamReader(cliente.getInputStream())
-            );
-            PrintWriter saida = new PrintWriter(
-                cliente.getOutputStream(), true
-            );
-            
-            // Receber mensagem do cliente
-            String mensagem = entrada.readLine();
-            System.out.println("Cliente disse: " + mensagem);
-            
-            // Enviar resposta
-            saida.println("Mensagem recebida com sucesso!");
-            
-            // Fechar conexões
-            entrada.close();
-            saida.close();
-            cliente.close();
-            servidor.close();
-            System.out.println("Conexão encerrada");
-            
-        } catch (IOException e) {
-            System.err.println("Erro no servidor: " + e.getMessage());
-        }
-    }
-}
+```text
+JAVA I/O
+   │
+   ├── Console
+   │   ├── System.in
+   │   ├── System.out
+   │   ├── System.err
+   │   └── Scanner
+   │
+   ├── Texto
+   │   ├── Reader
+   │   ├── Writer
+   │   ├── BufferedReader
+   │   └── BufferedWriter
+   │
+   ├── Bytes
+   │   ├── InputStream
+   │   ├── OutputStream
+   │   ├── DataInputStream
+   │   └── DataOutputStream
+   │
+   ├── Arquivos
+   │   ├── File
+   │   ├── RandomAccessFile
+   │   ├── Path
+   │   └── Files
+   │
+   ├── NIO
+   │   ├── Buffer
+   │   ├── ByteBuffer
+   │   ├── Channel
+   │   └── Selector
+   │
+   └── Rede
+       ├── Socket
+       ├── ServerSocket
+       ├── DatagramSocket
+       ├── URL
+       └── HttpClient
 ```
 
----
-
-## 📡 DatagramSocket e DatagramPacket
-
-### Conceito
-
-Para comunicação **UDP** (User Datagram Protocol) - alternativa ao TCP.
-
-### UDP vs TCP
-
-| Aspecto | TCP | UDP |
-|---------|-----|-----|
-| Conexão | Requer conexão (connect) | Sem conexão |
-| Confiabilidade | Garante entrega | Sem garantia |
-| Ordem | Preserva ordem | Sem garantia |
-| Velocidade | Mais lento (mais confiável) | Mais rápido |
-| Uso | Arquivos, email, web | Vídeo, áudio, games |
-
-### Classes Envolvidas
-
-- **DatagramSocket**: Socket para comunicação UDP
-- **DatagramPacket**: Pacote de dados enviado via UDP
-
-### Resumo de Uso
-
-```java
-// Cliente UDP
-DatagramSocket socket = new DatagramSocket();
-byte[] dados = "Mensagem".getBytes();
-DatagramPacket pacote = new DatagramPacket(
-    dados, dados.length, 
-    InetAddress.getByName("localhost"), 5000
-);
-socket.send(pacote);
-socket.close();
-```
-
----
-
-## 🌐 URL e URLConnection
-
-### O que são?
-
-- **URL**: Representa um endereço de recurso na internet (ex: https://www.example.com)
-- **URLConnection**: Conexão com um servidor HTTP/HTTPS para obter conteúdo
-
-### Para que servem?
-
-- Acessar páginas web
-- Fazer requisições HTTP
-- Baixar arquivos da internet
-- Consumir APIs web
-
-### Fluxo Conceitual
-
-```
-URL (endereço)
-     ↓
-URLConnection (conecta)
-     ↓
-InputStream (recebe dados)
-     ↓
-Programa processa o conteúdo
-```
-
----
-
-## 📥📤 Streams de Bytes
-
-Streams de bytes trabalham com dados binários brutos. Utilizadas principalmente para:
-
-- Arquivos binários
-- Imagens, áudio, vídeo
-- Dados compactados
-- Comunicação de rede de baixo nível
-
-### Principais Classes
-
-| Classe | Propósito |
-|--------|-----------|
-| `InputStream` | Classe abstrata base para leitura de bytes |
-| `OutputStream` | Classe abstrata base para escrita de bytes |
-| `FileInputStream` | Ler bytes de arquivos |
-| `FileOutputStream` | Escrever bytes em arquivos |
-| `BufferedInputStream` | Buffer para otimizar leitura |
-| `BufferedOutputStream` | Buffer para otimizar escrita |
-| `DataInputStream` | Ler tipos primitivos Java (int, double, etc.) |
-| `DataOutputStream` | Escrever tipos primitivos Java |
-| `ObjectInputStream` | Desserializar objetos Java |
-| `ObjectOutputStream` | Serializar objetos Java |
-| `ByteArrayInputStream` | Ler bytes da memória (array) |
-| `ByteArrayOutputStream` | Escrever bytes em memória |
-| `SequenceInputStream` | Concatenar múltiplos InputStreams |
-
-### Destaque: InputStream, OutputStream, FileInputStream, FileOutputStream
-
-```java
-// Ler arquivo binário
-FileInputStream fis = new FileInputStream("imagem.jpg");
-byte[] buffer = new byte[1024];
-int bytesLidos = fis.read(buffer);
-fis.close();
-
-// Escrever arquivo binário
-FileOutputStream fos = new FileOutputStream("copia.jpg");
-fos.write(buffer);
-fos.close();
-```
-
-### Destaque: ObjectInputStream e ObjectOutputStream
-
-Para serializar e desserializar objetos Java:
-
-```java
-// Serializar (escrever objeto)
-ObjectOutputStream oos = new ObjectOutputStream(
-    new FileOutputStream("objeto.dat")
-);
-oos.writeObject(meuObjeto);
-oos.close();
-
-// Desserializar (ler objeto)
-ObjectInputStream ois = new ObjectInputStream(
-    new FileInputStream("objeto.dat")
-);
-Object obj = ois.readObject();
-ois.close();
-```
-
----
-
-## 🔤 Streams de Caracteres
-
-Streams de caracteres trabalham especificamente com **texto e caracteres**. Utilizadas para:
-
-- Arquivos de texto
-- Processamento de strings
-- Comunicação em formato texto
-- Suporte a diferentes codificações Unicode
-
-### Principais Classes
-
-| Classe | Propósito |
-|--------|-----------|
-| `Reader` | Classe abstrata base para leitura de caracteres |
-| `Writer` | Classe abstrata base para escrita de caracteres |
-| `FileReader` | Ler caracteres de arquivos de texto |
-| `FileWriter` | Escrever caracteres em arquivos de texto |
-| `BufferedReader` | Buffer para otimizar leitura de texto |
-| `BufferedWriter` | Buffer para otimizar escrita de texto |
-| `InputStreamReader` | Converter InputStream em Reader |
-| `OutputStreamWriter` | Converter OutputStream em Writer |
-| `CharArrayReader` | Ler caracteres de um array |
-| `CharArrayWriter` | Escrever caracteres em um array |
-| `StringReader` | Ler caracteres de uma String |
-| `StringWriter` | Escrever caracteres em uma String |
-| `PrintWriter` | Impressão conveniente de caracteres |
-
-### Destaque: Reader, Writer, BufferedReader, PrintWriter
-
-```java
-// Ler arquivo de texto com buffer
-BufferedReader br = new BufferedReader(new FileReader("dados.txt"));
-String linha = br.readLine();
-br.close();
-
-// Escrever arquivo de texto com PrintWriter
-PrintWriter pw = new PrintWriter(new FileWriter("saida.txt"));
-pw.println("Primeira linha");
-pw.println("Segunda linha");
-pw.close();
-```
-
----
-
-## 📁 Manipulação de Arquivos
-
-Entrada e saída usando arquivos no sistema de arquivos.
-
-### Classes Principais
-
-| Classe | Propósito |
-|--------|-----------|
-| `File` | Representa um arquivo ou diretório (gerenciar, não ler/escrever) |
-| `RandomAccessFile` | Acessar arquivo em qualquer posição |
-| `FileInputStream` | Ler bytes de arquivo |
-| `FileOutputStream` | Escrever bytes em arquivo |
-| `FileReader` | Ler caracteres de arquivo de texto |
-| `FileWriter` | Escrever caracteres em arquivo de texto |
-
-### File - Gerenciamento
-
-```java
-File arquivo = new File("dados.txt");
-
-// Informações
-if (arquivo.exists()) {
-    System.out.println("Tamanho: " + arquivo.length() + " bytes");
-    System.out.println("Caminho absoluto: " + arquivo.getAbsolutePath());
-}
-
-// Operações
-arquivo.delete();  // Deletar
-arquivo.renameTo(new File("novo_nome.txt"));  // Renomear
-
-// Criar diretório
-File diretorio = new File("meu_diretorio");
-diretorio.mkdir();
-```
-
-### RandomAccessFile
-
-Permite acessar diferentes posições de um arquivo:
-
-```java
-// Abrir para leitura e escrita
-RandomAccessFile raf = new RandomAccessFile("dados.bin", "rw");
-
-// Ir para posição específica
-raf.seek(100);
-
-// Ler/escrever nessa posição
-raf.writeInt(42);
-raf.close();
-```
-
----
-
-## ⚡ Java NIO
-
-Java NIO (New I/O) oferece uma abordagem **alternativa e mais moderna** para operações de entrada e saída, especialmente para aplicações de alta performance.
-
-### Conceitos Principais
-
-**Buffer**: Área de memória temporária para armazenar dados durante transferência
-
-**Channel**: Canal de comunicação entre buffers e I/O
-
-### Principais Classes
-
-| Classe | Propósito |
-|--------|-----------|
-| `Buffer` | Classe abstrata para buffers (armazena dados) |
-| `ByteBuffer` | Buffer para bytes (o mais comum) |
-| `CharBuffer` | Buffer para caracteres |
-| `IntBuffer`, `LongBuffer`, etc. | Buffers para tipos primitivos |
-| `Channel` | Classe abstrata para canais |
-| `FileChannel` | Canal para leitura/escrita em arquivos |
-| `SocketChannel` | Canal para comunicação TCP/IP |
-| `ServerSocketChannel` | Canal para servidores TCP/IP |
-| `DatagramChannel` | Canal para comunicação UDP |
-
-### Destaque: ByteBuffer, FileChannel, SocketChannel
-
-#### ByteBuffer - Operações Básicas
-
-```java
-// Criar buffer com capacidade de 1024 bytes
-ByteBuffer buffer = ByteBuffer.allocate(1024);
-
-// Escrever dados
-buffer.put("Olá".getBytes());
-
-// Alternar para leitura
-buffer.flip();
-
-// Ler dados
-byte[] dados = new byte[buffer.remaining()];
-buffer.get(dados);
-```
-
-#### FileChannel - Leitura de Arquivo
-
-```java
-try (FileInputStream fis = new FileInputStream("dados.txt");
-     FileChannel channel = fis.getChannel()) {
-    
-    ByteBuffer buffer = ByteBuffer.allocate(1024);
-    
-    while (channel.read(buffer) > 0) {
-        buffer.flip();
-        // Processar dados
-        buffer.clear();
-    }
-}
-```
-
----
-
-## 🚀 Java NIO.2
-
-Java NIO.2 (também chamado `java.nio.file`) trouxe **melhorias modernas** principalmente para **manipulação de arquivos e sistemas de arquivos**.
-
-### Classes Principais
-
-| Classe | Propósito |
-|--------|-----------|
-| `Path` | Representa caminho de arquivo ou diretório |
-| `Paths` | Factory para criar instâncias de Path |
-| `Files` | Utilitários para operações em arquivos |
-| `FileSystem` | Representa o sistema de arquivos |
-| `FileSystems` | Factory para acessar FileSystems |
-| `FileStore` | Informações sobre armazenamento |
-| `DirectoryStream` | Iterar sobre arquivos em diretório |
-| `WatchService` | Monitorar alterações em arquivos/diretórios |
-| `WatchKey` | Chave de evento de monitoramento |
-| `WatchEvent` | Evento de alteração em arquivo/diretório |
-
-### Destaque: Path, Files, DirectoryStream
-
-#### Path e Files - Operações Modernas
-
-```java
-import java.nio.file.*;
-
-// Criar path
-Path caminho = Paths.get("dados.txt");
-
-// Verificar existência
-if (Files.exists(caminho)) {
-    System.out.println("Arquivo existe");
-}
-
-// Ler arquivo inteiro (simples!)
-List<String> linhas = Files.readAllLines(caminho);
-
-// Escrever em arquivo
-Files.write(caminho, "Novo conteúdo".getBytes());
-
-// Copiar arquivo
-Files.copy(caminho, Paths.get("copia.txt"));
-
-// Deletar arquivo
-Files.delete(caminho);
-```
-
-#### DirectoryStream - Listar Arquivos
-
-```java
-Path diretorio = Paths.get(".");
-
-// Iterar sobre arquivos do diretório
-try (DirectoryStream<Path> stream = Files.newDirectoryStream(diretorio)) {
-    for (Path arquivo : stream) {
-        System.out.println(arquivo.getFileName());
-    }
-}
-```
-
-#### WatchService - Monitorar Alterações
-
-```java
-WatchService watchService = FileSystems.getDefault().newWatchService();
-Path diretorio = Paths.get(".");
-
-// Registrar para monitorar alterações
-diretorio.register(watchService, 
-    StandardWatchEventKinds.ENTRY_CREATE,
-    StandardWatchEventKinds.ENTRY_MODIFY,
-    StandardWatchEventKinds.ENTRY_DELETE
-);
-
-// Aguardar eventos
-WatchKey chave = watchService.take();
-for (WatchEvent<?> evento : chave.pollEvents()) {
-    System.out.println("Alteração detectada: " + evento.context());
-}
-```
-
----
-
-## 🌐 Rede com Java NIO
-
-Java NIO oferece alternativas aos sockets tradicionais com abordagem baseada em channels:
-
-### Comparação: Java Tradicional vs NIO
-
-| Aspecto | Java Tradicional | Java NIO |
-|---------|---|---|
-| **Leitura de socket** | `Socket` | `SocketChannel` |
-| **Servidor** | `ServerSocket` | `ServerSocketChannel` |
-| **UDP** | `DatagramSocket` | `DatagramChannel` |
-| **Bloqueio** | Bloqueante | Não-bloqueante |
-| **Escalabilidade** | Uma thread por cliente | Uma thread, múltiplos clientes |
-
-### Canais de Rede
-
-- **SocketChannel**: Cliente TCP (alternativa a `Socket`)
-- **ServerSocketChannel**: Servidor TCP (alternativa a `ServerSocket`)
-- **DatagramChannel**: UDP (alternativa a `DatagramSocket`)
-
-### Conceitos Avançados (Menção)
-
-Para aplicações verdadeiramente escaláveis, Java NIO oferece:
-
-- **Selector**: Multiplexação de múltiplos canais em uma thread
-- **Programação não-bloqueante**: Evita bloqueios ao aguardar I/O
-- **Assincronismo**: Operações sem travamento
-
-Esses conceitos são **mais avançados** e estão fora do escopo deste guia introdutório.
-
----
-
-## 📊 Tabela de Resumo
-
-| Categoria | Classes Principais | Uso |
-|-----------|-------------------|-----|
-| 📥 Entrada de bytes | `InputStream`, `FileInputStream` | Ler dados binários |
-| 📤 Saída de bytes | `OutputStream`, `FileOutputStream` | Escrever dados binários |
-| 🔤 Entrada de caracteres | `Reader`, `BufferedReader` | Ler texto |
-| 📝 Saída de caracteres | `Writer`, `BufferedWriter` | Escrever texto |
-| 💻 Console | `System.in`, `System.out`, `System.err` | Interação com usuário |
-| ⌨️ Entrada do usuário | `Scanner`, `BufferedReader`, `Console` | Receber dados do usuário |
-| 🖨️ Impressão | `PrintStream`, `PrintWriter` | Saída formatada |
-| 📁 Arquivos | `File`, `Path`, `Files` | Gerenciar e acessar arquivos |
-| 🧠 Serialização de objetos | `ObjectInputStream`, `ObjectOutputStream` | Persistir objetos Java |
-| 🔢 Tipos primitivos | `DataInputStream`, `DataOutputStream` | I/O de tipos primitivos |
-| ⚡ Java NIO | `Buffer`, `Channel`, `FileChannel` | I/O não-bloqueante |
-| 🚀 Java NIO.2 | `Path`, `Files`, `WatchService` | Manipulação moderna de arquivos |
-| 🌐 Rede TCP | `Socket`, `ServerSocket` | Comunicação cliente-servidor |
-| 📡 Rede UDP | `DatagramSocket`, `DatagramPacket` | Comunicação sem conexão |
-| 🔌 Rede NIO | `SocketChannel`, `ServerSocketChannel` | Rede não-bloqueante |
-
----
-
-## 👨‍💻 Autor
-
-**Eduardo Fernandez Evangelista**
-
-**GitHub:** [EduardoFernandezEvangelista](https://github.com/EduardoFernandezEvangelista)
-
----
-
-## 📄 Licença
-
-Este projeto ainda não possui uma licença específica definida.
-
-**Licença:** ``
+Para começar, `System.out`, `System.in` e `Scanner` já cobrem boa parte dos exercícios e aplicações simples. Conforme o projeto cresce, entram em cena as APIs de arquivos, streams, NIO e comunicação de rede.
 
 ---
 
 <div align="center">
 
-☕ **Java • Tipos de entradas e saídas**
+☕ **Java • Entrada e Saída • I/O**
 
-📚 Estudo • Prática • Desenvolvimento • Evolução
+📚 **Estudo • Prática • Evolução**
 
 </div>
